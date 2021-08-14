@@ -1,0 +1,412 @@
+
+.imagep :hover{
+    animation: animate 0.4s linear;
+
+    transform: perspective(0px) rotateX(0deg) rotateY(0deg);
+}
+.imagep :not(:hover){
+    animation: animate2 0.7s linear;
+
+    transform: perspective(1000px) rotateX(35deg) rotateY(6deg);
+}
+
+.imager :hover{
+    float: right;
+    position: relative;
+    animation: animate 0.4s linear;
+
+    transform: perspective(0px) rotateX(0deg) rotateY(0deg);
+}
+.imager :not(:hover){
+    float: right;
+    position: relative;
+    animation: animate2 0.7s linear;
+
+    transform: perspective(1000px) rotateX(35deg) rotateY(6deg);
+}
+
+
+
+@keyframes animate2
+{
+    
+    0%
+    {
+
+        transform: perspective(0px) rotateX(0deg) rotateY(0deg);
+    }
+
+    100%
+    {
+
+        transform: perspective(1000px) rotateX(35deg) rotateY(6deg);
+    }
+
+}
+
+@keyframes animate
+{
+    
+    0%
+    {
+
+        transform: perspective(1000px) rotateX(35deg) rotateY(6deg);
+    }
+    100%
+    {
+
+        transform: perspective(0px) rotateX(0deg) rotateY(0deg);
+    }
+}
+
+.Rimage {
+    float: right;
+    margin-right: 150px;
+}
+
+.right {
+    float: right; 
+    margin-right: -35px;
+    margin-top: 10px;
+}
+
+.dark {
+    background-color: #242424;
+    height: auto;
+    width: 50%;
+    padding: 20px;
+    margin-left: 50px;
+    margin-top: -150px;
+    left: 50px;
+    right: 50px;
+    border-radius: 4px; 
+}
+@media screen and (min-width: 1400px) {
+    .responsive_bottom {
+        margin-top: 700px;
+     } 
+}
+
+@media screen and (min-width: 1188px) and (max-width: 1399px) {
+    .responsive_bottom {
+       margin-top: 900px;
+    } 
+}
+@media screen and (max-width: 1187px) and (min-width: 1052px) {
+    .responsive_bottom {
+       margin-top: 1000px;
+    } 
+}
+@media screen and (max-width: 1051px) and (min-width: 943px) {
+    .responsive_bottom {
+        margin-top: 1000px;
+    } 
+}
+@media screen and (max-width: 942px) and (min-width: 892px) {
+    .responsive_bottom {
+        margin-top: 1000px;
+    } 
+}
+  
+
+@media screen and (max-width: 942px) and (min-width: 748px) {
+    .responsive_bottom {
+        margin-top: 1000px;
+    } 
+}
+@media screen and (max-width: 747px) and (min-width: 623px) {
+    .responsive_bottom {
+        margin-top: 1000px;
+    } 
+}
+@media screen and (max-width: 622px)  and (min-width: 450px){
+    .responsive_bottom {
+        margin-top: 1400px;
+    } 
+}
+@media screen and (max-width: 449px) {
+    .responsive_bottom {
+       margin-top: 1500px;
+    } 
+}
+.info {
+    max-width: 100%;
+    padding: 10px 10px 10px 10px;
+    float: left;
+}
+
+
+
+.tweet {
+    margin-left: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    width: 500px;
+    max-width: 100%;
+    position: relative;
+}
+@media (max-width: 560px) {
+    .tweet {
+    width: 100%;
+    margin-left: 0px;
+    }
+}
+.tweet-content {
+    padding: 0px 20px 20px 20px;
+    color: white;
+    font-size: 20px;
+}
+.tweet-title {
+    padding: 20px 0px 0px 20px;
+    color: white;
+    font-size: 30px;
+}
+
+.hr2 {
+    position:absolute;
+    right: 20px;
+    left:20px;
+    height: 3px;
+    top:70px;
+    background-color: #0E76B8;
+}
+
+
+.partner {
+    padding: 10px 10px 10px 10px;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.partner-video {
+    border-radius: 20px;
+    margin-left: -10px;
+    max-width: 100%;
+}
+
+.partner-image {
+    margin-top: 45px;
+    float:left;
+}
+
+.Pbox {
+    background-color: #ffffff;
+    position: relative;
+}
+
+
+.Pinfos {
+    text-align: left;
+     margin-left: 400px;
+     margin-right: 400px;
+}
+
+@media screen and (max-width: 1100px) and (min-width: 899px) {
+    .Pinfos {
+margin-left: 300px;
+margin-right: 300px;
+}
+}
+
+
+
+@media screen and (max-width: 898px) and (min-width: 768px) {
+        .Pinfos {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+}
+
+@media screen and (max-width: 767px) and (min-width: 557px) {
+    .Pinfos {
+margin-left: 100px;
+margin-right: 100px;
+}
+}
+@media screen and (max-width: 556px) {
+    .Pinfos {
+margin-left: 10px;
+margin-right: 10px;
+}
+}
+
+@media screen and (max-width: 394px) {
+    .partner-video {
+        margin-top: 50px;
+}
+}
+
+.header-frame {
+    margin-bottom: -275px;
+    position:relative;
+    z-index:10;
+}
+
+
+
+  
+    
+
+.ytb_video {
+    max-width:100%;
+}
+
+.cadre {
+    background:#262626;
+    border-radius:15px;
+     padding:20px 20px 20px 20px;
+     
+     
+}
+
+.sub_cadre {
+    display: table-cell;
+
+    position: relative;
+    max-width: 100%;
+    width:700px;
+}
+
+
+
+
+@media (min-width: 521px) {
+    .video_button {
+        float: left;
+        position: absolute;
+        top:40px;
+        left:10px;
+    }
+    .view_video {
+        top:25px;
+        left:130px;
+        position: absolute;
+        
+    }
+
+}
+.view_video {
+    font-size: 25px;
+    color:white;
+
+    
+}
+
+
+.video_title {
+    color:#0E76B8;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.cadre_title {
+    color:white;
+    font-size:35px;
+    margin-top: 2px;
+}
+
+.btn-2 {
+    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+  .btn {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+   }
+  
+  /* Demo Stuff End -> */
+  
+  /* <- Magic Stuff Start */
+  
+  .btn:hover {
+    background-position: right center; /* change the direction of the change here */
+  }
+
+
+
+  .admin_decal {
+      margin-left:60px;
+  }
+
+
+  @media (max-width: 600px) {
+
+    .admin_decal {
+        margin-left:0px;
+        margin-top:60px;
+    }
+
+
+
+
+    @media (max-width: 567px) {
+ 
+        .admin_decal {
+            margin-left:0px;
+            margin-top:120px;
+        }
+    
+    
+    }}
+
+  .admin_header_element {
+        color:#8c8c8c;
+      font-size: 25px;
+      text-decoration: none;
+      padding: 10px;
+  }
+
+  .header_element {
+      color: #737373;
+      font-weight: bold;
+  }
+  .header_element:hover {
+    color: #2ea0e8 !important;
+  }
+
+  .icone_header {
+      color:#0E76B8;
+  }
+
+  .container2 {
+    border: 1px solid #b9b9b9;
+    color:#404040;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: block;
+    padding: 10px;
+  }
+
+  .button {
+    background-color: #348ec2; border: none;color: white;padding: 15px 32px;text-align:
+    center;text-decoration: none;display: inline-block;font-size: 16px;
+  }
+  .button2 {
+    background-color: #3b3b3b; border: none;color: white;padding: 7px 16px;text-align:
+    center;text-decoration: none;display: inline-block;font-size: 14px;
+  } 
+
+  
