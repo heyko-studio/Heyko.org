@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
+.burger_text {
+  font-size: 20px;
+}
+
 #menuToggle
 {
   display: block;
   position: relative;
   top: 50px;
   left: 50px;
-  
+  margin-top: -100px;
+  margin-left: -90px;
   z-index: 11;
   
   -webkit-user-select: none;

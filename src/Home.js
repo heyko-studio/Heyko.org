@@ -2,7 +2,7 @@
 
 function App() {
   return (
-   <p>Home</p>
+   <p></p>
   );
 }
 export default App;
