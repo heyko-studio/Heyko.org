@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-var burger
+var burger = 0
 
 function NavBar() {
     return(
