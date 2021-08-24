@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+var burger
 
 function NavBar() {
     return(
@@ -28,7 +29,9 @@ function NavBar() {
         </div>
         </nav>
         </div>
-        </header>
+        </header>,
+          burger = document.getElementById('burger')
+          
     )
 }
 
