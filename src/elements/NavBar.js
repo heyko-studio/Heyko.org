@@ -1,16 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-var burger = 0
+
 
 function NavBar() {
     return(
-
         <header class="topbar ombre">
       
   <div class="topbar-container">
       <div id="menuToggle">
           
-          <input id="burger" type="checkbox"/>
+          <input id="burger" type="checkbox" value="checked"/>
         
           <span></span>
           <span></span>
@@ -29,9 +28,7 @@ function NavBar() {
         </div>
         </nav>
         </div>
-        </header>,
-          burger = document.getElementById('burger')
-          
+        </header>
     )
 }
 
