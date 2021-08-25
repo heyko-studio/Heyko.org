@@ -1,27 +1,34 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-
+import ReactDOM from 'react-dom';
 
 function NavBar() {
+  var number = Math.floor(Math.random() * 100)
+  function change_number() {
+    number = Math.floor(Math.random() * 100)
+    console.log(number)
+    NavBar()
+  }
     return(
-        <header class="topbar ombre">
+      <div>
+        <header className="topbar ombre">
       
-  <div class="topbar-container">
+  <div className="topbar-container">
       <div id="menuToggle">
           
-          <input id="burger" type="checkbox" value="checked"/>
+          <input id="burger" type="checkbox" value="checked" onChange={change_number}/>
         
           <span></span>
           <span></span>
           <span></span>
        
-          <ul id="menu" class="ombre burger_text">
+          <ul id="menu" className="ombre burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
         </ul>
         </div>
-        <nav class="menu">
-        <div class="topbar-container">
+        <nav className="menu">
+        <div className="topbar-container">
           <div id="profile_image">
             <img src="./img/profile.png" alt="Heyko profile" width="50px"></img>
         </div>
@@ -29,7 +36,24 @@ function NavBar() {
         </nav>
         </div>
         </header>
+        <p id="hello-example">{number}</p>
+        </div>
     )
 }
+class HelloMessage extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello {this.props.name}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <HelloMessage name="Taylor" />,
+  document.getElementById('hello-example')
+);
+
 
 export default NavBar
