@@ -36,15 +36,16 @@ function NavBar() {
         </nav>
         </div>
         </header>
-        <p id="hello-example">{number}</p>
         </div>
     )
 }
+/*
 class HelloMessage extends React.Component {
   render() {
     return (
       <div>
         Hello {this.props.name}
+        <p id="hello-example"></p>
       </div>
     );
   }
@@ -54,6 +55,6 @@ ReactDOM.render(
   <HelloMessage name="Taylor" />,
   document.getElementById('hello-example')
 );
-
+*/
 
 export default NavBar
