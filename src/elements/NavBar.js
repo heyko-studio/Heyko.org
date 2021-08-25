@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import ReactDOM from 'react-dom';
 
 function NavBar() {
   var number = Math.floor(Math.random() * 100)
