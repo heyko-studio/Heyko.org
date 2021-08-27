@@ -9,7 +9,7 @@ function NavBar() {
     NavBar()
   }
     return(
-      <div>
+      
         <header className="topbar ombre">
       
   <div className="topbar-container">
