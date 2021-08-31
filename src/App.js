@@ -14,6 +14,7 @@ function App() {
      <Route exact path="/contacts" component={Contacts}/>
     </div>
   );
+
 }
 
 
