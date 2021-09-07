@@ -409,4 +409,12 @@ margin-right: 10px;
     center;text-decoration: none;display: inline-block;font-size: 14px;
   } 
 
+  .profile_img {
+      width: 60px;
+      height: 60px;
+      border-radius: 90px;
+      background-color: grey;
+      display: inline-block;
+  }
+
   
