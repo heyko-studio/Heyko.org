@@ -1,35 +1,64 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-var image_link = 'https://images-eu.ssl-images-amazon.com/images/I/81BES%2BtsVvL.png';
 
-GetUserProfileImage();
+
+
 /*
 function GetUserProfileImage()
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "https://heyko.alwaysdata.net/requests/get_user_avatar", false ); // false for synchronous request
+    xmlHttp.open( "GET", "http://158.101.204.28:8100/requests/get_user_avatar", false ); // false for synchronous request
     xmlHttp.send("test");
     return xmlHttp.responseText;
 }
 */
-function GetUserProfileImage() {
-  let x = new XMLHttpRequest();
-x.open("POST", `https://heyko.alwaysdata.net/requests/get_user_avatar`);
-x.setRequestHeader("Content-type", "application/json");
-let params = {
-}
-x.send(JSON.stringify(params))
 
-x.onreadystatechange = (e) => {
-  console.log(x.responseText)
-}
+
+
+
+
+
+class Profile extends React.Component {
+  constructor(props) {
+    super(props);
+  this.state = {
+    image_link: ''
+  }
+  }
+  componentDidMount() {
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)===' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
   }
 
-class HelloMessage extends React.Component {
+    const username = getCookie("heyko_username")
+    const password = getCookie("heyko_password")
+
+    console.log(username)
+    console.log(" | ")
+    console.log(password)
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username:"truc" })
+    };
+    fetch('http://158.101.204.28:8100/requests/get_user_avatar', requestOptions)
+        .then(response => response.json())
+        .then(data => this.setState({ image_link: data }));
+        
+        
+}
+
   render() {
     return (
       <div>
-        <img className="profile_img" id="profile_img" src={image_link} alt="Heyko profile"></img>
+        <img className="profile_img" id="profile_img" src={JSON.stringify(this.state.image_link)} alt="Heyko profile"></img>
       </div>
     );
   }
@@ -63,7 +92,7 @@ function NavBar() {
         <nav className="menu">
         <div className="topbar-container">
           <div id="profile_image">
-       <HelloMessage/>
+       <Profile/>
         {
         document.getElementById('hello-example')
          }
