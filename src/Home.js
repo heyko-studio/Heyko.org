@@ -69,7 +69,7 @@ function App() {
           <div className="Description_text_underline"></div>
           </p>
           <a href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn" className="Home_Social"><img alt="Discord" className="Home_Social_Image" src="img/discord.svg"></img></a>
-          <a href="https://twitter.com/heyko_studio" target="https://twitter.com/heyko_studio" className="Home_Social"><img alt="Twitter" className="Home_Social_Image" src="img/twitter.svg"></img></a>
+          <a href="https://twitter.com/heyko_studio" target="https://twitter.com/heyko_studio" className="Home_Social"><img alt="Twitter" className="Home_Social_Image" src="img/Twitter.svg"></img></a>
           <a href="https://utip.io/heykostudio/" target="https://utip.io/heykostudio/" className="Home_Social"><img alt="Utip" className="Home_Social_Image" src="img/Utip.webp"></img></a>
          
           </div>
