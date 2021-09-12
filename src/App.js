@@ -1,8 +1,10 @@
 import {Route} from 'react-router-dom';
 import React from "react";
 import Home from './Home';
-import Contacts from './Contacts';
+import Contacts from './pages/Contacts';
+import Connection from './pages/connection';
 import NavBar from './elements/NavBar';
+
 
 
 
@@ -12,6 +14,7 @@ function App() {
       <NavBar/>
      <Route exact path="/" component={Home}/>
      <Route exact path="/contacts" component={Contacts}/>
+     <Route exact path="/connection" component={Connection}/>
     </div>
   );
 

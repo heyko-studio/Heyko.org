@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+.Home_Title {
+    color:#2ea0e8;
+    font-size: 100px;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 500px;
+}
+
+.Home_Bottom_Arrow {
+    margin-top: 0px;
+    color: #2ea0e8;
+    width: 7em;
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    animation: 10s Bottom_Arrow infinite;
+    animation: 5s Bottom_Arrow_2 infinite;
+    transition: 0.7s;
+}
+.Home_Bottom_Arrow:hover {
+    color: rgb(157, 72, 255);
+}
+
+@keyframes Bottom_Arrow {
+
+    25% {
+        color: rgb(25, 125, 255);
+    }
+    75% {
+        color: rgb(132, 25, 255);
+    }
+
+}
+@keyframes Bottom_Arrow_2 {
+
+    0% {
+        transform: rotate(25deg);
+    }
+    50% {
+        transform: rotate(-25deg);
+    }
+    100% {
+        transform: rotate(25deg);
+    } 
+}
+.Home_Sub_Title {
+    left: 0;
+    right: 0;
+    color: #302d38;
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.Strip_1 {
+    width: 130%;
+    height: 150px;
+    position:absolute;
+    background: rgb(26,23,93);
+    background: linear-gradient(90deg, rgba(26,23,93,1) 0%, rgba(136,47,204,1) 35%, rgba(0,212,255,1) 100%);
+    transform: rotate(45deg);
+    left:-55%;
+}
+
+.Strip_2 {
+    width: 130%;
+    height: 150px;
+    position:absolute;
+    background: rgb(26,23,93);
+    background: linear-gradient(90deg, rgba(26,23,93,1) 0%, rgba(136,47,204,1) 35%, rgba(0,212,255,1) 100%);
+    transform: rotate(-70deg) translatey(450px);
+    left:-55%;
+    z-index: -1;
+}
+
+.Strip_3 {
+    width: 100%;
+    height: 100px;
+    position:absolute;
+    background: rgb(74,71,145);
+    background: linear-gradient(90deg, rgba(74,71,145,1) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);
+    transform: rotate(-15deg) translatex(-1000px);
+    left:90%;
+}
+
+@media (max-width: 1576px) {
+    .Strip_3 {
+
+    }
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    position: relative;
+    width: 600%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: glisse 40s infinite;
+}
+.slide {
+    float: left;
+    width: calc(100% / 6); /*16.666667%;*/
+}
+
+.Home_Title_2 {
+    margin:25px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 40px;
+    background-color: rgb(0, 68, 255);
+    width: fit-content;
+    padding: 10px;
+    transform: rotate(-5deg);
+}
+.Home_Title_3 {
+    margin:25px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 40px;
+    background-color: rgb(111, 0, 255);
+    width: fit-content;
+    padding: 10px;
+    transform: rotate(1deg);
+}
+.Home_Game {
+  margin: 25px 25px 25px 70px;
+  border-radius: 12px;
+  width: fit-content;
+  padding: 30px;
+
+  background: rgb(74,71,145);
+  background: linear-gradient(40deg, rgba(74,71,145,1) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);
+}
+.Home_Game_Title {
+    color: white;
+    font-size: 35px;  
+    font-weight: 600;
+}
+.Home_Game_Description {
+    color: rgb(241, 241, 241);
+    font-size: 20px;  
+    font-weight: bold;
+}
+
+.background_2 {
+    background: rgb(42,37,170);
+    background: linear-gradient(90deg, rgba(42,37,170,1) 0%, rgba(163,92,255,1) 42%, rgba(129,234,255,1) 100%);
+}
+
+.background_3 {
+    background: rgb(42,37,170);
+    background: linear-gradient(90deg, rgba(42,37,170,1) 0%, rgba(255,92,164,1) 70%, rgba(255,148,129,1) 98%);
+}
+
+.Game {
+    display: inline-block;
+}
+
+.Description {
+    margin: 25px;
+    padding: 25px;
+    border: 2px solid #b9b9b9;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.Description_text_underline {
+    background: rgb(42,37,170);
+    background: linear-gradient(90deg, rgba(42,37,170,1) 0%, rgba(163,92,255,1) 42%, rgba(129,234,255,1) 100%);
+    width: 100%;
+    height: 3px;
+}
+
+.Home_Social {
+    padding: 5px;
+    background-color: rgb(181, 180, 206);
+    margin: 5px 5px 5px 5px;
+}
+.Home_Social_Image {
+    width: 30px;
+}

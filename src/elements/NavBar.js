@@ -22,55 +22,50 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
   this.state = {
-    image_link: ''
+    image_link: 'img/profile.png'
   }
+
   }
   componentDidMount() {
-    function getCookie(name) {
-      var nameEQ = name + "=";
-      var ca = document.cookie.split(';');
-      for(var i=0;i < ca.length;i++) {
-          var c = ca[i];
-          while (c.charAt(0)===' ') c = c.substring(1,c.length);
-          if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
-      }
-      return null;
-  }
+    function getCookie(cName) {
+      const name = cName + "=";
+      const cDecoded = decodeURIComponent(document.cookie); //to be careful
+      const cArr = cDecoded.split('; ');
+      let res;
+      cArr.forEach(val => {
+        if (val.indexOf(name) === 0) res = val.substring(name.length);
+      })
+      return res
+    }
 
-    const username = getCookie("heyko_username")
-    const password = getCookie("heyko_password")
+    const username = getCookie("username")
+    const password = getCookie("password")
 
-    console.log(username)
-    console.log(" | ")
-    console.log(password)
+ 
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username:"truc" })
+        body: JSON.stringify({ username:username,password:password })
     };
-    fetch('http://158.101.204.28:8100/requests/get_user_avatar', requestOptions)
+   fetch('http://158.101.204.28/requests/get_user_avatar', requestOptions)
         .then(response => response.json())
-        .then(data => this.setState({ image_link: data }));
-        
+        .then(data => this.setState({ image_link: data.user_image }))
+
         
 }
 
   render() {
     return (
       <div>
-        <img className="profile_img" id="profile_img" src={JSON.stringify(this.state.image_link)} alt="Heyko profile"></img>
+        <img className="profile_img" id="profile_img" src={this.state.image_link} alt="Avatar"></img>
       </div>
     );
   }
 }
 
+
+
 function NavBar() {
-  var number = Math.floor(Math.random() * 100)
-  function change_number() {
-    number = Math.floor(Math.random() * 100)
-    console.log(number)
-    NavBar()
-  }
     return(
       <div>
         <header className="topbar ombre">
@@ -78,7 +73,7 @@ function NavBar() {
   <div className="topbar-container">
       <div id="menuToggle">
           
-          <input id="burger" type="checkbox" value="checked" onChange={change_number}/>
+      <input id="burger" type="checkbox"/>
         
           <span></span>
           <span></span>
@@ -87,15 +82,13 @@ function NavBar() {
           <ul id="menu" className="ombre burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
+            <li><Link to="/connection">Login</Link></li>
         </ul>
         </div>
         <nav className="menu">
         <div className="topbar-container">
           <div id="profile_image">
        <Profile/>
-        {
-        document.getElementById('hello-example')
-         }
         </div>
         </div>
         </nav>
