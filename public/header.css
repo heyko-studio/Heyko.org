@@ -65,7 +65,7 @@
   
   z-index: 11;
   
-  transform-origin: 4px 0px;
+  transform-origin: 4px 0;
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
