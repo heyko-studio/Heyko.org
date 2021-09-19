@@ -47,7 +47,7 @@ class Profile extends React.Component {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username:username,password:password })
     };
-   fetch('http://158.101.204.28/requests/get_user_avatar', requestOptions)
+   fetch('https://cyberia.alwaysdata.net/requests/get_user_avatar', requestOptions)
         .then(response => response.json())
         .then(data => this.setState({ image_link: data.user_image }))
 
