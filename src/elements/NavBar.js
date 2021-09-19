@@ -82,7 +82,7 @@ function NavBar() {
           <ul id="menu" className="ombre burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
-            <li><Link to="/connection">Login</Link></li>
+          { /* <li><Link to="/connection">Login</Link></li> */}
         </ul>
         </div>
         <nav className="menu">
