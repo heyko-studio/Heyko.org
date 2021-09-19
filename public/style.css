@@ -15,9 +15,9 @@ body{
 .topbar {
     background-color: white;
     z-index: 3;
-    -webkit-box-shadow: 4px 3px 6px 0px rgba(0,0,0,0.7);
-    -moz-box-shadow: 4px 3px 6px 0px rgba(0,0,0,0.7);
-    box-shadow: 4px 3px 6px 0px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
+    -moz-box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
+    box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
 }
 .topbar-container {
     display: flex;
@@ -41,9 +41,9 @@ body{
     color: #2EA0E8 !important;
 }
 .ombre {
-    -webkit-box-shadow: 4px 3px 6px 0px rgba(0, 0, 0, 0.329);
-    -moz-box-shadow: 4px 3px 6px 0px rgba(0, 0, 0, 0.329);
-    box-shadow: 4px 3px 6px 0px rgba(0, 0, 0, 0.329);
+    -webkit-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+    -moz-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
 }
 
 

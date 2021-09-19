@@ -8,7 +8,6 @@
 }
 
 .Home_Bottom_Arrow {
-    margin-top: 0px;
     color: #2ea0e8;
     width: 7em;
     display: block;
@@ -241,7 +240,7 @@
 .Home_Social {
     padding: 5px;
     background-color: rgb(181, 180, 206);
-    margin: 5px 5px 5px 5px;
+    margin: 5px;
 }
 .Home_Social_Image {
     width: 30px;
