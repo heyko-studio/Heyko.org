@@ -1,35 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
 
+body {
+    background-color: white;
+}
+
+.slider {
+    background: #2ea0e8;
+    z-index:0;
+}
+
+.shadow {
+    -webkit-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+    -moz-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+    z-index: 10;
+    position: relative;
+}
+
+.shadow2 {
+    box-shadow: 4px 3px 6px 0 rgb(46, 67, 255);
+}
+
+
 .Home_Title {
-    color:#2ea0e8;
+    color:#ffffff;
     font-size: 100px;
     font-family: 'Nunito', sans-serif;
     margin-top: 500px;
 }
 
 .Home_Bottom_Arrow {
-    color: #2ea0e8;
+    color: #ffffff;
     width: 7em;
     display: block;
     margin: auto;
-    animation: 10s Bottom_Arrow infinite;
+
     animation: 5s Bottom_Arrow_2 infinite;
     transition: 0.7s;
+    z-index: initial;
 }
 .Home_Bottom_Arrow:hover {
-    color: rgb(157, 72, 255);
+    color: rgba(119, 0, 255, 0.137);
 }
 
-@keyframes Bottom_Arrow {
-
-    25% {
-        color: rgb(25, 125, 255);
-    }
-    75% {
-        color: rgb(132, 25, 255);
-    }
-
-}
 @keyframes Bottom_Arrow_2 {
 
     0% {
@@ -45,7 +58,7 @@
 .Home_Sub_Title {
     left: 0;
     right: 0;
-    color: #302d38;
+    color: #ffffff;
     font-size: 64px;
     font-weight: 600;
     letter-spacing: 5px;
@@ -53,23 +66,25 @@
 }
 
 .Strip_1 {
-    width: 130%;
+    width: 100%;
     height: 150px;
     position:absolute;
     background: rgb(26,23,93);
     background: linear-gradient(90deg, rgba(26,23,93,1) 0%, rgba(136,47,204,1) 35%, rgba(0,212,255,1) 100%);
     transform: rotate(45deg);
-    left:-55%;
+    left:-29%;
+    bottom: 0;
 }
 
 .Strip_2 {
-    width: 130%;
+    width: 25%;
     height: 150px;
     position:absolute;
     background: rgb(26,23,93);
-    background: linear-gradient(90deg, rgba(26,23,93,1) 0%, rgba(136,47,204,1) 35%, rgba(0,212,255,1) 100%);
-    transform: rotate(-70deg) translatey(450px);
-    left:-55%;
+    background: linear-gradient(90deg, rgba(136, 47, 204, 1) 0%, rgba(0, 213, 255, 0) 100%);
+    transform: rotate(-70deg);
+    left:17%;
+    bottom: 0;
     z-index: -1;
 }
 
@@ -78,8 +93,8 @@
     height: 100px;
     position:absolute;
     background: rgb(74,71,145);
-    background: linear-gradient(90deg, rgba(74,71,145,1) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);
-    transform: rotate(-15deg) translatex(-1000px);
+    background: linear-gradient(90deg, rgba(126, 10, 155, 0) 35%, rgb(89, 0, 255) 100%);
+    transform: rotate(-12deg) translatex(-1000px);
     left:90%;
 }
 
@@ -98,14 +113,14 @@
 }
 @media (max-width: 1237px) {
     .Strip_3 {
-        left:150%; 
+        left:130%; 
         top:10%;
     }
 }
 @media (max-width: 893px) {
     .Strip_3 {
         left:160%; 
-        top:25%;
+        top:20%;
     }
     .Strip_1 {
         left:-90%; 
@@ -197,26 +212,45 @@
   background: linear-gradient(40deg, rgba(74,71,145,1) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);
 }
 .Home_Game_Title {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 35px;  
     font-weight: 600;
 }
+.Home_Game_Title_2 {
+    color: rgb(12, 12, 12);
+    font-size: 28px;  
+    font-weight: 600;
+}
 .Home_Game_Description {
-    color: rgb(241, 241, 241);
+    color: rgb(252, 252, 252);
     font-size: 20px;  
     font-weight: bold;
 }
-
+.Home_Game_Description_2 {
+    color: rgb(53, 53, 53);
+    font-size: 21px;  
+}
 .background_2 {
+    background: rgb(255, 255, 255);
+   /*
     background: rgb(42,37,170);
     background: linear-gradient(90deg, rgba(42,37,170,1) 0%, rgba(163,92,255,1) 42%, rgba(129,234,255,1) 100%);
+    */
 }
 
 .background_3 {
+    background: rgb(255, 255, 255);
+    border: 2px solid #b9b9b9;
+    /*
     background: rgb(42,37,170);
     background: linear-gradient(90deg, rgba(42,37,170,1) 0%, rgba(255,92,164,1) 70%, rgba(255,148,129,1) 98%);
+    */
 }
 
+.background_4 {
+    background: rgb(255, 255, 255);
+    border: 1px solid #b9b9b9;
+}
 .Game {
     display: inline-block;
 }
@@ -228,6 +262,15 @@
     border-radius: 12px;
     width: fit-content;
 }
+
+.Description2 {
+    margin: 25px;
+    padding: 25px;
+    border: 2px solid #363636;
+    border-radius: 12px;
+    width: fit-content;
+}
+
 
 .Description_text_underline {
     background: rgb(42,37,170);
@@ -244,4 +287,34 @@
 }
 .Home_Social_Image {
     width: 30px;
+}
+
+.Button.Join {
+    background-color: #2ea0e8;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 40px 8px 40px;
+    color: white;
+    margin-bottom: -25px;
+    text-decoration: none;
+}
+
+.Home.Circle_1 {
+    top:50px;
+    left:50px;
+    position: absolute;
+    animation: 5s move_1 infinite;
+}
+
+@keyframes move_1 {
+
+    0% {
+        transform: rotate(7deg);
+    }
+    50% {
+        transform: rotate(-7deg);
+    }
+    100% {
+        transform: rotate(7deg);
+    } 
 }

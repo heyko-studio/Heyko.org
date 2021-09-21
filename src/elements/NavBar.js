@@ -67,8 +67,8 @@ class Profile extends React.Component {
 
 function NavBar() {
     return(
-      <div>
-        <header className="topbar ombre">
+      <div className="navbar">
+        <header className="topbar shadow">
       
   <div className="topbar-container">
       <div id="menuToggle">
@@ -79,7 +79,7 @@ function NavBar() {
           <span></span>
           <span></span>
        
-          <ul id="menu" className="ombre burger_text">
+          <ul id="menu" className="shadow burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
           { /* <li><Link to="/connection">Login</Link></li> */}
