@@ -25,9 +25,12 @@ function App() {
         <div className="Strip_3"></div>
         <br></br><br></br><br></br><br></br><br></br>
             <h1 className="Home_Sub_Title" ><strong className="Home_Title">Heyko<br></br></strong>Game creation studio</h1>
+        
+        {/*
             <svg className="Home Circle_1" width='200' height='200'>
    <circle cx='50' cy='50' r='40' stroke='#2e2e2e' strokeWidth='4' fill='transparent' />
 </svg>
+        */}
           { 
           /*
             <svg width='100' height='100'>
