@@ -5,20 +5,25 @@ body {
 }
 
 .slider {
-    background: #2ea0e8;
+    background: #7CD8FF;
     z-index:0;
 }
 
+
+.Home.Separator {
+    background-color: #2ea0e8;
+}
+
 .shadow {
-    -webkit-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
-    -moz-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
-    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+    -webkit-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.151);
+    -moz-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.151);
+    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.151);
     z-index: 10;
     position: relative;
 }
 
 .shadow2 {
-    box-shadow: 4px 3px 6px 0 rgb(46, 67, 255);
+    box-shadow: 4px 3px 6px 0 rgba(46, 161, 255, 0.5);
 }
 
 
@@ -38,9 +43,10 @@ body {
     animation: 5s Bottom_Arrow_2 infinite;
     transition: 0.7s;
     z-index: initial;
+    
 }
 .Home_Bottom_Arrow:hover {
-    color: rgba(119, 0, 255, 0.137);
+    color: #2ea0e8;
 }
 
 @keyframes Bottom_Arrow_2 {
@@ -70,10 +76,11 @@ body {
     height: 150px;
     position:absolute;
     background: rgb(26,23,93);
-    background: linear-gradient(90deg, rgba(26,23,93,1) 0%, rgba(136,47,204,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, #006eb3 0%, #0093ee 35%, rgb(113, 231, 255) 100%);
     transform: rotate(45deg);
     left:-29%;
     bottom: 0;
+
 }
 
 .Strip_2 {
@@ -81,11 +88,12 @@ body {
     height: 150px;
     position:absolute;
     background: rgb(26,23,93);
-    background: linear-gradient(90deg, rgba(136, 47, 204, 1) 0%, rgba(0, 213, 255, 0) 100%);
+    background: linear-gradient(90deg, #2ea0e8 0%, rgba(0, 213, 255, 0) 100%);
     transform: rotate(-70deg);
     left:17%;
     bottom: 0;
     z-index: -1;
+
 }
 
 .Strip_3 {
@@ -93,27 +101,24 @@ body {
     height: 100px;
     position:absolute;
     background: rgb(74,71,145);
-    background: linear-gradient(90deg, rgba(126, 10, 155, 0) 35%, rgb(89, 0, 255) 100%);
+    background: linear-gradient(90deg, rgba(10, 20, 155, 0) 35%, #2ea0e8 100%);
     transform: rotate(-12deg) translatex(-1000px);
     left:90%;
+    
 }
 
-@media (max-width: 1650px) {
-    .Strip_3 {
-        left:120%; 
-    }
-}
+
 @media (max-width: 1437px) {
     .Strip_1 {
-        left:-80%; 
+        left:-40%; 
     }
     .Strip_2 {
-        left:-80%; 
+        left:12%; 
     }
 }
 @media (max-width: 1237px) {
     .Strip_3 {
-        left:130%; 
+        left:129%; 
         top:10%;
     }
 }
@@ -123,11 +128,11 @@ body {
         top:20%;
     }
     .Strip_1 {
-        left:-90%; 
-        top:20%;
+        left:-60%;
+        
     }
     .Strip_2 {
-        left:-90%; 
+        left:3%; 
     }
 }
 @media (max-width: 700px) {
@@ -135,48 +140,38 @@ body {
         font-size: 45px;
     }
 }
-@media (max-width: 630px) {
+@media (max-width: 740px) {
     .Strip_3 {
-        visibility: hidden;
+        left:180%; 
+        top:20%;
+        z-index: -1;
     }
 }
-@media (max-width: 590px) {
-    .Strip_1 {
-        left:-90%; 
-        top:32%;
+@media (max-width: 600px) {
+    .Strip_3 {
+        left:240%; 
+        top:-20%;
+        z-index: -1;
     }
 }
 @media (max-width: 520px) {
     .Strip_1 {
-        left:-85%; 
-        top:45%;
+        visibility: hidden;
+    }
+    .Strip_2 {
+        visibility: hidden;
+    }
+    .Strip_3 {
+        visibility: hidden;
     }
 }
-@media (max-width: 460px) {
-    .Strip_1 {
-        left:-85%; 
-        top:55%;
-    }
-    .Home_Sub_Title {
-        font-size: 35px;
-    }
-}
-
 
 .slider {
     position: relative;
     overflow: hidden;
 }
 
-.slides {
-    position: relative;
-    width: 600%;
-    margin: 0;
-    left: 0;
-    text-align: left;
-    font-size: 0;
-    animation: glisse 40s infinite;
-}
+
 .slide {
     float: left;
     width: calc(100% / 6); /*16.666667%;*/
@@ -187,7 +182,7 @@ body {
     font-weight: bold;
     color: #ffffff;
     font-size: 40px;
-    background-color: rgb(0, 68, 255);
+    background-color: #2ea0e8;
     width: fit-content;
     padding: 10px;
     transform: rotate(-5deg);
@@ -197,7 +192,7 @@ body {
     font-weight: bold;
     color: #ffffff;
     font-size: 40px;
-    background-color: rgb(111, 0, 255);
+    background-color: #2ea0e8;
     width: fit-content;
     padding: 10px;
     transform: rotate(1deg);
@@ -289,7 +284,7 @@ body {
     width: 30px;
 }
 
-.Button.Join {
+.Home.Button.Join {
     background-color: #2ea0e8;
     border: none;
     border-radius: 8px;
@@ -298,14 +293,36 @@ body {
     margin-bottom: -25px;
     text-decoration: none;
 }
-
-.Home.Circle_1 {
-    top:50px;
-    left:50px;
-    position: absolute;
-    animation: 5s move_1 infinite;
+.Home.Button.More_2 {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 40px 8px 40px;
+    color: #2ea0e8;
+    font-weight: bold;
+    margin-bottom: -25px;
+    text-decoration: none;
 }
 
+
+
+
+
+.Home.shape_1 {
+    border-radius: 30% 70% 67% 33% / 30% 30% 70% 70%;
+    position: absolute;
+    right: 0px;
+    top: 450px;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(40deg, rgb(0, 129, 250) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);
+    color: white;
+    padding: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    animation: 5s move_1 infinite;
+    z-index: 0;
+}
 @keyframes move_1 {
 
     0% {
