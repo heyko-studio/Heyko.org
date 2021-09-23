@@ -7,7 +7,10 @@ body {
 .slider {
     background: #7CD8FF;
     z-index:0;
+    position: relative;
+    overflow: hidden;
 }
+
 
 
 .Home.Separator {
@@ -166,11 +169,6 @@ body {
     }
 }
 
-.slider {
-    position: relative;
-    overflow: hidden;
-}
-
 
 .slide {
     float: left;
@@ -288,7 +286,7 @@ body {
     background-color: #2ea0e8;
     border: none;
     border-radius: 8px;
-    padding: 8px 40px 8px 40px;
+    padding: 8px 40px;
     color: white;
     margin-bottom: -25px;
     text-decoration: none;
@@ -297,7 +295,7 @@ body {
     background-color: white;
     border: none;
     border-radius: 8px;
-    padding: 8px 40px 8px 40px;
+    padding: 8px 40px;
     color: #2ea0e8;
     font-weight: bold;
     margin-bottom: -25px;
@@ -311,7 +309,7 @@ body {
 .Home.shape_1 {
     border-radius: 30% 70% 67% 33% / 30% 30% 70% 70%;
     position: absolute;
-    right: 0px;
+    right: 0;
     top: 450px;
     width: 350px;
     height: 350px;
