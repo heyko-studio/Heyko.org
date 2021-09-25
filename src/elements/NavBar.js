@@ -38,7 +38,7 @@ class Profile extends React.Component {
       return res
     }
 
-   const username = getCookie("username")
+  // const username = getCookie("username")
   // const password = getCookie("password")
 
  
