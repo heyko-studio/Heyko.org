@@ -27,7 +27,7 @@ class Profile extends React.Component {
 
   }
   componentDidMount() {
-    function getCookie(cName) {
+  /*  function getCookie(cName) {
       const name = cName + "=";
       const cDecoded = decodeURIComponent(document.cookie); //to be careful
       const cArr = cDecoded.split('; ');
@@ -37,7 +37,7 @@ class Profile extends React.Component {
       })
       return res
     }
-
+*/
   // const username = getCookie("username")
   // const password = getCookie("password")
 
