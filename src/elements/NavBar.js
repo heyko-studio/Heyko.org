@@ -43,7 +43,7 @@ class Profile extends React.Component {
 
  
     const requestOptions = {
-        method: 'POST',
+        method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username:username,password:password }),
     };
