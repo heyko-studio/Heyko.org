@@ -27,7 +27,7 @@ class Profile extends React.Component {
 
   }
   componentDidMount() {
-    /*function getCookie(cName) {
+    function getCookie(cName) {
       const name = cName + "=";
       const cDecoded = decodeURIComponent(document.cookie); //to be careful
       const cArr = cDecoded.split('; ');
@@ -36,10 +36,10 @@ class Profile extends React.Component {
         if (val.indexOf(name) === 0) res = val.substring(name.length);
       })
       return res
-    }*/
+    }
 
-   // const username = getCookie("username")
-   // const password = getCookie("password")
+   const username = getCookie("username")
+  // const password = getCookie("password")
 
  
     const requestOptions = {
@@ -47,7 +47,7 @@ class Profile extends React.Component {
         headers: { 'Content-Type': 'application/json' },
       //  body: JSON.stringify({ username:username,password:password }),
     };
-   fetch('https://backend.heyko.fr/requests/get_user_avatar', requestOptions)
+   fetch(`https://backend.heyko.fr/requests/get_user_avatar?${username}`, requestOptions)
         .then(response => response.json())
         .then(data => this.setState({ image_link: data.user_image }))
 
