@@ -45,7 +45,7 @@ class Profile extends React.Component {
     const requestOptions = {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username:username,password:password }),
+      //  body: JSON.stringify({ username:username,password:password }),
     };
    fetch('https://backend.heyko.fr/requests/get_user_avatar', requestOptions)
         .then(response => response.json())
