@@ -10,7 +10,8 @@ function App() {
         const last_name = document.getElementById("last_name").value
         const email = document.getElementById("email").value
         const subject = document.getElementById("subject").value
-        const content = document.getElementById("content").value
+        const content = document.getElementById("content").value.replace(/\n/g, "\\n").split('"').join('\\"');
+        console.log(content)
         const recaptcha = recaptchaRef.current.getValue()
 
         if (recaptcha) {
