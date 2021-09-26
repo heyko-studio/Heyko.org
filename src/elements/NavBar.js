@@ -3,19 +3,6 @@ import {Link} from 'react-router-dom'
 
 
 
-/*
-function GetUserProfileImage()
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://158.101.204.28:8100/requests/get_user_avatar", false ); // false for synchronous request
-    xmlHttp.send("test");
-    return xmlHttp.responseText;
-}
-*/
-
-
-
-
 
 
 class Profile extends React.Component {
@@ -27,9 +14,10 @@ class Profile extends React.Component {
 
   }
   componentDidMount() {
-  /*  function getCookie(cName) {
+
+    function getCookie(cName) {
       const name = cName + "=";
-      const cDecoded = decodeURIComponent(document.cookie); //to be careful
+      const cDecoded = decodeURIComponent(document.cookie);
       const cArr = cDecoded.split('; ');
       let res;
       cArr.forEach(val => {
@@ -37,22 +25,32 @@ class Profile extends React.Component {
       })
       return res
     }
-*/
-  // const username = getCookie("username")
-  // const password = getCookie("password")
+    const username = getCookie("username")
+    const password = getCookie("password")
+    if (username && password) {
+    const requestOptions2 = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+  };
+ fetch(`https://backend.heyko.fr/requests/user_exists?${username}?${password}`, requestOptions2)
+      .then(response => response.json())
+      .then(data => {
+        if (data.exists === "true") {
+        const requestOptions = {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+      };
+     fetch(`https://backend.heyko.fr/requests/get_user_avatar?${username}`, requestOptions)
+          .then(response => response.json())
+          .then(data => this.setState({ image_link: data.user_image }))  
+    }
+    
+        })  
+      }
 
- 
-    const requestOptions = {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      //  body: JSON.stringify({ username:username,password:password }),
-    };
-   fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
-        .then(response => response.json())
-        .then(data => this.setState({ image_link: data.user_image }))
+   
+}  
 
-        
-}
 
   render() {
     return (
@@ -97,22 +95,5 @@ function NavBar() {
         </div>
     )
 }
-/*
-class HelloMessage extends React.Component {
-  render() {
-    return (
-      <div>
-        Hello {this.props.name}
-        <p id="hello-example"></p>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(
-  <HelloMessage name="Taylor" />,
-  document.getElementById('hello-example')
-);
-*/
 
 export default NavBar
