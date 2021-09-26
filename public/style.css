@@ -206,7 +206,6 @@ body{
   z-index: 10;
 }
 .button.ok {
-    border: none;
     font-weight: bold;
     padding: 8px 40px;
     color: rgb(255, 255, 255);
