@@ -15,7 +15,7 @@ class Ok extends React.Component {
     
       render() {
         return (
-          <button className="login button ok" onClick={this.handleClick}>
+          <button className="login button ok wrong" onClick={this.handleClick}>
               Ok
           </button>
         );
@@ -46,12 +46,12 @@ function App() {
         if (data.exists === "true") {
             const title = React.createElement("h1", {}, 'Hello ' + data.username);
             const loader = React.createElement(Loading, {}, '');
-            const contener = React.createElement('div', {className : 'login message success'}, title, loader);
+            const contener = React.createElement('div', {className : 'login default_message success'}, title, loader);
             ReactDOM.render(
                 contener,
                 document.getElementById('login_contener')
               );
-              const background = React.createElement('div', {className : 'login background'}, '');
+              const background = React.createElement('div', {className : 'login white_background'}, '');
               ReactDOM.render(
                   background,
                   document.getElementById('background')
@@ -62,12 +62,12 @@ function App() {
         else {
             const title = React.createElement('h1', {}, 'Wrong email address/username or password. Contact us on discord for help');
             const ok = React.createElement(Ok, {}, 'Ok');
-            const contener = React.createElement('div', {className : 'login message wrong'}, title, ok);
+            const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
             ReactDOM.render(
                 contener,
                 document.getElementById('login_contener')
               );
-              const background = React.createElement('div', {className : 'login background'}, '');
+              const background = React.createElement('div', {className : 'login white_background'}, '');
               ReactDOM.render(
                   background,
                   document.getElementById('background')

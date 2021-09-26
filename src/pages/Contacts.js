@@ -1,7 +1,47 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import React from 'react';
+import reactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 const recaptchaRef = React.createRef();
 
+class Ok extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+      }
+    
+      handleClick() {
+        reactDom.unmountComponentAtNode(document.getElementById("login_contener"))
+        reactDom.unmountComponentAtNode(document.getElementById("background")) 
+      }
+    
+      render() {
+        return (
+          <button className="button wrong ok" onClick={this.handleClick}>
+              Ok
+          </button>
+        );
+      }
+  }
+  class Ok_success extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+      }
+    
+      handleClick() {
+        reactDom.unmountComponentAtNode(document.getElementById("login_contener"))
+        reactDom.unmountComponentAtNode(document.getElementById("background")) 
+      }
+    
+      render() {
+        return (
+          <button className="button success ok" onClick={this.handleClick}>
+              Ok
+          </button>
+        );
+      }
+  }
 function App() {
   
     function handleSubmit(e) {
@@ -11,7 +51,6 @@ function App() {
         const email = document.getElementById("email").value
         const subject = document.getElementById("subject").value
         const content = document.getElementById("content").value.replace(/\n/g, "\\n").split('"').join('\\"');
-        console.log(content)
         const recaptcha = recaptchaRef.current.getValue()
 
         if (recaptcha) {
@@ -22,16 +61,60 @@ function App() {
         };
        fetch(`https://backend.heyko.fr/requests/send_mail?`, requestOptions)
             .then(response => response.json())
-            .then(data => console.log(data))  
+            .then(data => {
+                if (data.results === "captcha_error") {
+                    const title = React.createElement('h1', {}, 'Please wait before sending us another email');
+                    const ok = React.createElement(Ok, {}, 'Ok');
+                    const contener = React.createElement('div', {className : 'default_message wrong'}, title, ok);
+                    ReactDOM.render(
+                        contener,
+                        document.getElementById('login_contener')
+                      );
+                      const background = React.createElement('div', {className : 'white_background'}, '');
+                      ReactDOM.render(
+                          background,
+                          document.getElementById('background')
+                        );
+                  }
+                  else {
+                    if (data.results === "sent") {
+                        const title = React.createElement('h1', {}, 'Mail sent successfully');
+                        const ok = React.createElement(Ok_success, {}, 'Ok');
+                        const contener = React.createElement('div', {className : 'default_message success'}, title, ok);
+                        ReactDOM.render(
+                            contener,
+                            document.getElementById('login_contener')
+                          );
+                          const background = React.createElement('div', {className : 'white_background'}, '');
+                          ReactDOM.render(
+                              background,
+                              document.getElementById('background')
+                            );
+                      }
+                  }
+                
+            })  
       }
       else {
-        console.log(recaptcha)
+        const title = React.createElement('h1', {}, 'Please complete the Captcha');
+        const ok = React.createElement(Ok, {}, 'Ok');
+        const contener = React.createElement('div', {className : 'default_message wrong'}, title, ok);
+        ReactDOM.render(
+            contener,
+            document.getElementById('login_contener')
+          );
+          const background = React.createElement('div', {className : 'white_background'}, '');
+          ReactDOM.render(
+              background,
+              document.getElementById('background')
+            );
       }
     }
   return (
       <>
     <div>
-
+    <div id="background"></div>
+<div id="login_contener"></div>
 <img width="700px" className="heyko_banner_1" src="./img/heyko.png" alt="Heyko banner"></img>
 
 

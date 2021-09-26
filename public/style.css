@@ -171,7 +171,62 @@ body{
 .input_1 {
     padding: 5px;
 }
+.default_message {
+    background-color: #2ea0e8;
+    text-align: center;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 1;
+}
 
+
+.default_message.wrong {
+    background-color: #ffffff;
+    border: 1px solid #b9b9b9;
+    color: rgb(48, 48, 48);
+    max-width: 90%;
+}
+.default_message.success {
+    background-color: #ffffff;
+    border: 1px solid #b9b9b9;
+    color: rgb(48, 48, 48);
+    max-width: 90%;
+}
+.white_background {
+  background-color: rgba(255, 255, 255, 0.596);
+  position: absolute;
+  top:0;
+  left:0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.wrong.button.ok {
+    background-color: #ff3c3c;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 8px 40px;
+    color: rgb(255, 255, 255);
+    margin-bottom: -25px;
+    text-decoration: none;
+}
+.button.success.ok {
+    background-color: #19ac4a;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 8px 40px;
+    color: rgb(255, 255, 255);
+    margin-bottom: -25px;
+    text-decoration: none;
+}
 
 
 
