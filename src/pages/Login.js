@@ -2,6 +2,7 @@ import React from 'react';
 import reactDom from 'react-dom';
 import ReactDOM from 'react-dom';
 import './login.css';
+import {Link} from 'react-router-dom'
 class Ok extends React.Component {
     constructor(props) {
         super(props);
@@ -44,7 +45,7 @@ function App() {
       function connect(data) {
           console.log(data)
         if (data.exists === "true") {
-            const title = React.createElement("h1", {}, 'Hello ' + data.username);
+            const title = React.createElement("h1", {}, 'Hello ' + data.username + '🎉');
             const loader = React.createElement(Loading, {}, '');
             const contener = React.createElement('div', {className : 'login default_message success'}, title, loader);
             ReactDOM.render(
@@ -58,6 +59,9 @@ function App() {
                 );
             document.cookie = "username=" + data.username
             document.cookie = "password=" + document.getElementById("password").value
+            setTimeout(function() {
+              
+            }, 1000);
         }
         else {
             const title = React.createElement('h1', {}, 'Wrong email address/username or password. Contact us on discord for help');
@@ -96,7 +100,7 @@ function App() {
             <button className="send" name="submit" type="submit">Login</button>
         </div>
         <div className="form-line4">
-            <a href="/" className="link">Sign Up (coming soon)</a>
+            <Link to="/sign-up" className="link">➡️ Sign Up</Link>
         </div>
         {
             /*

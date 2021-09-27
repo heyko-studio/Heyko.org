@@ -1,7 +1,9 @@
 
 
-.login.message.success {
+.login.default_message.success {
     padding: 10px 80px;
+    background-color: #2ea0e8;
+
 }
 
 
