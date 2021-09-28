@@ -34,25 +34,37 @@ function App() {
         };
        fetch(`https://backend.heyko.fr/requests/email_or_username_already_used`, requestOptions)
             .then(response => response.json())
-            .then(data => connect(data))  
+            .then(data => check_1(data))  
       }
-      function connect(data) {
+      function add_user(data) {
+        console.log(data)
+        const title = React.createElement('h1', {}, 'test');
+        const ok = React.createElement(Ok, {}, 'Ok');
+        const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
+        ReactDOM.render(
+            contener,
+            document.getElementById('login_contener')
+          );
+          const background = React.createElement('div', {className : 'login white_background'}, '');
+          ReactDOM.render(
+              background,
+              document.getElementById('background')
+            );
+      }
+      function check_1(data) {
           console.log(data)
         if (data.results === "unused") {
-            const title = React.createElement('h1', {}, 'test');
-            const ok = React.createElement(Ok, {}, 'Ok');
-            const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
-            ReactDOM.render(
-                contener,
-                document.getElementById('login_contener')
-              );
-              const background = React.createElement('div', {className : 'login white_background'}, '');
-              ReactDOM.render(
-                  background,
-                  document.getElementById('background')
-                );
-                
-        
+          const email = document.getElementById("mail").value
+          const username = document.getElementById("username").value
+          const password = document.getElementById("password").value
+          const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: `{"email":"${email}","usemprname":"${username}", "password":"${password}"}`
+        };
+          fetch(`https://backend.heyko.fr/requests/add_user`, requestOptions)
+          .then(response => response.json())
+          .then(data => add_user(data))  
         }
         else {
             if (data.results === "username") {

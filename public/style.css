@@ -198,7 +198,7 @@ body{
 }
 .white_background {
   background-color: rgba(255, 255, 255, 0.596);
-  position: absolute;
+  position:fixed;
   
   left:0;
   bottom: 0;
