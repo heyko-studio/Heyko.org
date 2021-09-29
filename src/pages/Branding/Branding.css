@@ -21,7 +21,6 @@
 
 .Branding.color_line {
     background-color: rgb(231, 231, 231);
-    display: flex;
     padding: 5px;
     width: 210px;
     border-radius: 10px;
