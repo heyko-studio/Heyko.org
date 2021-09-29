@@ -14,7 +14,7 @@ function Footer() {
         
             <h1 className="Home_Sub_Title" >
             <img className="Home Banner" src="img/heyko.png" alt="Heyko's Banner" width="450px"></img><br></br>
-            Heyko's branding 🌼</h1>
+            Heyko's branding</h1>
         </div>
 
 
