@@ -30,7 +30,7 @@ function App() {
         <div id="games">
 
 
-          <h1 className="Home_Title_2">Our games</h1>
+          <h1 className="Title_2">Our games</h1>
 
 
           <div className="Game">
@@ -87,7 +87,7 @@ function App() {
         </div>
 
 
-        <h2 className="Home_Title_3">What is Heyko?</h2>
+        <h2 className="Title_2 v2">What is Heyko?</h2>
         <div className="Description">
         <p>
           Heyko is an independent video game creation team 😋

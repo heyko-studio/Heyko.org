@@ -1,3 +1,18 @@
+/*
+BLACK : #353535
+GREY : #737373
+BLUE_1 : #2ea0e8
+BLUE_2 : #7CD8FF
+
+
+
+
+
+
+*/
+
+
+
 * {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
@@ -224,3 +239,37 @@ body{
     background-color: #19ac4a;
 }
 */
+
+.Title_1 {
+    text-align: center;
+    font-size: 40px;
+    color: rgb(53, 53, 53);
+    font-weight: bold;
+}
+.Title_1_min {
+    font-size: 30px;
+    color: rgb(53, 53, 53);  
+    margin: 20px;
+}
+
+.Title_2 {
+    margin:25px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 40px;
+    background-color: #2ea0e8;
+    width: fit-content;
+    padding: 10px;
+    transform: rotate(-5deg);
+}
+.Title_2.v2 {
+    transform: rotate(1deg);
+}
+
+.Subtitle_1 {
+    text-align: center;
+    font-size: 26px;
+}
+.shadow_2 {
+    box-shadow: 4px 3px 6px 0 rgba(46, 161, 255, 0.5);
+}

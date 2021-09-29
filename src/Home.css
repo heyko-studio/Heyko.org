@@ -5,16 +5,18 @@ body {
 }
 
 .slider {
-    background: #7CD8FF;
+    background-image   : url("img/Five_Mysteries_Banner_1.webp");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
     z-index:0;
     position: relative;
     overflow: hidden;
 }
 
 
-
 .Home.Separator {
-    background-color: #2ea0e8;
+    background-color: transparent;
 }
 
 .shadow {
@@ -23,10 +25,6 @@ body {
     box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.151);
     z-index: 10;
     position: relative;
-}
-
-.shadow2 {
-    box-shadow: 4px 3px 6px 0 rgba(46, 161, 255, 0.5);
 }
 
 
@@ -175,26 +173,6 @@ body {
     width: calc(100% / 6); /*16.666667%;*/
 }
 
-.Home_Title_2 {
-    margin:25px;
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 40px;
-    background-color: #2ea0e8;
-    width: fit-content;
-    padding: 10px;
-    transform: rotate(-5deg);
-}
-.Home_Title_3 {
-    margin:25px;
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 40px;
-    background-color: #2ea0e8;
-    width: fit-content;
-    padding: 10px;
-    transform: rotate(1deg);
-}
 .Home_Game {
   margin: 25px 25px 25px 70px;
   border-radius: 12px;

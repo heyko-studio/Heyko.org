@@ -38,6 +38,7 @@ function App() {
       }
       function add_user(data) {
         console.log(data)
+        if (data.results === "failed") {
         const title = React.createElement('h1', {}, 'test');
         const ok = React.createElement(Ok, {}, 'Ok');
         const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
@@ -50,6 +51,21 @@ function App() {
               background,
               document.getElementById('background')
             );
+          }
+          else  {
+            const title = React.createElement('h1', {}, 'test');
+            const ok = React.createElement(Ok, {}, 'Ok');
+            const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
+            ReactDOM.render(
+                contener,
+                document.getElementById('login_contener')
+              );
+              const background = React.createElement('div', {className : 'login white_background'}, '');
+              ReactDOM.render(
+                  background,
+                  document.getElementById('background')
+                );
+          }
       }
       function check_1(data) {
           console.log(data)
@@ -60,7 +76,7 @@ function App() {
           const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: `{"email":"${email}","usemprname":"${username}", "password":"${password}"}`
+            body: `{"email":"${email}","username":"${username}", "password":"${password}"}`
         };
           fetch(`https://backend.heyko.fr/requests/add_user`, requestOptions)
           .then(response => response.json())
