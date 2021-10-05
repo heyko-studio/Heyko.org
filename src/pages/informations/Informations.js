@@ -14,7 +14,7 @@ Heyko is an independent video game creation team
 </h1>
 <br></br>
 <center>
-<p>Coming soon...</p>
+<p>Developed with ❤️ by Nicolas Marchand</p>
 </center>
 <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
 </div>

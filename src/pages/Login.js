@@ -3,6 +3,8 @@ import reactDom from 'react-dom';
 import ReactDOM from 'react-dom';
 import './login.css';
 import {Link} from 'react-router-dom'
+
+
 class Ok extends React.Component {
     constructor(props) {
         super(props);
@@ -60,7 +62,7 @@ function App() {
             document.cookie = "username=" + data.username
             document.cookie = "password=" + document.getElementById("password").value
             setTimeout(function() {
-              
+              window.location = 'profile';
             }, 1000);
         }
         else {

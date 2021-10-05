@@ -1,0 +1,20 @@
+.Profile.Avatar {
+    border-radius: 90px;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 5px solid #2ea0e8;
+}
+
+.Profile.Username {
+    margin: 10px;
+}
+
+.Profile.Bio {
+    width: auto;
+    height: 200px;
+    margin: 25px;
+    padding: 25px;
+    border: 1px solid #b9b9b9;
+    border-radius: 12px;
+}
