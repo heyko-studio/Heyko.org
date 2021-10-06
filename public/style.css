@@ -3,12 +3,6 @@ BLACK : #353535
 GREY : #737373
 BLUE_1 : #2ea0e8
 BLUE_2 : #7CD8FF
-
-
-
-
-
-
 */
 
 
@@ -68,6 +62,16 @@ body{
     width: 100%;
     height: 3px;
     background-color: #0E76B8;
+}
+.hr_2 {
+    width: 100%;
+    height: 3px;
+    background-color: #737373;
+}
+.hr_3 {
+    width: 100%;
+    height: 1px;
+    background-color: #737373;
 }
 .link {
     text-decoration: none;
@@ -230,6 +234,16 @@ body{
     margin-bottom: -25px;
     text-decoration: none;
     border: 2px solid #ffffff;
+    border-radius: 90px;
+}
+.button.view {
+    font-weight: bold;
+    padding: 8px 40px;
+    color: #2ea0e8;
+    background-color: transparent;
+    margin-bottom: -25px;
+    text-decoration: none;
+    border: 2px solid #2ea0e8;
     border-radius: 90px;
 }
 /*

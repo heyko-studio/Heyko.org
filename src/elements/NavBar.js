@@ -32,7 +32,7 @@ class Profile extends React.Component {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
   };
- fetch(`https://backend.heyko.fr/requests/user_exists?${username}?${password}`, requestOptions2)
+fetch(`https://backend.heyko.fr/requests/user_exists?${username}?${password}`, requestOptions2)
       .then(response => response.json())
       .then(data => {
         if (data.exists === "true") {
@@ -40,7 +40,7 @@ class Profile extends React.Component {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
       };
-     fetch(`https://backend.heyko.fr/requests/get_user_avatar?${username}`, requestOptions)
+      fetch(`https://backend.heyko.fr/requests/get_user_avatar?${username}`, requestOptions)
           .then(response => response.json())
           .then(data => this.setState({ image_link: data.user_image }))  
     }
@@ -48,7 +48,6 @@ class Profile extends React.Component {
         })  
       }
 
-   
 }  
 
 
@@ -76,7 +75,6 @@ function NavBar() {
           <span></span>
           <span></span>
           <span></span>
-       
           <ul id="menu" className="shadow burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
@@ -86,7 +84,7 @@ function NavBar() {
         <nav className="menu">
         <div className="topbar-container">
           <div id="profile_image">
-       <Profile/>
+        <Profile/>
         </div>
         </div>
         </nav>

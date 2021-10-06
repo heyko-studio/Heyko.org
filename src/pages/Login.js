@@ -40,7 +40,7 @@ function App() {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
         };
-       fetch(`https://backend.heyko.fr/requests/user_exists?${email}?${password}`, requestOptions)
+        fetch(`https://backend.heyko.fr/requests/user_exists?${email}?${password}`, requestOptions)
             .then(response => response.json())
             .then(data => connect(data))  
       }
@@ -106,7 +106,7 @@ function App() {
         </div>
         {
             /*
-       <div className="form-line3">
+        <div className="form-line3">
             <a id="text3" href="other/account/change_pass" className="link">● Forgot your password?</a>
         </div>
         <br></br>
