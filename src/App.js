@@ -9,19 +9,35 @@ import SignUp from './pages/SignUp';
 import Informations from './pages/informations/Informations';
 import Branding from './pages/Branding/Branding';
 import Profile from './pages/Profile/profile'
+import Welcome from './pages/welcome/Welcome'
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-     <Route exact path="/" component={Home}/>
-     <Route exact path="/contacts" component={Contacts}/>
-     <Route exact path="/login" component={Login}/>
-     <Route exact path="/sign-up" component={SignUp}/>
-     <Route exact path="/informations" component={Informations}/>
-     <Route exact path="/branding" component={Branding}/>
-     <Route exact path="/profile" component={Profile}/>
-     <Footer/>
+      <Route 
+    render={({ location }) => !['/welcome'].includes(location.pathname)
+        ? <NavBar/>
+        : null
+    }
+/>
+      <Route exact path="/" component={Home}/>
+      <Route exact path="/contacts" component={Contacts}/>
+      <Route exact path="/login" component={Login}/>
+      <Route exact path="/sign-up" component={SignUp}/>
+      <Route exact path="/informations" component={Informations}/>
+      <Route exact path="/branding" component={Branding}/>
+      <Route exact path="/profile" component={Profile}/>
+      <Route exact path="/welcome" component={Welcome}/>
+      
+      <Route 
+    render={({ location }) => !['/welcome'].includes(location.pathname)
+        ? <>
+        <Footer/>     
+          <section id="Footer_decal"></section>
+          </>
+        : null
+    }
+/>
     </div>
   );
 

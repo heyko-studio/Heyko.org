@@ -21,7 +21,13 @@ class Ok extends React.Component {
         );
       }
   }
-
+  class Loading extends React.Component {
+    render() {
+      return (
+          <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      );
+    }
+}
 function App() {
     function handleSubmit(e) {
         e.preventDefault();
@@ -32,28 +38,15 @@ function App() {
             headers: { 'Content-Type': 'application/json' },
             body: `{"mail":"${email}","username":"${username}"}`
         };
-       fetch(`https://backend.heyko.fr/requests/email_or_username_already_used`, requestOptions)
+      fetch(`https://backend.heyko.fr/requests/email_or_username_already_used`, requestOptions)
             .then(response => response.json())
             .then(data => check_1(data))  
       }
       function add_user(data) {
         console.log(data)
-        if (data.results === "failed") {
-        const title = React.createElement('h1', {}, 'test');
-        const ok = React.createElement(Ok, {}, 'Ok');
-        const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
-        ReactDOM.render(
-            contener,
-            document.getElementById('login_contener')
-          );
-          const background = React.createElement('div', {className : 'login white_background'}, '');
-          ReactDOM.render(
-              background,
-              document.getElementById('background')
-            );
-          }
-          else  {
-            const title = React.createElement('h1', {}, 'test');
+        if (data.results === "error") {
+          if (data.error === "username_too_long") {
+            const title = React.createElement('h1', {}, 'Username too long');
             const ok = React.createElement(Ok, {}, 'Ok');
             const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
             ReactDOM.render(
@@ -65,6 +58,59 @@ function App() {
                   background,
                   document.getElementById('background')
                 );
+          }
+          else {
+            if (data.error === "email_too_long") {
+              const title = React.createElement('h1', {}, 'Email adress too long');
+              const ok = React.createElement(Ok, {}, 'Ok');
+              const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
+              ReactDOM.render(
+                  contener,
+                  document.getElementById('login_contener')
+                );
+                const background = React.createElement('div', {className : 'login white_background'}, '');
+                ReactDOM.render(
+                    background,
+                    document.getElementById('background')
+                  );
+            }
+            else {
+              if (data.error === "password_too_long") {
+                const title = React.createElement('h1', {}, 'Password too long');
+                const ok = React.createElement(Ok, {}, 'Ok');
+                const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
+                ReactDOM.render(
+                    contener,
+                    document.getElementById('login_contener')
+                  );
+                  const background = React.createElement('div', {className : 'login white_background'}, '');
+                  ReactDOM.render(
+                      background,
+                      document.getElementById('background')
+                    );
+              }
+            }
+          }
+          }
+          else  {
+            const title = React.createElement('h1', {}, 'Welcome 😃');
+            const ok = React.createElement(Loading, {});
+            const contener = React.createElement('div', {className : 'login default_message'}, title, ok);
+            ReactDOM.render(
+                contener,
+                document.getElementById('login_contener')
+              );
+              const background = React.createElement('div', {className : 'login white_background'}, '');
+              ReactDOM.render(
+                  background,
+                  document.getElementById('background')
+                );
+                const username = document.getElementById("username").value
+                document.cookie = "username=" + username
+                document.cookie = "password=" + document.getElementById("password").value
+                setTimeout(function() {
+                  window.location = 'welcome';
+                }, 1000);
           }
       }
       function check_1(data) {

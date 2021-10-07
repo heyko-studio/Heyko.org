@@ -145,32 +145,29 @@ body{
     /* width */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  ::-webkit-scrollbar:horizontal {
+}
+::-webkit-scrollbar:horizontal {
     height: 10px;
-  }
-  
+}
+
   /* Track */
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: rgb(206, 206, 206); 
-  }
-  
-   
+}
+
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #2ea0e8;
-  }
-  
-  
-  
+}
+
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: #2ea0e8; 
-  }
+}
 
-  
 
-  .profile_img {
+
+.profile_img {
     width: 60px;
     height: 60px;
     border-radius: 90px;
@@ -179,13 +176,13 @@ body{
 }
 
 .heyko_banner_1 {
-  max-width:90%;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  background-color: rgb(245, 245, 245);
-  margin-top: 40px;
-  border-radius: 15px;
+    max-width:90%;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: rgb(245, 245, 245);
+    margin-top: 40px;
+    border-radius: 15px;
 }
 
 .input_1 {
@@ -217,14 +214,14 @@ body{
     max-width: 90%;
 }
 .white_background {
-  background-color: rgba(255, 255, 255, 0.596);
-  position:fixed;
-  
-  left:0;
-  bottom: 0;
-  top:0;
-  right: 0;
-  z-index: 10;
+    background-color: rgba(255, 255, 255, 0.596);
+    position:fixed;
+    
+    left:0;
+    bottom: 0;
+    top:0;
+    right: 0;
+    z-index: 10;
 }
 .button.ok {
     font-weight: bold;
@@ -287,4 +284,17 @@ body{
 }
 .shadow_2 {
     box-shadow: 4px 3px 6px 0 rgba(46, 161, 255, 0.5);
+}
+
+#App {
+    position: relative;
+    min-height:100%; 
+}
+
+html, body {
+    height:100%;
+}
+
+#Footer_decal {
+    padding-bottom: 44px;
 }

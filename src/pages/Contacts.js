@@ -59,7 +59,7 @@ function App() {
             headers: { 'Content-Type': 'application/json' },
             body: `{"first_name":"${first_name}","last_name":"${last_name}","email":"${email}","subject":"${subject}","content":"${content}", "captcha":"${recaptcha}"}`
         };
-       fetch(`https://backend.heyko.fr/requests/send_mail?`, requestOptions)
+      fetch(`https://backend.heyko.fr/requests/send_mail?`, requestOptions)
             .then(response => response.json())
             .then(data => {
                 if (data.results === "captcha_error") {
