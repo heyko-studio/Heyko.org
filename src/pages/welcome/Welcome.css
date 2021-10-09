@@ -12,7 +12,6 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: #2ea0e8;
     height: 0;
     z-index: -1;
 }
@@ -146,11 +145,6 @@
 }
 .Circle.v6 {
     top: 270px;
-    left: -125px;
-    width: 125px;
-    height: 125px;
-    top: 0;
-    left: 0;
     z-index: -1;
     animation: 5s Transition_circle_6;
     background-color: #2ea0e8;
@@ -318,7 +312,184 @@
     position: absolute;
     top:50%;
     transform: translateY(-50%);
-    width: 50px;
     height: 285px;
     width: 400px;
+}
+.Welcome.decal_1 {
+    margin-top: 275px;
+    margin-left: 50px;
+    animation: 1s Next_anim;
+    opacity: 1;
+}
+@keyframes Next_anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    
+    }
+}
+
+.Welcome.transition_2 {
+    background-color: white;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    animation: 1s transition_next_1;
+}
+@keyframes transition_next_1 {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    
+    }
+}
+.Welcome.transition_3 {
+    background-color: #2ea0e8;
+    background-image   : url("../../img/Five_Mysteries_Banner_1.webp");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    margin-left:0;
+    animation: 1s transition_next_2;
+}
+@keyframes transition_next_2 {
+    0% {
+        margin-left: -100%;
+    }
+    100% {
+        margin-left: 0;
+    
+    }
+}
+
+
+.Welcome.profile_editor_circle {   
+    background-color: #ffffff; 
+    width: 500px; 
+    height: 500px;
+    margin: 30px auto;
+    text-align: justify;
+    transition: all 1s ease; 
+    border-radius: 400px;
+    border: 1px solid #b9b9b9;
+} 
+.Welcome.profile_editor_circle:hover{ 
+    border: 1px solid #1a90ff;
+} 
+
+
+.Welcome.profile_tool_bar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+}
+.Welcome.profile_tool_bar_item {
+    width: 40px;
+    display: inline-block;
+    padding: 4px;
+    font-size: 40px;
+}
+.Welcome.profile_tool_bar_item.v2 {
+    margin-top: -6px;
+    margin-bottom: 3px;
+}
+.Welcome.profile_tool_bar_item:hover {
+    width: 40px;
+    display: inline-block;
+    padding: 0;
+}
+
+.Welcome.profile_tool_bar_item_button {
+    background-color: transparent;
+    border: none;
+}
+
+.Welcome.Canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 400px;
+}
+
+.Welcome.profile_tool_bar_colors {
+    background-color: white;
+    border-radius: 12px;
+    position: absolute;
+    left: 10px;
+    top: 150px;
+    bottom: 25px;
+    width: 170px;
+    padding:0 20px 0 20px;
+}
+
+.Welcome.Color_picker {
+    background-color: transparent;
+    border: none;
+    width:100%;
+    -webkit-appearance: none;
+	height: 32px;
+}
+.Welcome.Color_picker[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+.Welcome.Color_picker[type="color"]::-webkit-color-swatch {
+	border: none;
+    border-radius:4px;
+}
+.Welcome.profile_tool_bar_titles {
+    font-weight: bold;
+    font-size: 17px;
+    color: #353535;
+    display: inline-block;
+}
+
+.Welcome.Color_Checkbox {
+    display: inline-block;
+}
+
+.Welcome.Slider_1 {
+    -webkit-appearance: none;
+    width: 95px;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 15px;
+    position: absolute;
+    right: 20px;
+    margin-top: -35px;
+  }
+  
+  .Welcome.Slider_1:hover {
+    opacity: 1;
+  }
+  
+  .Welcome.Slider_1::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #2ea0e8;
+    cursor: pointer;
+  }
+
+.Welcome.Slider_value {
+    margin-top: 12px;
 }

@@ -243,6 +243,16 @@ body{
     border: 2px solid #2ea0e8;
     border-radius: 90px;
 }
+.button.Next {
+    font-weight: bold;
+    padding: 8px 40px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    margin-bottom: -25px;
+    text-decoration: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 90px;
+}
 /*
 .button.wrong.ok {
     background-color: #ff3c3c;
