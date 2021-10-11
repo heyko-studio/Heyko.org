@@ -34,9 +34,8 @@ function Welcome() {
             elem.parentNode.removeChild(elem);         
             ReactDOM.render(
                 <>
-                <div className="Welcome Contener transition_3" id="Welcome_Page">
-                    <h1 className="Welcome Title_2">Let's continue!</h1>
-                    <h1 className="Welcome Title_1">Customise your profile</h1>
+                <div className="Welcome transition_3" id="Welcome_Page">
+                    <h1 className="Welcome Title_2">🎨 Customise your profile</h1>
                     <div className="Welcome profile">
                     <div id="#canvas" className="Welcome profile_editor_circle">
                     <Canvas  key={key} initialTopLeft={dimensions.topLeft} initialBottomRight={dimensions.bottomRight}/>
@@ -61,7 +60,7 @@ function Welcome() {
         document.getElementById('Next_Button')
     );
 }, 9500);
-//100);
+//0);
     return(
         <div id="Welcome_Page" className="Welcome Contener">  
             <div className="Welcome Background v1"></div>

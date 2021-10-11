@@ -1,81 +1,31 @@
-/**import React, { useRef, useEffect } from 'react'
-
-    const Canvas = props => {
-    
-    const canvasRef = useRef(null)
-
-    const canvas = canvasRef.current;
-    console.log(canvas)
-    var actions = [[100,20,'#0fff']]
-    console.log(window)
-    const draw = (ctx) => {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-        actions.forEach(element => {
-            const x = element[0]
-            const y = element[1]
-            const color = element[2]
-            ctx.fillStyle = color
-            ctx.beginPath()
-            ctx.arc(x, y, 20*Math.sin(1)**2, 0, 2*Math.PI)
-            ctx.fill()
-        });
-    }
-    
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-    }
-    const test = () => {
-        actions.push([90,getRandomInt(100),'#0fff'])
-        console.log(getMousePosition(canvasRef))
-    }
-    function getMousePosition(canvas, event) {
-        let rect = canvas.getBoundingClientRect();
-        let x = event.clientX - rect.left;
-        let y = event.clientY - rect.top;
-        console.log("Coordinate x: " + x, 
-                    "Coordinate y: " + y);
-    }
-    useEffect(() => {
-        
-        const canvas = canvasRef.current
-        const context = canvas.getContext('2d')
-        let animationFrameId
-        
-        const render = () => {
-        draw(context)
-        animationFrameId = window.requestAnimationFrame(render)
-        }
-        render()
-        
-        return () => {
-        window.cancelAnimationFrame(animationFrameId)
-        }
-    }, [draw])
-    
-    return <canvas id="canvas" className="Welcome Canvas" onClick={test} ref={canvasRef} {...props}/>
-    }
-
-export default Canvas
-**/
     import { Delaunay } from "d3-delaunay"
     import React, { useRef, useEffect, useState } from 'react'
     import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
     import { faCircle } from '@fortawesome/free-regular-svg-icons'
     import { faSquare } from '@fortawesome/free-regular-svg-icons'
-
+    import { faUndo } from '@fortawesome/free-solid-svg-icons'
+    import { faRedo } from '@fortawesome/free-solid-svg-icons'
 
     function MapCanvas({ initialBottomRight, initialTopLeft }) {
-        var tool = 0;
-        var last_action = undefined;
-        var actions = []
-        var fill_color = '#353535'
-        var stroke_color = '#2ea0e8' 
-        var fill = true;
-        var stroke = false;
-        var stroke_width = 3;
+        let tool = 0;
+        let last_action = undefined;
+        let actions = []
+        let fill_color = '#353535'
+        let stroke_color = '#2ea0e8' 
+        let fill = true;
+        let stroke = false;
+        let stroke_width = 3;
+        var mouse_pressed = false;
+        var background = false;
+        var background_color = '#7CD8FF'
+        var redo = []
     
         const draw = (ctx) => {
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+            if (background) {
+                ctx.fillStyle = background_color;
+                ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            }
             actions.forEach(element => {
                 const tool_type = element[5]
                 if (tool_type === 0 || tool_type === 1 ||tool_type === 2) {
@@ -150,13 +100,16 @@ export default Canvas
         const context = canvas.getContext('2d')
         context.scale(scale, scale);
 
-        function handleMouseClick(e) {
+
+        function handleMouseUp (e) {
+            if (actions.length < 100) {
             if (tool === 0) {
                 
                 if (last_action === undefined) {
                     last_action = [e.offsetX, e.offsetY]
                 } else {
                     actions.push([e.offsetX, e.offsetY, last_action[0], last_action[1], stroke_color, 0, stroke_width])
+                    redo = []
                     last_action = undefined;
                 }
             }
@@ -167,6 +120,7 @@ export default Canvas
                     }
                     else {
                         actions.push([e.offsetX, e.offsetY, last_action[0], last_action[1], [fill_color, stroke_color, fill, stroke, stroke_width], 1])
+                        redo = []
                         last_action = undefined;
                     }
                 }
@@ -177,6 +131,7 @@ export default Canvas
                         }
                         else {
                             actions.push([e.offsetX, e.offsetY, last_action[0], last_action[1], [fill_color, stroke_color, fill, stroke, stroke_width], 2])
+                            redo = []
                             last_action = undefined;
                         }
                     }
@@ -185,11 +140,18 @@ export default Canvas
                     }
                 }
             }
+        }
+        }
+
+        function handleMouseDown(e) {
+            if (actions.length < 100) {
                 draw(context)
+                last_action = [e.offsetX, e.offsetY]
             }
+        }
             function handleMouseMove(e) {
+                if (mouse_pressed = true) {
                 if (tool === 0) {
-                
                     if (last_action !== undefined) {
                         draw(context)
                         const x = e.offsetX
@@ -232,7 +194,6 @@ export default Canvas
                                 draw(context)
                                 const x = e.offsetX
                                 const y = e.offsetY
-                                const color = fill_color
                                 context.lineWidth = stroke_width;
                                 context.fillStyle = fill_color
                                 context.strokeStyle = stroke_color
@@ -250,16 +211,30 @@ export default Canvas
                         }
                     }
                 }
-
+                
+            }
             }
         const checkbox_fill_color = document.getElementById('checkbox_fill_color')
         const checkbox_stroke_color = document.getElementById('checkbox_stroke_color')  
         const picker_fill_color = document.getElementById('picker_fill_color')
         const picker_stroke_color = document.getElementById('picker_stroke_color')  
-        
+
+
+        const picker_background_color = document.getElementById('picker_background_color')  
+        const checkbox_background_color = document.getElementById('checkbox_background_color')  
+
+        picker_background_color.addEventListener('input', (event) => {
+            background_color = picker_background_color.value
+            draw(context)
+        })
+        checkbox_background_color.addEventListener('change', (event) => {
+            background = checkbox_background_color.checked
+            draw(context)
+        })
 
         canvas.addEventListener('mousemove', handleMouseMove);
-        canvas.addEventListener('click', handleMouseClick);  
+        canvas.addEventListener('mouseup', handleMouseUp);  
+        canvas.addEventListener('mousedown', handleMouseDown);  
             checkbox_fill_color.addEventListener('change', (event) => {
                 fill = checkbox_fill_color.checked
         })
@@ -317,25 +292,66 @@ export default Canvas
     function onKeyPressed(event) {
 
     }
-    class Trash_button extends React.Component {
+    class UndoButton extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
         }
         handleClick() {
+            if (actions.length > 0) {
+            redo.push(actions[actions.length - 1])
+            actions.splice(-1)
+            draw(canvasRef.current.getContext('2d'))
+            }
+        }
+        render() {
+            return (
+        <button id="undo" onClick={() => this.handleClick()} className="Welcome profile_tool_bar_item_button">
+            <FontAwesomeIcon icon={faUndo} className="Welcome profile_tool_bar_item v2" />
+        </button>
+            )
+        }
+    }
+    class RedoButton extends React.Component {
+        constructor(props) {
+            super(props);
+            this.handleClick = this.handleClick.bind(this);
+        }
+        handleClick() {
+            if (redo.length > 0) {
+            actions.push(redo[redo.length - 1])
+            redo.splice(-1)
+            draw(canvasRef.current.getContext('2d'))
+            }
+        }
+        render() {
+            return (
+        <button id="redo" onClick={() => this.handleClick()} className="Welcome profile_tool_bar_item_button">
+            <FontAwesomeIcon icon={faRedo} className="Welcome profile_tool_bar_item v2" />
+        </button>
+            )
+        }
+    }
+    class TrashButton extends React.Component {
+        constructor(props) {
+            super(props);
+            this.handleClick = this.handleClick.bind(this);
+        }
+        handleClick() {
+            redo = []
             actions = []
             draw(canvasRef.current.getContext('2d'))
         }
         render() {
             return (
-        <button onClick={() => this.handleClick()} className="Welcome profile_tool_bar_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button id="trash" onClick={() => this.handleClick()} className="Welcome profile_tool_bar_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
         </svg>
         </button>
             )
         }
     }
-    class Pen_button extends React.Component {
+    class PenButton extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -353,7 +369,7 @@ export default Canvas
             )
         }
     }
-    class Circle_button extends React.Component {
+    class CircleButton extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -369,7 +385,7 @@ export default Canvas
             )
         }
     }
-    class Square_button extends React.Component {
+    class SquareButton extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -381,6 +397,22 @@ export default Canvas
             return (
         <button onClick={() => this.handleClick()} className="Welcome profile_tool_bar_item_button">
         <FontAwesomeIcon icon={faSquare} className="Welcome profile_tool_bar_item v2" />
+        </button>
+            )
+        }
+    }
+    class TextButton extends React.Component {
+        constructor(props) {
+            super(props);
+            this.handleClick = this.handleClick.bind(this);
+        }
+        handleClick() {
+            tool = 2
+        }
+        render() {
+            return (
+        <button onClick={() => this.handleClick()} className="Welcome profile_tool_bar_item_button">
+        <p className="Welcome T">T</p>
         </button>
             )
         }
@@ -406,28 +438,152 @@ export default Canvas
             )
         }
     }
+    class Elements extends React.Component {
+        constructor(props) {
+        super(props);
+        this.state = {
+            elements_number: 0
+        }
+        }
+        componentDidMount() {
+            const count = () => {
+                if (actions.length < 100) {
+                this.setState({ elements_number: actions.length + 1})
+                }
+            }
+            const count_2 = () => {
+                this.setState({ elements_number: 0})
+            }
+            const count_3 = () => {
+                if (actions.length > 0) {
+                this.setState({ elements_number: actions.length - 1})
+                }
+                else {
+                    this.setState({ elements_number: 0})
+                }
+            }
+
+        document.getElementById("canvas").addEventListener('mousedown', count)
+        document.getElementById("trash").addEventListener('mousedown', count_2)
+        document.getElementById("undo").addEventListener('mousedown', count_3)
+        document.getElementById("redo").addEventListener('mousedown', count)
+    }
+        render() {
+            return (
+                <>
+                    <p className="Welcome profile_tool_bar_titles">Elements : {this.state.elements_number} / 100</p>
+                </>
+            )
+        }
+    }
+    class Remove_element extends React.Component {
+            constructor(props) {
+                super(props);
+                this.handleClick = this.handleClick.bind(this);
+            }
+            handleClick() {
+                actions.splice(this.props.index, 1);
+                draw(canvasRef.current.getContext('2d'))
+                this.props.count()
+            }
+            render() {
+                return (
+            <button id="trash" onClick={() => this.handleClick()} className="Welcome profile_tool_bar_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+            </button>
+                )
+            }
+        }
+    class Elements_list extends React.Component {
+        constructor(props) {
+        super(props);
+        this.state = {
+            elements: []
+        }
+        }
+        count () {
+                this.setState({ elements: actions})
+        }
+        componentDidMount() {
+            
+            const count = () => {
+                setTimeout(() => {
+                    this.setState({ elements: actions})
+                }, 500)
+            }
+
+        document.getElementById("canvas").addEventListener('mouseup', count)
+        document.getElementById("trash").addEventListener('mousedown', count)
+        document.getElementById("undo").addEventListener('mousedown', count)
+        document.getElementById("redo").addEventListener('mousedown', count)
+    }
+        render() {
+            const test = (element) => {
+                var type = "none"
+                const tool_type = element[5]
+                if (tool_type === 0) {
+                    type = "Line"
+                }
+                if (tool_type === 1) {
+                    type = "Circle"
+                }
+                if (tool_type === 2) {
+                    type = "Square"
+                }
+                return type;
+            }
+            return (
+                <>
+                    <div className="Welcome profile_tool_bar_elements_contener">
+                        {this.state.elements.map((element, index) => 
+                        <>
+                        <Remove_element key={"element_" + index} element={element} index={index} />
+                            <p key={"text_" + index}>{
+                                test(element)
+                            }</p>
+                        </>
+                        )}
+                    </div>
+                </>
+            )
+        }
+    }
     return <>
     <div className="Welcome profile_tool_bar_colors">
     <input defaultChecked={true} id="checkbox_fill_color" type="checkbox" className="Welcome Color_Checkbox"></input><p className="Welcome profile_tool_bar_titles">Fill color</p>
         <input id="picker_fill_color" defaultValue="#353535" type="color" className="Welcome Color_picker"></input>
-              
-              <hr></hr>
-              <input id="checkbox_stroke_color" type="checkbox" className="Welcome Color_Checkbox"></input>
-              <p className="Welcome profile_tool_bar_titles">Outline</p><br></br>
-              <p className="Welcome profile_tool_bar_titles">Line color</p>
-      <input id="picker_stroke_color" defaultValue="#2ea0e8" type="color" className="Welcome Color_picker"></input>
+            
+            <hr></hr>
+            <input id="checkbox_stroke_color" type="checkbox" className="Welcome Color_Checkbox"></input>
+            <p className="Welcome profile_tool_bar_titles">Outline</p><br></br>
+            <p className="Welcome profile_tool_bar_titles">Line color</p>
+    <input id="picker_stroke_color" defaultValue="#2ea0e8" type="color" className="Welcome Color_picker"></input>
         <p className="Welcome profile_tool_bar_titles">Line width</p>
         <Slider />
+        <hr></hr>
+        <input id="checkbox_background_color" type="checkbox" className="Welcome Color_Checkbox"></input>
+            <p className="Welcome profile_tool_bar_titles">Background color</p><br></br>
+            <input id="picker_background_color" defaultValue="#7CD8FF" type="color" className="Welcome Color_picker"></input>
     </div>
 
-    <canvas className="Welcome Canvas" width="100%" height="100%" onKeyDown={onKeyPressed}
+    <canvas className="Welcome Canvas" id="canvas" width="100%" height="100%" onKeyDown={onKeyPressed}
         tabIndex={0} ref={canvasRef} />
-                    <div className="Welcome profile_tool_bar">
-<Trash_button />
-<Pen_button />
-<Circle_button />
-<Square_button />
+    <div className="Welcome profile_tool_bar">
+<TrashButton />
+<UndoButton />
+<RedoButton />
+<PenButton />
+<CircleButton />
+<SquareButton />
+<TextButton />
 </div>
+
+<div className="Welcome profile_tool_bar_elements">
+    <Elements />
+            <hr></hr>
+    <Elements_list />
+    </div>
         </>
         
     }
