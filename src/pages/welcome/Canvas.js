@@ -19,6 +19,7 @@
         var background = false;
         var background_color = '#7CD8FF'
         var redo = []
+
     
         const draw = (ctx) => {
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
@@ -471,7 +472,7 @@
         render() {
             return (
                 <>
-                    <p className="Welcome profile_tool_bar_titles">Elements : {this.state.elements_number} / 100</p>
+                    <p className="Welcome profile_tool_bar_titles">Layers : {this.state.elements_number} / 100</p>
                 </>
             )
         }
@@ -479,18 +480,126 @@
     class Remove_element extends React.Component {
             constructor(props) {
                 super(props);
-                this.handleClick = this.handleClick.bind(this);
             }
-            handleClick() {
+            click = () => {
                 actions.splice(this.props.index, 1);
                 draw(canvasRef.current.getContext('2d'))
-                this.props.count()
+                this.props.count_elements()
             }
             render() {
                 return (
-            <button id="trash" onClick={() => this.handleClick()} className="Welcome profile_tool_bar_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button key={"button_" + this.props.index} id="trash" onClick={() => this.click()} className="Welcome profile_tool_bar2_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
+            </button>
+                )
+            }
+        }
+        class Up_element extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            click = () => {
+                if (this.props.index != 0) {
+                array_move(actions, this.props.index, this.props.index - 1);
+                draw(canvasRef.current.getContext('2d'))
+                this.props.count_elements()
+                }
+            }
+            render() {
+                return (
+            <button key={"button_" + this.props.index} id="trash" onClick={() => this.click()} className="Welcome profile_tool_bar2_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+</svg>
+            </button>
+                )
+            }
+        }
+        class Down_element extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            click = () => {
+                if (this.props.index != (actions.length - 1)) {
+                array_move(actions, this.props.index, this.props.index + 1);
+                draw(canvasRef.current.getContext('2d'))
+                this.props.count_elements()
+                }
+            }
+            render() {
+                return (
+            <button key={"button_" + this.props.index} id="trash" onClick={() => this.click()} className="Welcome profile_tool_bar2_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+</svg>
+            </button>
+                )
+            }
+        }
+        class View extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            click = () => {
+                const ctx = canvasRef.current.getContext('2d')
+                const element = this.props.element
+                console.log(element)
+                const tool_type = element[5]
+                if (tool_type === 0 || tool_type === 1 ||tool_type === 2) {
+                const x = element[0]
+                const y = element[1]
+                if (tool_type === 0) {
+                    const color = invertColor(element[4])
+                    ctx.lineWidth = element[6]
+                    ctx.strokeStyle = color
+                    ctx.beginPath()
+                    ctx.moveTo(element[2], element[3]);
+                    ctx.lineTo(x, y);
+                    ctx.stroke()
+                }
+                else {
+                    if (tool_type === 1) {
+                        ctx.strokeStyle = invertColor(element[4][1])
+                        ctx.lineWidth = element[4][4]
+                        ctx.fillStyle = invertColor(element[4][0])
+                        ctx.beginPath()
+                        ctx.arc(element[2], element[3], (Math.abs(element[2] - x) + Math.abs(element[3] - y)), 0, 2 * Math.PI);
+                            if (element[4][2]) {
+                            ctx.fill()
+                            }
+                            if (element[4][3]) {
+                            ctx.stroke()
+                            }
+
+                    }
+                    else {
+                    if (tool_type === 2) {
+                        ctx.strokeStyle = invertColor(element[4][1])
+                        ctx.lineWidth = element[4][4]
+                        ctx.fillStyle = invertColor(element[4][0])
+                        ctx.beginPath()
+                        ctx.rect(element[2], element[3], element[0] - element[2], element[1] - element[3]);
+                            if (element[4][2]) {
+                            ctx.fill()
+                            }
+                            if (element[4][3]) {
+                            ctx.stroke()
+                            }
+                    }
+                }
+                }
+                        
+                    
+                }
+                setTimeout(() => {
+                    draw(canvasRef.current.getContext('2d'))
+                }, 1000)
+            }
+            render() {
+                return (
+            <button key={"button_" + this.props.index} id="trash" onClick={() => this.click()} className="Welcome profile_tool_bar2_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+</svg>
             </button>
                 )
             }
@@ -501,22 +610,23 @@
         this.state = {
             elements: []
         }
+        this.count_elements = this.count_elements.bind(this);
         }
-        count () {
-                this.setState({ elements: actions})
+        count_elements () {
+                this.setState({ elements: actions })
         }
         componentDidMount() {
             
             const count = () => {
                 setTimeout(() => {
                     this.setState({ elements: actions})
-                }, 500)
+                }, 300)
             }
 
         document.getElementById("canvas").addEventListener('mouseup', count)
         document.getElementById("trash").addEventListener('mousedown', count)
         document.getElementById("undo").addEventListener('mousedown', count)
-        document.getElementById("redo").addEventListener('mousedown', count)
+        document.getElementById("redo").addEventListener('mousedown', count) 
     }
         render() {
             const test = (element) => {
@@ -533,15 +643,45 @@
                 }
                 return type;
             }
+            const colors = (element) => {
+                var results = "none"
+                const tool_type = element[5]
+                if (tool_type === 0) {
+                    results = <div style={{background:element[4]}} className="Welcome profile_tool_bar_elements_color"></div>
+                }
+                if (tool_type === 1 || tool_type === 2) {
+                    if (element[4][2] && element[4][3]) {
+                        results = <>
+                        <div style={{background:element[4][0]}} className="Welcome profile_tool_bar_elements_color"></div>
+                        <div style={{background:element[4][1]}} className="Welcome profile_tool_bar_elements_color"></div>
+                        </>
+                    }
+                    else {
+                        if (element[4][2]) {
+                            results = <div style={{background:element[4][0]}} className="Welcome profile_tool_bar_elements_color"></div>
+                        }
+                        if (element[4][3]) {
+                            results = <div style={{background:element[4][1]}} className="Welcome profile_tool_bar_elements_color"></div>
+                        }
+                    }
+                }
+                return results;     
+            }
             return (
                 <>
                     <div className="Welcome profile_tool_bar_elements_contener">
                         {this.state.elements.map((element, index) => 
                         <>
-                        <Remove_element key={"element_" + index} element={element} index={index} />
-                            <p key={"text_" + index}>{
+                        <div className="Welcome profile_tool_bar_elements_breaker" key={"element_" + index}>
+                        <Remove_element count_elements={this.count_elements} element={element} index={index} />
+                        <Up_element count_elements={this.count_elements} element={element} index={index} />
+                        <Down_element count_elements={this.count_elements} element={element} index={index} />
+                        <View element={element} index={index} />
+                            {colors(element)}
+                            <p className="Welcome profile_tool_bar_item_text" key={"text_" + index}>{
                                 test(element)
                             }</p>
+                            </div>
                         </>
                         )}
                     </div>
@@ -603,6 +743,48 @@
         topLeft: { x: center.x - width_plots_amount / 2, y: center.y - height_plots_amount / 2 },
         bottomRight: { x: center.x + width_plots_amount / 2, y: center.y + height_plots_amount / 2 }
     };
+    }
+    function array_move(arr, old_index, new_index) {
+        if (new_index >= arr.length) {
+            var k = new_index - arr.length + 1;
+            while (k--) {
+                arr.push(undefined);
+            }
+        }
+        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+        return arr; // for testing
+    };
+    function invertColor(hex, bw) {
+        if (hex.indexOf('#') === 0) {
+            hex = hex.slice(1);
+        }
+        // convert 3-digit hex to 6-digits.
+        if (hex.length === 3) {
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        }
+        if (hex.length !== 6) {
+            throw new Error('Invalid HEX color.');
+        }
+        var r = parseInt(hex.slice(0, 2), 16),
+            g = parseInt(hex.slice(2, 4), 16),
+            b = parseInt(hex.slice(4, 6), 16);
+        if (bw) {
+            // http://stackoverflow.com/a/3943023/112731
+            return (r * 0.299 + g * 0.587 + b * 0.114) > 186
+                ? '#000000'
+                : '#FFFFFF';
+        }
+        // invert color components
+        r = (255 - r).toString(16);
+        g = (255 - g).toString(16);
+        b = (255 - b).toString(16);
+        // pad each with zeros and return
+        return "#" + padZero(r) + padZero(g) + padZero(b);
+    }
+    function padZero(str, len) {
+        len = len || 2;
+        var zeros = new Array(len).join('0');
+        return (zeros + str).slice(-len);
     }
 
     export default MapCanvas
