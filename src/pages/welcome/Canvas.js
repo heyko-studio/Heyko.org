@@ -22,6 +22,7 @@
 
     
         const draw = (ctx) => {
+            console.log(actions)
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
             if (background) {
                 ctx.fillStyle = background_color;
@@ -72,19 +73,6 @@
                     }
                 }
                 }
-                /*                                context.rect(last_action[0], last_action[1], x - last_action[0], y - last_action[1]);
-                ctx.strokeStyle = color
-                ctx.beginPath()
-                ctx.moveTo(0, 0);
-                ctx.lineTo(x, y);
-                ctx.stroke()
-                */
-                /*
-                ctx.fillStyle = color
-                ctx.beginPath()
-                ctx.arc(x, y, 20*Math.sin(1)**2, 0, 2*Math.PI)
-                ctx.fill()
-                */
                 }
             });
         
@@ -103,13 +91,17 @@
 
 
         function handleMouseUp (e) {
+
+            const bx = canvas.getBoundingClientRect();
             if (actions.length < 100) {
+                const x = e.offsetX || e.changedTouches[0].clientX - bx.left
+                const y = e.offsetY || e.changedTouches[0].clientY - bx.top
             if (tool === 0) {
                 
                 if (last_action === undefined) {
-                    last_action = [e.offsetX, e.offsetY]
+                    last_action = [x, y]
                 } else {
-                    actions.push([e.offsetX, e.offsetY, last_action[0], last_action[1], stroke_color, 0, stroke_width])
+                    actions.push([x, y, last_action[0], last_action[1], stroke_color, 0, stroke_width])
                     redo = []
                     last_action = undefined;
                 }
@@ -117,10 +109,10 @@
             else {
                 if (tool === 1) {
                     if (last_action === undefined) {
-                        last_action = [e.offsetX, e.offsetY]
+                        last_action = [x, y]
                     }
                     else {
-                        actions.push([e.offsetX, e.offsetY, last_action[0], last_action[1], [fill_color, stroke_color, fill, stroke, stroke_width], 1])
+                        actions.push([x, y, last_action[0], last_action[1], [fill_color, stroke_color, fill, stroke, stroke_width], 1])
                         redo = []
                         last_action = undefined;
                     }
@@ -128,10 +120,10 @@
                 else {
                     if (tool === 2) {
                         if (last_action === undefined) {
-                            last_action = [e.offsetX, e.offsetY]
+                            last_action = [x, y]
                         }
                         else {
-                            actions.push([e.offsetX, e.offsetY, last_action[0], last_action[1], [fill_color, stroke_color, fill, stroke, stroke_width], 2])
+                            actions.push([x, y, last_action[0], last_action[1], [fill_color, stroke_color, fill, stroke, stroke_width], 2])
                             redo = []
                             last_action = undefined;
                         }
@@ -145,18 +137,24 @@
         }
 
         function handleMouseDown(e) {
+            const bx = canvas.getBoundingClientRect();
+                const x = e.offsetX || e.changedTouches[0].clientX - bx.left
+                const y = e.offsetY || e.changedTouches[0].clientY - bx.top
             if (actions.length < 100) {
                 draw(context)
-                last_action = [e.offsetX, e.offsetY]
+                last_action = [x, y]
             }
         }
             function handleMouseMove(e) {
+                const bx = canvas.getBoundingClientRect();
+                
                 if (mouse_pressed = true) {
                 if (tool === 0) {
                     if (last_action !== undefined) {
                         draw(context)
-                        const x = e.offsetX
-                        const y = e.offsetY
+                        const x = e.offsetX || e.touches[0].clientX - bx.left
+                        const y = e.offsetY || e.touches[0].clientY - bx.top
+                        console.log(y)
                         const color = stroke_color
                         context.lineWidth = stroke_width
                         context.strokeStyle = color
@@ -171,8 +169,8 @@
                     if (tool === 1) {
                         if (last_action !== undefined) {
                             draw(context)
-                            const x = e.offsetX
-                            const y = e.offsetY
+                            const x = e.offsetX || e.touches[0].clientX - bx.left
+                            const y = e.offsetY || e.touches[0].clientY - bx.top
 
                             context.lineWidth = stroke_width;
                             context.fillStyle = fill_color
@@ -193,8 +191,8 @@
                         if (tool === 2) {
                             if (last_action !== undefined) {
                                 draw(context)
-                                const x = e.offsetX
-                                const y = e.offsetY
+                                const x = e.offsetX || e.touches[0].clientX - bx.left
+                                const y = e.offsetY || e.touches[0].clientY - bx.top
                                 context.lineWidth = stroke_width;
                                 context.fillStyle = fill_color
                                 context.strokeStyle = stroke_color
@@ -236,6 +234,10 @@
         canvas.addEventListener('mousemove', handleMouseMove);
         canvas.addEventListener('mouseup', handleMouseUp);  
         canvas.addEventListener('mousedown', handleMouseDown);  
+        
+        canvas.addEventListener('touchmove', handleMouseMove);
+        canvas.addEventListener('touchend', handleMouseUp);  
+        canvas.addEventListener('touchstart', handleMouseDown);  
             checkbox_fill_color.addEventListener('change', (event) => {
                 fill = checkbox_fill_color.checked
         })
@@ -468,6 +470,10 @@
         document.getElementById("trash").addEventListener('mousedown', count_2)
         document.getElementById("undo").addEventListener('mousedown', count_3)
         document.getElementById("redo").addEventListener('mousedown', count)
+        document.getElementById("canvas").addEventListener('touchstart', count)
+        document.getElementById("trash").addEventListener('touchstart', count_2)
+        document.getElementById("undo").addEventListener('touchstart', count_3)
+        document.getElementById("redo").addEventListener('touchstart', count)
     }
         render() {
             return (
@@ -623,6 +629,10 @@
                 }, 300)
             }
 
+        document.getElementById("canvas").addEventListener('touchend', count)
+        document.getElementById("trash").addEventListener('touchstart', count)
+        document.getElementById("undo").addEventListener('touchstart', count)
+        document.getElementById("redo").addEventListener('touchstart', count) 
         document.getElementById("canvas").addEventListener('mouseup', count)
         document.getElementById("trash").addEventListener('mousedown', count)
         document.getElementById("undo").addEventListener('mousedown', count)

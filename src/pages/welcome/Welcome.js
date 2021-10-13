@@ -59,8 +59,8 @@ function Welcome() {
         contener,
         document.getElementById('Next_Button')
     );
-}, 9500);
-//0);
+}, //9500);
+0);
     return(
         <div id="Welcome_Page" className="Welcome Contener">  
             <div className="Welcome Background v1"></div>
