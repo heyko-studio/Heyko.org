@@ -7,6 +7,8 @@
 }
 
 
+
+
 .Welcome.Background {
     position: absolute;
     top: 0;
@@ -209,13 +211,125 @@
         opacity: 1;
     }
 }
+.Welcome.example {
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    left: 50px;
+    width: 100%;
+}
 .Welcome.Title_1 {
     animation: 5s Title_Anim;
     font-size: 75px;
     color: rgb(255, 255, 255);
     font-weight: 0;
 }
+.Welcome.Canvas {   
+    background-color: #ffffff; 
+    width: 500px; 
+    height: 500px;
+    margin: 30px auto;
+    display: block;
+    text-align: justify;
+    transition: all 1s ease; 
+    border-radius: 400px;
+    border: 1px solid #b9b9b9;
+} 
+.Welcome.profile_editor_circle:hover{ 
+    border: 1px solid #1a90ff;
+} 
+.Welcome.profile_tool_bar_colors {
+    background-color: white;
+    border-radius: 12px;
+    position: absolute;
+    left: 10px;
+    top: 150px;
+    bottom: 25px;
+    width: 250px;
+    padding:0 20px 0 20px;
+}
+.Welcome.profile_tool_bar_elements {
+    background-color: white;
+    border-radius: 12px;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    bottom: 25px;
+    width: 400px;
+    padding:0 20px 0 20px;
+}
+@media (max-width: 860px) {
+    .Welcome.Title_1 {
+        font-size: 40px;
+        color: rgb(53, 53, 53);
+        font-weight: bold;
+    }
+}
+@media (max-width: 459px) {
+    .Welcome.Title_1 {
+        font-size: 25px;
+        color: rgb(53, 53, 53);
+        font-weight: bold;
+    }
+}
+@media (max-width: 434px) {
+    .Welcome.example {
+        font-size: 16px;
+    }
+}
+.Welcome.profile_tool_bar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 380px;
+    max-width: 99%;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    height: 62px;
+}
 
+.Welcome.profile_editor_circle:hover{ 
+    border: 1px solid #1a90ff;
+} 
+@media (max-width: 1354px) {
+.Welcome.profile_tool_bar_elements {
+    display: none;
+}
+.Welcome.profile_tool_bar_colors {
+    width: 200px;
+}
+.Welcome.Canvas {  
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.Welcome.profile_tool_bar_colors {
+    position: absolute;
+    left: 0;
+    height: fit-content;
+    padding:  15px 15px 15px 15px;
+}
+.Welcome.profile_tool_bar {
+    margin-left: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+}
+@media (max-width: 766px) {
+    .Welcome.Canvas {  
+        width: calc(100% - 225px);
+        height: auto;
+    }
+}
+@media (max-width: 766px) {
+
+}
+
+@media (min-width: 861px) {
 @keyframes Title_Anim {
     0% {
         font-size: 40px;
@@ -233,14 +347,6 @@
         font-weight: 0;
     }
 }
-
-.Welcome.example {
-    font-weight: bold;
-    color: white;
-    font-size: 25px;
-    position: absolute;
-    left: 50px;
-    width: 100%;
 }
 
 
@@ -372,34 +478,6 @@
     
     }
 }
-
-
-.Welcome.profile_editor_circle {   
-    background-color: #ffffff; 
-    width: 500px; 
-    height: 500px;
-    margin: 30px auto;
-    text-align: justify;
-    transition: all 1s ease; 
-    border-radius: 400px;
-    border: 1px solid #b9b9b9;
-} 
-.Welcome.profile_editor_circle:hover{ 
-    border: 1px solid #1a90ff;
-} 
-
-
-.Welcome.profile_tool_bar {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 380px;
-    margin-top: 10px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 12px;
-    height: 62px;
-}
 .Welcome.profile_tool_bar_item {
     width: 40px;
     display: inline-block;
@@ -421,22 +499,6 @@
     border: none;
 }
 
-.Welcome.Canvas {
-    width: 100%;
-    height: 100%;
-    border-radius: 400px;
-}
-
-.Welcome.profile_tool_bar_colors {
-    background-color: white;
-    border-radius: 12px;
-    position: absolute;
-    left: 10px;
-    top: 150px;
-    bottom: 25px;
-    width: 250px;
-    padding:0 20px 0 20px;
-}
 
 .Welcome.Color_picker {
     background-color: transparent;
@@ -496,16 +558,7 @@
 .Welcome.Slider_value {
     margin-top: 12px;
 }
-.Welcome.profile_tool_bar_elements {
-    background-color: white;
-    border-radius: 12px;
-    position: absolute;
-    right: 10px;
-    top: 25px;
-    bottom: 25px;
-    width: 400px;
-    padding:0 20px 0 20px;
-}
+
 
 .Welcome.T {
     font-size: 39px;

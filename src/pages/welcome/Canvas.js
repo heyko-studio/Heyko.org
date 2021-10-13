@@ -717,7 +717,7 @@
             <input id="picker_background_color" defaultValue="#7CD8FF" type="color" className="Welcome Color_picker"></input>
     </div>
 
-    <canvas className="Welcome Canvas" id="canvas" width="100%" height="100%" onKeyDown={onKeyPressed}
+    <canvas className="Welcome Canvas" id="canvas" onKeyDown={onKeyPressed}
         tabIndex={0} ref={canvasRef} />
     <div className="Welcome profile_tool_bar">
 <TrashButton />
