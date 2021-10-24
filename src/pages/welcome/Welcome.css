@@ -27,6 +27,111 @@
     animation: 3s Transition_1;
     height: 100%;
 }
+.Welcome.profile_tool_bar_item_button {
+    background-color: transparent;
+    border: none;
+}
+
+
+.Welcome.Color_picker {
+    background-color: transparent;
+    border: none;
+    width:100%;
+    -webkit-appearance: none;
+	height: 32px;
+}
+.Welcome.Color_picker[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+.Welcome.Color_picker[type="color"]::-webkit-color-swatch {
+	border: none;
+    border-radius:4px;
+    border: 2px solid #b9b9b9;
+}
+.Welcome.profile_tool_bar_titles {
+    font-weight: bold;
+    font-size: 17px;
+    color: #353535;
+    display: inline-block;
+}
+
+.Welcome.Color_Checkbox {
+    display: inline-block;
+}
+
+.Welcome.Slider_1 {
+    -webkit-appearance: none;
+    width: 95px;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 15px;
+    position: absolute;
+    right: 20px;
+    margin-top: -35px;
+}
+
+.Welcome.Slider_1:hover {
+    opacity: 1;
+}
+
+.Welcome.Slider_1::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #2ea0e8;
+    cursor: pointer;
+}
+
+.Welcome.Slider_value {
+    margin-top: 12px;
+}
+
+
+
+.Welcome.profile_tool_bar_elements_contener {
+    background-color: rgb(241, 241, 241);
+    padding: 15px;
+    overflow-y: scroll;
+    position: absolute;
+    bottom: 20px;
+    top: 80px;
+    width: calc(100% - 40px);
+}
+.Welcome.profile_tool_bar_item_button {
+    display: inline-block;
+}
+.Welcome.profile_tool_bar_item_button {
+    float: left;
+}
+.Welcome.profile_tool_bar_elements_breaker {
+    clear: left;
+}
+.Welcome.profile_tool_bar_elements_color {
+    width: 15px;
+    height: 15px;
+    margin: 4px;
+    border-radius: 12px;
+}
+.Welcome.profile_tool_bar2_item_button {
+    background-color: transparent;
+    border: none;
+    float: left;
+    margin-top:-3px;
+    background-color: white;
+    border-radius: 12px;
+    margin-left: 26px;
+}
+
+.Welcome.profile_tool_bar_item_text {
+    clear: left;
+    font-weight: bold;
+}
 .Welcome.Background.v3 {
     background-color: #8fd4ff;
     animation: 4s Transition_1;
@@ -335,6 +440,35 @@
     left: 10px;
 }
 }
+.Welcome.profile_tool_bar_color_show {
+    display: none;
+}
+@media (max-width: 708px) {
+    .Welcome.Title_2 {
+        font-size: 20px;
+    }
+    .Welcome.Canvas {  
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Welcome.profile_tool_bar_colors {
+        position: absolute;
+        border: 1px solid #b9b9b9;
+    }
+    .Welcome.profile_tool_bar_color_show {
+        display: block;
+        background-color: transparent;
+        border: none;
+        margin-top:-3px;
+        background-color: white;
+        border-radius: 12px;
+        margin-left: 26px;
+    }
+    .profile_tool_bar_color_show_icon {
+        color: gray;
+    }
+}
+
 @media (max-width: 537px) {
     .Welcome.Title_2 {
         font-size: 20px;
@@ -343,16 +477,24 @@
         top: 100px;
     }
 }
-@media (max-width: 766px) {
+@media (max-width: 500px) {
     .Welcome.Canvas {  
-        width: calc(100% - 225px);
-        height: auto;
+        max-width: 400px;
+        height:400px
     }
 }
-@media (max-width: 766px) {
-
+@media (max-width: 400px) {
+    .Welcome.Canvas {  
+        max-width: 350px;
+        height:350px
+    }
 }
-
+@media (max-width: 350px) {
+    .Welcome.Canvas {  
+        max-width: 300px;
+        height:300px
+    }
+}
 @media (min-width: 861px) {
 @keyframes Title_Anim {
     0% {
@@ -527,110 +669,4 @@
         margin-left: 0;
     
     }
-}
-
-.Welcome.profile_tool_bar_item_button {
-    background-color: transparent;
-    border: none;
-}
-
-
-.Welcome.Color_picker {
-    background-color: transparent;
-    border: none;
-    width:100%;
-    -webkit-appearance: none;
-	height: 32px;
-}
-.Welcome.Color_picker[type="color"]::-webkit-color-swatch-wrapper {
-	padding: 0;
-}
-
-.Welcome.Color_picker[type="color"]::-webkit-color-swatch {
-	border: none;
-    border-radius:4px;
-    border: 2px solid #b9b9b9;
-}
-.Welcome.profile_tool_bar_titles {
-    font-weight: bold;
-    font-size: 17px;
-    color: #353535;
-    display: inline-block;
-}
-
-.Welcome.Color_Checkbox {
-    display: inline-block;
-}
-
-.Welcome.Slider_1 {
-    -webkit-appearance: none;
-    width: 95px;
-    height: 25px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-    margin-top: 15px;
-    position: absolute;
-    right: 20px;
-    margin-top: -35px;
-}
-
-.Welcome.Slider_1:hover {
-    opacity: 1;
-}
-
-.Welcome.Slider_1::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #2ea0e8;
-    cursor: pointer;
-}
-
-.Welcome.Slider_value {
-    margin-top: 12px;
-}
-
-
-
-.Welcome.profile_tool_bar_elements_contener {
-    background-color: rgb(241, 241, 241);
-    padding: 15px;
-    overflow-y: scroll;
-    position: absolute;
-    bottom: 20px;
-    top: 80px;
-    width: calc(100% - 40px);
-}
-.Welcome.profile_tool_bar_item_button {
-    display: inline-block;
-}
-.Welcome.profile_tool_bar_item_button {
-    float: left;
-}
-.Welcome.profile_tool_bar_elements_breaker {
-    clear: left;
-}
-.Welcome.profile_tool_bar_elements_color {
-    width: 15px;
-    height: 15px;
-    margin: 4px;
-    border-radius: 12px;
-}
-.Welcome.profile_tool_bar2_item_button {
-    background-color: transparent;
-    border: none;
-    float: left;
-    margin-top:-3px;
-    background-color: white;
-    border-radius: 12px;
-    margin-left: 26px;
-}
-
-.Welcome.profile_tool_bar_item_text {
-    clear: left;
-    font-weight: bold;
 }

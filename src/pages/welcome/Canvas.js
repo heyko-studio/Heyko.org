@@ -5,6 +5,7 @@
     import { faSquare } from '@fortawesome/free-regular-svg-icons'
     import { faUndo } from '@fortawesome/free-solid-svg-icons'
     import { faRedo } from '@fortawesome/free-solid-svg-icons'
+    import  { faPalette } from '@fortawesome/free-solid-svg-icons'
 
     function MapCanvas({ initialBottomRight, initialTopLeft }) {
         let tool = 0;
@@ -418,23 +419,28 @@
             )
         }
     }
-        class Slider extends React.Component {
+    class Slider extends React.Component {
         constructor(props) {
             super(props);
         this.handleChange = this.handleChange.bind(this);
         this.state = {
-            slider_val: 3
+            slider_val: '03'
         }
         }
         handleChange() {
             const slider = document.getElementById("stroke_width")
-            this.setState({ slider_val: slider.value })
+            if (slider.value < 10) {
+                this.setState({ slider_val: '0' + slider.value })
+            }
+            else {
+                this.setState({ slider_val: slider.value })
+            }
             stroke_width = slider.value
         }
         render() {
             return (
                 <>
-                <p className="Welcome Slider_value">{this.state.slider_val}</p><input onChange={this.handleChange} type="range" min="1" max="100" defaultValue="3" className="Welcome Slider_1" id="stroke_width"></input>
+                <p className="Welcome Slider_value">{this.state.slider_val}</p><input onChange={this.handleChange} type="range" min="1" max="16" defaultValue="3" className="Welcome Slider_1" id="stroke_width"></input>
                 </>
             )
         }
@@ -495,6 +501,28 @@
             <button key={"button_" + this.props.index} id="trash" onClick={() => this.click()} className="Welcome profile_tool_bar2_item_button"><svg className="Welcome profile_tool_bar_item" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
+            </button>
+                )
+            }
+        }
+        
+        class ShowToolBar extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            click = () => {
+                const tool_bar = document.getElementById("tool_bar_colors")
+                if (tool_bar.style.display === 'none') {
+                    tool_bar.style.display = 'block'
+                }
+                else {
+                    tool_bar.style.display = 'none'
+                }
+            }
+            render() {
+                return (
+            <button key={"button_" + this.props.index} id="trash" onClick={() => this.click()} className="Welcome profile_tool_bar_color_show">
+                <FontAwesomeIcon icon={faPalette} className="Welcome profile_tool_bar_item v2 profile_tool_bar_color_show_icon" />
             </button>
                 )
             }
@@ -696,7 +724,8 @@
     }
     return <>
     <div>
-    <div className="Welcome profile_tool_bar_colors">
+    <ShowToolBar />
+    <div style={{display: "none"}} id="tool_bar_colors" className="Welcome profile_tool_bar_colors">
     <input defaultChecked={true} id="checkbox_fill_color" type="checkbox" className="Welcome Color_Checkbox"></input><p className="Welcome profile_tool_bar_titles">Fill color</p>
         <input id="picker_fill_color" defaultValue="#353535" type="color" className="Welcome Color_picker"></input>
             
