@@ -15,11 +15,6 @@ function Welcome() {
     return () => window.removeEventListener("resize", handler)
     });
 
-    /*while (true) {
-        if (window.innerHeight) {
-            console.log("test")
-        }
-    }*/
     var error_screen = 0
     setTimeout(function() {
     reportWindowSize()
@@ -96,7 +91,6 @@ function Welcome() {
 0);
     return(
         <div id="Welcome_Page" className="Welcome Contener"> 
-            <div id="error_screen"></div> 
             <div className="Welcome Background v1"></div>
             <div className="Welcome Background v4"></div>
             <div className="Welcome Background v2"></div>
