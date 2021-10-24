@@ -467,6 +467,9 @@
     .profile_tool_bar_color_show_icon {
         color: gray;
     }
+    .Welcome.profile_tool_bar_colors {
+        display: none;
+    }
 }
 
 @media (max-width: 537px) {

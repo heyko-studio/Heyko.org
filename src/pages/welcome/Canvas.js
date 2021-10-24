@@ -512,11 +512,11 @@
             }
             click = () => {
                 const tool_bar = document.getElementById("tool_bar_colors")
-                if (tool_bar.style.display === 'none') {
-                    tool_bar.style.display = 'block'
+                if (tool_bar.style.display === 'block') {
+                    tool_bar.style.display = 'none'
                 }
                 else {
-                    tool_bar.style.display = 'none'
+                    tool_bar.style.display = 'block'
                 }
             }
             render() {
@@ -725,7 +725,7 @@
     return <>
     <div>
     <ShowToolBar />
-    <div style={{display: "none"}} id="tool_bar_colors" className="Welcome profile_tool_bar_colors">
+    <div id="tool_bar_colors" className="Welcome profile_tool_bar_colors">
     <input defaultChecked={true} id="checkbox_fill_color" type="checkbox" className="Welcome Color_Checkbox"></input><p className="Welcome profile_tool_bar_titles">Fill color</p>
         <input id="picker_fill_color" defaultValue="#353535" type="color" className="Welcome Color_picker"></input>
             
