@@ -22,7 +22,6 @@
 
     
         const draw = (ctx) => {
-            console.log(actions)
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
             if (background) {
                 ctx.fillStyle = background_color;
@@ -154,7 +153,6 @@
                         draw(context)
                         const x = e.offsetX || e.touches[0].clientX - bx.left
                         const y = e.offsetY || e.touches[0].clientY - bx.top
-                        console.log(y)
                         const color = stroke_color
                         context.lineWidth = stroke_width
                         context.strokeStyle = color
@@ -235,9 +233,9 @@
         canvas.addEventListener('mouseup', handleMouseUp);  
         canvas.addEventListener('mousedown', handleMouseDown);  
         
-        canvas.addEventListener('touchmove', handleMouseMove);
-        canvas.addEventListener('touchend', handleMouseUp);  
-        canvas.addEventListener('touchstart', handleMouseDown);  
+        canvas.addEventListener('touchmove', handleMouseMove, false);
+        canvas.addEventListener('touchend', handleMouseUp, false);  
+        canvas.addEventListener('touchstart', handleMouseDown, false);  
             checkbox_fill_color.addEventListener('change', (event) => {
                 fill = checkbox_fill_color.checked
         })
@@ -548,7 +546,6 @@
             click = () => {
                 const ctx = canvasRef.current.getContext('2d')
                 const element = this.props.element
-                console.log(element)
                 const tool_type = element[5]
                 if (tool_type === 0 || tool_type === 1 ||tool_type === 2) {
                 const x = element[0]
@@ -700,6 +697,7 @@
         }
     }
     return <>
+    <div>
     <div className="Welcome profile_tool_bar_colors">
     <input defaultChecked={true} id="checkbox_fill_color" type="checkbox" className="Welcome Color_Checkbox"></input><p className="Welcome profile_tool_bar_titles">Fill color</p>
         <input id="picker_fill_color" defaultValue="#353535" type="color" className="Welcome Color_picker"></input>
@@ -733,6 +731,7 @@
     <Elements />
             <hr></hr>
     <Elements_list />
+    </div>
     </div>
         </>
         

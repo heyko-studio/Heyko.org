@@ -2,7 +2,8 @@
     overflow-x:hidden;
     overflow-y: hidden;
     width:100%;
-    height:100vh;
+    max-height:100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -236,9 +237,6 @@
     border-radius: 400px;
     border: 1px solid #b9b9b9;
 } 
-.Welcome.profile_editor_circle:hover{ 
-    border: 1px solid #1a90ff;
-} 
 .Welcome.profile_tool_bar_colors {
     background-color: white;
     border-radius: 12px;
@@ -278,12 +276,37 @@
         font-size: 16px;
     }
 }
+.Welcome.profile_tool_bar_item {
+    width: 40px;
+    display: inline-block;
+    padding: 4px;
+    font-size: 40px;
+}
+.Welcome.profile_tool_bar_item.v2 {
+    margin-top: 1px;
+    margin-bottom: 3px;
+}
+.Welcome.profile_tool_bar_item:hover {
+    width: 40px;
+    display: inline-block;
+    padding: 0;
+}
+.Welcome.T {
+    font-size: 39px;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-3.5px);
+}
+.Welcome.T:hover {
+    font-weight: bold;
+}
+
+
 .Welcome.profile_tool_bar {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 380px;
-    max-width: 99%;
     margin-top: 10px;
     background-color: white;
     padding: 10px;
@@ -291,9 +314,7 @@
     height: 62px;
 }
 
-.Welcome.profile_editor_circle:hover{ 
-    border: 1px solid #1a90ff;
-} 
+
 @media (max-width: 1354px) {
 .Welcome.profile_tool_bar_elements {
     display: none;
@@ -318,6 +339,14 @@
     bottom: 10px;
     left: 10px;
 }
+}
+@media (max-width: 537px) {
+    .Welcome.Title_2 {
+        font-size: 20px;
+    }
+    .Welcome.profile_tool_bar_colors {
+        top: 100px;
+    }
 }
 @media (max-width: 766px) {
     .Welcome.Canvas {  
@@ -347,6 +376,22 @@
         font-weight: 0;
     }
 }
+}
+@media (max-width: 399px) {
+    .Welcome.profile_tool_bar_item {
+        width: 20px;
+        display: inline-block;
+        padding: 4px;
+        font-size: 20px;
+    }
+    .Welcome.profile_tool_bar {
+        height: 43px;
+        width: 235px;
+    }
+    .Welcome.T {
+        font-size: 18px;
+        margin-top: 4px;
+    }
 }
 
 
@@ -478,21 +523,6 @@
     
     }
 }
-.Welcome.profile_tool_bar_item {
-    width: 40px;
-    display: inline-block;
-    padding: 4px;
-    font-size: 40px;
-}
-.Welcome.profile_tool_bar_item.v2 {
-    margin-top: 1px;
-    margin-bottom: 3px;
-}
-.Welcome.profile_tool_bar_item:hover {
-    width: 40px;
-    display: inline-block;
-    padding: 0;
-}
 
 .Welcome.profile_tool_bar_item_button {
     background-color: transparent;
@@ -560,15 +590,7 @@
 }
 
 
-.Welcome.T {
-    font-size: 39px;
-    margin: 0;
-    padding: 0;
-    transform: translateY(-3.5px);
-}
-.Welcome.T:hover {
-    font-weight: bold;
-}
+
 .Welcome.profile_tool_bar_elements_contener {
     background-color: rgb(241, 241, 241);
     padding: 15px;
