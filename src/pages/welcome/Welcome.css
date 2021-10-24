@@ -476,9 +476,6 @@
     .Welcome.Title_2 {
         font-size: 20px;
     }
-    .Welcome.profile_tool_bar_colors {
-        top: 100px;
-    }
 }
 @media (max-width: 500px) {
     .Welcome.Canvas {  
