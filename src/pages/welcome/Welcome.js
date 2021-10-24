@@ -30,6 +30,7 @@ function Welcome() {
             );
             
             setTimeout(function() {
+            document.getElementById("body").style.overscrollBehavior = 'contain'
             var elem = document.getElementById("Welcome_Page");
             elem.parentNode.removeChild(elem);         
             ReactDOM.render(
