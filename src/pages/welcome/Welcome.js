@@ -15,6 +15,38 @@ function Welcome() {
     return () => window.removeEventListener("resize", handler)
     });
 
+    /*while (true) {
+        if (window.innerHeight) {
+            console.log("test")
+        }
+    }*/
+    var error_screen = 0
+    setTimeout(function() {
+    reportWindowSize()
+    }, 100)
+    function reportWindowSize() {
+        if (window.innerHeight < 516) {
+            if (error_screen !== 1) {
+                error_screen = 1
+                ReactDOM.render(
+                    <>
+                    <div className="white_background">
+                    </div>
+                    <div className="default_message wrong">Please rotate your phone</div>
+                    </>,
+                    document.getElementById('error_screen')
+                );
+            }
+        }
+        else {
+            if (error_screen === 1) {
+                error_screen = 0
+                ReactDOM.unmountComponentAtNode(document.getElementById("error_screen")) 
+            }
+        }
+    }
+
+    window.onresize = reportWindowSize;
 
     class Next_1 extends React.Component {
         
@@ -60,15 +92,15 @@ function Welcome() {
         contener,
         document.getElementById('Next_Button')
     );
-}, 9500);
-//0);
+}, //9500);
+0);
     return(
-        <div id="Welcome_Page" className="Welcome Contener">  
+        <div id="Welcome_Page" className="Welcome Contener"> 
+            <div id="error_screen"></div> 
             <div className="Welcome Background v1"></div>
             <div className="Welcome Background v4"></div>
             <div className="Welcome Background v2"></div>
             <div className="Welcome Background v3"></div>
-
             <div className="Circle v1"></div>
             <div className="Circle v2"></div>
             <div className="Circle v3"></div>
