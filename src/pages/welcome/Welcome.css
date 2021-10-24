@@ -470,6 +470,9 @@
     .Welcome.profile_tool_bar_colors {
         display: none;
     }
+    .Welcome.Contener {
+        overscroll-behavior: contain;
+    }
 }
 
 @media (max-width: 537px) {
