@@ -678,7 +678,6 @@
                 <>
                     <div className="Welcome profile_tool_bar_elements_contener">
                         {this.state.elements.map((element, index) => 
-                        <>
                         <div className="Welcome profile_tool_bar_elements_breaker" key={"element_" + index}>
                         <Remove_element count_elements={this.count_elements} element={element} index={index} />
                         <Up_element count_elements={this.count_elements} element={element} index={index} />
@@ -689,7 +688,6 @@
                                 test(element)
                             }</p>
                             </div>
-                        </>
                         )}
                     </div>
                 </>

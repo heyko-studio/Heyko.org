@@ -286,11 +286,6 @@
     margin-top: 1px;
     margin-bottom: 3px;
 }
-.Welcome.profile_tool_bar_item:hover {
-    width: 40px;
-    display: inline-block;
-    padding: 0;
-}
 .Welcome.T {
     font-size: 39px;
     margin: 0;
@@ -377,6 +372,11 @@
     }
 }
 }
+.Welcome.profile_tool_bar_item:hover {
+    width: 40px;
+    display: inline-block;
+    padding: 0;
+}
 @media (max-width: 399px) {
     .Welcome.profile_tool_bar_item {
         width: 20px;
@@ -391,6 +391,11 @@
     .Welcome.T {
         font-size: 18px;
         margin-top: 4px;
+    }
+    .Welcome.profile_tool_bar_item:hover {
+        width: 20px;
+        display: inline-block;
+        padding: 0;
     }
 }
 
