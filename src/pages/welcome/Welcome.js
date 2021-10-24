@@ -24,13 +24,13 @@ function Welcome() {
             this.Next_Button = React.createRef();
         }
         handleClick() {
+            document.getElementById("body").style.overscrollBehavior = 'contain'
             ReactDOM.render(
                 <div className="Welcome transition_2"></div>,
                 document.getElementById('anim_1')
             );
             
             setTimeout(function() {
-            document.getElementById("body").style.overscrollBehavior = 'contain'
             var elem = document.getElementById("Welcome_Page");
             elem.parentNode.removeChild(elem);         
             ReactDOM.render(
