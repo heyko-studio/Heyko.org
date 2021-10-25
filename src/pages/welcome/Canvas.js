@@ -20,7 +20,6 @@
         var background = false;
         var background_color = '#7CD8FF'
         var redo = []
-
     
         const draw = (ctx) => {
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
@@ -78,14 +77,10 @@
         
         } 
     const canvasRef = useRef(null)
-    const [bottomRight] = useState(initialBottomRight);
-    const [topLeft] = useState(initialTopLeft);
 
     useEffect(() => {
         const scale = window.devicePixelRatio;
         const canvas = canvasRef.current;
-        canvas.width = canvas.clientWidth * scale;
-        canvas.height = canvas.clientHeight * scale;
         const context = canvas.getContext('2d')
         context.scale(scale, scale);
 
@@ -94,8 +89,12 @@
 
             const bx = canvas.getBoundingClientRect();
             if (actions.length < 100) {
-                const x = e.offsetX || e.changedTouches[0].clientX - bx.left
-                const y = e.offsetY || e.changedTouches[0].clientY - bx.top
+                const width = parseInt(getComputedStyle(canvasRef.current).width.split('px')[0])
+                const height = parseInt(getComputedStyle(canvasRef.current).height.split('px')[0])
+                const w_diff = 500 / width
+                const h_diff = 500 / height
+                const x = (e.offsetX) * w_diff || (e.changedTouches[0].clientX - bx.left) * w_diff
+                const y = (e.offsetY) * h_diff || (e.changedTouches[0].clientY - bx.top) * h_diff
             if (tool === 0) {
                 
                 if (last_action === undefined) {
@@ -138,8 +137,12 @@
 
         function handleMouseDown(e) {
             const bx = canvas.getBoundingClientRect();
-                const x = e.offsetX || e.changedTouches[0].clientX - bx.left
-                const y = e.offsetY || e.changedTouches[0].clientY - bx.top
+            const width = parseInt(getComputedStyle(canvasRef.current).width.split('px')[0])
+            const height = parseInt(getComputedStyle(canvasRef.current).height.split('px')[0])
+            const w_diff = 500 / width
+            const h_diff = 500 / height
+            const x = (e.offsetX) * w_diff || (e.changedTouches[0].clientX - bx.left) * w_diff
+            const y = (e.offsetY) * h_diff || (e.changedTouches[0].clientY - bx.top) * h_diff
             if (actions.length < 100) {
                 draw(context)
                 last_action = [x, y]
@@ -147,13 +150,18 @@
         }
             function handleMouseMove(e) {
                 const bx = canvas.getBoundingClientRect();
-                
+
                 if (mouse_pressed = true) {
                 if (tool === 0) {
                     if (last_action !== undefined) {
                         draw(context)
-                        const x = e.offsetX || e.touches[0].clientX - bx.left
-                        const y = e.offsetY || e.touches[0].clientY - bx.top
+                        const width = parseInt(getComputedStyle(canvasRef.current).width.split('px')[0])
+                        const height = parseInt(getComputedStyle(canvasRef.current).height.split('px')[0])
+                        const w_diff = 500 / width
+                        const h_diff = 500 / height
+                        const x = (e.offsetX) * w_diff || (e.changedTouches[0].clientX - bx.left) * w_diff
+                        const y = (e.offsetY) * h_diff || (e.changedTouches[0].clientY - bx.top) * h_diff
+
                         const color = stroke_color
                         context.lineWidth = stroke_width
                         context.strokeStyle = color
@@ -168,8 +176,12 @@
                     if (tool === 1) {
                         if (last_action !== undefined) {
                             draw(context)
-                            const x = e.offsetX || e.touches[0].clientX - bx.left
-                            const y = e.offsetY || e.touches[0].clientY - bx.top
+                            const width = parseInt(getComputedStyle(canvasRef.current).width.split('px')[0])
+                            const height = parseInt(getComputedStyle(canvasRef.current).height.split('px')[0])
+                            const w_diff = 500 / width
+                            const h_diff = 500 / height
+                            const x = (e.offsetX) * w_diff || (e.changedTouches[0].clientX - bx.left) * w_diff
+                            const y = (e.offsetY) * h_diff || (e.changedTouches[0].clientY - bx.top) * h_diff
 
                             context.lineWidth = stroke_width;
                             context.fillStyle = fill_color
@@ -190,8 +202,12 @@
                         if (tool === 2) {
                             if (last_action !== undefined) {
                                 draw(context)
-                                const x = e.offsetX || e.touches[0].clientX - bx.left
-                                const y = e.offsetY || e.touches[0].clientY - bx.top
+                                const width = parseInt(getComputedStyle(canvasRef.current).width.split('px')[0])
+                                const height = parseInt(getComputedStyle(canvasRef.current).height.split('px')[0])
+                                const w_diff = 500 / width
+                                const h_diff = 500 / height
+                                const x = (e.offsetX) * w_diff || (e.changedTouches[0].clientX - bx.left) * w_diff
+                                const y = (e.offsetY) * h_diff || (e.changedTouches[0].clientY - bx.top) * h_diff
                                 context.lineWidth = stroke_width;
                                 context.fillStyle = fill_color
                                 context.strokeStyle = stroke_color
@@ -251,49 +267,8 @@
         })
         
 
+    })
 
-        const map_width = bottomRight.x - topLeft.x;
-        const map_height = bottomRight.y - topLeft.y;
-        let x_step = context.canvas.width / (scale * (map_width + 1));
-        let y_step = context.canvas.height / (scale * (map_height + 1));
-
-        let Iterator = {
-        _i: -1,
-
-        [Symbol.iterator]() {
-            this.current = -1;
-            return this;
-        },
-
-        next() {
-            let center = getTileCenter(topLeft.x, this._i, topLeft.y, this.current, x_step, y_step);
-
-            if (this.current >= map_height + 1) {
-            this._i++;
-            this.current = -1;
-            return { done: false, value: [center.x, center.y] };
-            } else {
-            this.current++;
-            return { done: this._i > map_width + 1, value: [center.x, center.y] };
-            }
-        }
-        };
-
-        const voronoi = Delaunay.from(Iterator).voronoi([0, 0, canvas.width, canvas.height]);
-        context.beginPath();
-        context.strokeStyle = "#ffffff";
-        context.fillStyle = "#000000";
-        voronoi.render(context);
-        context.fill();
-        context.stroke();
-
-        context.closePath();
-
-    }, [bottomRight, topLeft])
-
-    function onKeyPressed(event) {
-
-    }
     class UndoButton extends React.Component {
         constructor(props) {
             super(props);
@@ -440,7 +415,7 @@
         render() {
             return (
                 <>
-                <p className="Welcome Slider_value">{this.state.slider_val}</p><input onChange={this.handleChange} type="range" min="1" max="16" defaultValue="3" className="Welcome Slider_1" id="stroke_width"></input>
+                <p className="Welcome Slider_value">{this.state.slider_val}</p><input onChange={this.handleChange} type="range" min="1" max="50" defaultValue="3" className="Welcome Slider_1" id="stroke_width"></input>
                 </>
             )
         }
@@ -522,7 +497,7 @@
             render() {
                 return (
             <button key={"button_" + this.props.index} id="trash" onClick={() => this.click()} className="Welcome profile_tool_bar_color_show">
-                <FontAwesomeIcon icon={faPalette} className="Welcome profile_tool_bar_item v2 profile_tool_bar_color_show_icon" />
+                <FontAwesomeIcon icon={faPalette} className="Welcome profile_tool_bar_color_show_icon" />
             </button>
                 )
             }
@@ -654,6 +629,48 @@
                 }, 300)
             }
 
+            function getCookie(cName) {
+                const name = cName + "=";
+                const cDecoded = decodeURIComponent(document.cookie);
+                const cArr = cDecoded.split('; ');
+                let res;
+                cArr.forEach(val => {
+                if (val.indexOf(name) === 0) res = val.substring(name.length);
+                })
+                return res
+                }
+        
+            const username = getCookie("username")
+            const password = getCookie("password")
+                if (username && password) {
+                const requestOptions2 = {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            };
+            fetch(`https://backend.heyko.fr/requests/user_exists?${username}?${password}`, requestOptions2)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.exists === "true") {
+                    const requestOptions = {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                    };
+        
+                fetch(`https://backend.heyko.fr/requests/get_user_avatar?${username}`, requestOptions)
+                    .then(response => response.json())
+                    .then(data2 => load_profile(data2))  
+            }
+            })
+            }
+        
+            function load_profile(data) {
+                console.log(data)
+                actions = data.user_image
+                draw(canvasRef.current.getContext('2d'))
+                count()
+            }
+            
+
         document.getElementById("canvas").addEventListener('touchend', count)
         document.getElementById("trash").addEventListener('touchstart', count)
         document.getElementById("undo").addEventListener('touchstart', count)
@@ -722,9 +739,42 @@
             )
         }
     }
+    function next() {
+        function getCookie(cName) {
+            const name = cName + "=";
+            const cDecoded = decodeURIComponent(document.cookie);
+            const cArr = cDecoded.split('; ');
+            let res;
+            cArr.forEach(val => {
+                if (val.indexOf(name) === 0) res = val.substring(name.length);
+            })
+            return res
+            }
+        const username = getCookie("username")
+        const password = getCookie("password")
+        var final_array = actions
+        if (background) {
+        final_array.push(background_color)
+        }
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: `{"username":"${username}","password":"${password}", "image":${JSON.stringify(actions)}}`
+        };
+        fetch(`https://backend.heyko.fr/requests/save_profile_image`, requestOptions)
+            .then(response => response.json())
+            .then(data => save_result(data))  
+            
+            function save_result(data) {
+                console.log(data)
+                window.location = 'welcome/end';
+            }
+        
+        }
     return <>
     <div>
     <ShowToolBar />
+    <button onClick={() => next()} className="button ok Welcome finish_button">Terminer</button>
     <div id="tool_bar_colors" className="Welcome profile_tool_bar_colors">
     <input defaultChecked={true} id="checkbox_fill_color" type="checkbox" className="Welcome Color_Checkbox"></input><p className="Welcome profile_tool_bar_titles">Fill color</p>
         <input id="picker_fill_color" defaultValue="#353535" type="color" className="Welcome Color_picker"></input>
@@ -742,7 +792,7 @@
             <input id="picker_background_color" defaultValue="#7CD8FF" type="color" className="Welcome Color_picker"></input>
     </div>
 
-    <canvas className="Welcome Canvas" id="canvas" onKeyDown={onKeyPressed}
+    <canvas width="500px" height="500px" className="Welcome Canvas" id="canvas"
         tabIndex={0} ref={canvasRef} />
     <div className="Welcome profile_tool_bar">
 <TrashButton />
@@ -764,22 +814,7 @@
         
     }
 
-    function getTileCenter(i_prefix, i, j_prefix, j, tile_width, tile_height) {
-    const x = i + i_prefix;
-    const y = j + j_prefix;
-    let alpha = ((x * 16807 + y * y * 37 + 509 ^ x + 71 ^ (y - 27)) % tile_width + 881) % tile_width;
-    let beta = (((x & 1) * (y + 71) * 389 + y * 601 + 127 ^ (x - 27)) % tile_height + 439) % tile_height;
-    return { x: i * tile_width + alpha % tile_width, y: j * tile_height + beta % tile_height };
-    }
 
-    export function getDimensions(center, plot_width) {
-    const width_plots_amount = window.innerWidth / plot_width;
-    const height_plots_amount = window.innerHeight / (plot_width / 2);
-    return {
-        topLeft: { x: center.x - width_plots_amount / 2, y: center.y - height_plots_amount / 2 },
-        bottomRight: { x: center.x + width_plots_amount / 2, y: center.y + height_plots_amount / 2 }
-    };
-    }
     function array_move(arr, old_index, new_index) {
         if (new_index >= arr.length) {
             var k = new_index - arr.length + 1;

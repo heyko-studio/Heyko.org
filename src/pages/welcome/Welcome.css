@@ -348,7 +348,7 @@
     position: absolute;
     left: 10px;
     top: 150px;
-    bottom: 25px;
+    bottom: 100px;
     width: 250px;
     padding:0 20px 0 20px;
 }
@@ -414,7 +414,12 @@
     height: 62px;
 }
 
-
+.Welcome.finish_button {
+    bottom: 40px;
+    position: absolute;
+    left: 10px;
+    font-size: 25px;
+}
 @media (max-width: 1354px) {
 .Welcome.profile_tool_bar_elements {
     display: none;
@@ -426,7 +431,13 @@
     margin-left: auto;
     margin-right: 0;
 }
-
+.Welcome.finish_button {
+    left: unset;
+    bottom:unset;
+    top: 40px;
+    right: 10px;
+    font-size: 16px;
+}
 .Welcome.profile_tool_bar_colors {
     position: absolute;
     left: 0;
@@ -444,6 +455,9 @@
     display: none;
 }
 @media (max-width: 708px) {
+    .Welcome.finish_button {
+        top: 95px;
+    }
     .Welcome.Title_2 {
         font-size: 20px;
     }
@@ -463,9 +477,12 @@
         background-color: white;
         border-radius: 12px;
         margin-left: 26px;
+
     }
     .profile_tool_bar_color_show_icon {
         color: gray;
+        font-size: 35px;
+        margin: 5px;
     }
     .Welcome.profile_tool_bar_colors {
         display: none;

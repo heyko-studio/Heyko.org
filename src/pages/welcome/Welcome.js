@@ -1,19 +1,11 @@
 import React from 'react'
 import './Welcome.css';
 import ReactDOM from 'react-dom';
-import Canvas, { getDimensions } from './Canvas'
+import Canvas from './Canvas'
 import { useEffect, useState } from "react";
-import debounce from "debounce";
+
 
 function Welcome() {
-
-    const dimensions = getDimensions({ x: 0, y: 0 }, 48);
-    const [key, setKey] = useState(0);
-    useEffect(() => {
-    const handler = debounce(() => setKey((oldValue) => oldValue + 1), 20);
-    window.addEventListener("resize", handler);
-    return () => window.removeEventListener("resize", handler)
-    });
 
     var error_screen = 0
     setTimeout(function() {
@@ -66,7 +58,7 @@ function Welcome() {
                     <h1 className="Welcome Title_2">🎨 Customise your profile</h1>
                     <div className="Welcome profile">
                     <div id="#canvas" className="Welcome profile_editor_circle">
-                    <Canvas  key={key} initialTopLeft={dimensions.topLeft} initialBottomRight={dimensions.bottomRight}/>
+                    <Canvas />
                     </div>
                     </div>
                 </div>
@@ -87,8 +79,8 @@ function Welcome() {
         contener,
         document.getElementById('Next_Button')
     );
-}, //9500);
-0);
+}, 9500);
+//0);
     return(
         <div id="Welcome_Page" className="Welcome Contener"> 
             <div className="Welcome Background v1"></div>

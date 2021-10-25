@@ -10,6 +10,7 @@ import Informations from './pages/informations/Informations';
 import Branding from './pages/Branding/Branding';
 import Profile from './pages/Profile/profile'
 import Welcome from './pages/welcome/Welcome'
+import Welcome_End from './pages/welcome/End'
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
       <Route exact path="/branding" component={Branding}/>
       <Route exact path="/profile" component={Profile}/>
       <Route exact path="/welcome" component={Welcome}/>
-      
-      <Route 
+      <Route exact path="/welcome/end" component={Welcome_End}/>
+      <Route
     render={({ location }) => !['/welcome'].includes(location.pathname)
         ? <>
         <Footer/>     
