@@ -644,19 +644,20 @@
             const password = getCookie("password")
                 if (username && password) {
                 const requestOptions2 = {
-                method: 'GET',
+                method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                body: `{"username":"${username}", "password":"${password}"}`
             };
-            fetch(`https://backend.heyko.fr/requests/user_exists?${username}?${password}`, requestOptions2)
+            fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions2)
                 .then(response => response.json())
                 .then(data => {
-                    if (data.exists === "true") {
+                    if (data.exists === true) {
                     const requestOptions = {
-                    method: 'GET',
+                    method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    };
-        
-                fetch(`https://backend.heyko.fr/requests/get_user_avatar?${username}`, requestOptions)
+                    body: `{"username":"${username}"}`
+                };
+                fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
                     .then(response => response.json())
                     .then(data2 => load_profile(data2))  
             }
@@ -665,9 +666,11 @@
         
             function load_profile(data) {
                 console.log(data)
+                if (data.user_image) {
                 actions = data.user_image
                 draw(canvasRef.current.getContext('2d'))
                 count()
+                }
             }
             
 

@@ -168,10 +168,11 @@ body{
 
 
 .profile_img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 90px;
     display: inline-block;
+    border: 1px solid #b9b9b9;
 }
 
 .heyko_banner_1 {

@@ -29,24 +29,28 @@ class Profile extends React.Component {
     const password = getCookie("password")
     if (username && password) {
     const requestOptions2 = {
-      method: 'GET',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      body: `{"username":"${username}", "password":"${password}"}`
   };
-fetch(`https://backend.heyko.fr/requests/user_exists?${username}?${password}`, requestOptions2)
+fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions2)
       .then(response => response.json())
       .then(data => {
-        if (data.exists === "true") {
+        console.log(data)
+        if (data.exists === true) {
         const requestOptions = {
-          method: 'GET',
+          method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          body: `{"username":"${username}"}`
       };
-      fetch(`https://backend.heyko.fr/requests/get_user_avatar?${username}`, requestOptions)
+      fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
           .then(response => response.json())
           .then(data => draw(data))  
 
           const draw = (data) => {
             console.log(data)
             const actions = data.user_image
+            if (actions) {
             const canvas = document.getElementById("profile_img")
             const ctx = canvas.getContext('2d')
             var background_color = undefined
@@ -108,7 +112,7 @@ fetch(`https://backend.heyko.fr/requests/user_exists?${username}?${password}`, r
                 }
                 }
             });
-        
+          }
         } 
     }
     
@@ -145,6 +149,7 @@ function NavBar() {
           <ul id="menu" className="shadow burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
+            <li><Link to="/login">Login</Link></li>
           { /* <li><Link to="/connection">Login</Link></li> */}
         </ul>
         </div>
