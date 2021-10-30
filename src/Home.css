@@ -212,10 +212,10 @@ body {
     right: 0;
     height: 120px;
 }
-.Home.Game_Background.v2 {
+.Home.Game_Background.v3 {
     background-image   : url("img/background-ps.webp");
 }
-.Home.Game_Background.v3 {
+.Home.Game_Background.v2 {
     background-image   : url("img/background-h.webp");
 }
 .Home.Game_Background {
