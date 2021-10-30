@@ -208,14 +208,87 @@ function App() {
                 headers: { 'Content-Type': 'application/json' },
                 body: `{"username":"${username}", "password":"${password}"}`
             };
+            const draw = (data) => {
+              console.log(data)
+              const actions = data.user_image
+              if (actions) {
+              const canvas = document.getElementById("profile_img_2")
+              const ctx = canvas.getContext('2d')
+              var background_color = undefined
+              var background = false
+              if (!Array.isArray(actions[actions.length - 1])) {
+              background_color = actions[actions.length - 1]
+              background = true
+              }
+              ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+              if (background) {
+                  ctx.fillStyle = background_color;
+                  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+              }
+              actions.forEach(element => {
+                  const tool_type = element[5]
+                  if (tool_type === 0 || tool_type === 1 ||tool_type === 2) {
+                  const x = element[0]
+                  const y = element[1]
+                  const color = element[4]
+                  if (tool_type === 0) {
+                      ctx.lineWidth = element[6]
+                      ctx.strokeStyle = color
+                      ctx.beginPath()
+                      ctx.moveTo(element[2], element[3]);
+                      ctx.lineTo(x, y);
+                      ctx.stroke()
+                  }
+                  else {
+                      if (tool_type === 1) {
+                          ctx.strokeStyle = element[4][1]
+                          ctx.lineWidth = element[4][4]
+                          ctx.fillStyle = element[4][0]
+                          ctx.beginPath()
+                          ctx.arc(element[2], element[3], (Math.abs(element[2] - x) + Math.abs(element[3] - y)), 0, 2 * Math.PI);
+                              if (element[4][2]) {
+                              ctx.fill()
+                              }
+                              if (element[4][3]) {
+                              ctx.stroke()
+                              }
+  
+                      }
+                      else {
+                      if (tool_type === 2) {
+                          ctx.strokeStyle = element[4][1]
+                          ctx.lineWidth = element[4][4]
+                          ctx.fillStyle = element[4][0]
+                          ctx.beginPath()
+                          ctx.rect(element[2], element[3], element[0] - element[2], element[1] - element[3]);
+                              if (element[4][2]) {
+                              ctx.fill()
+                              }
+                              if (element[4][3]) {
+                              ctx.stroke()
+                              }
+                      }
+                  }
+                  }
+                  }
+              });
+            }
+          }
+
           fetch(`https://backend.heyko.fr/requests/get_user_description`, requestOptions)
                 .then(response => response.json())
                 .then(user_description => {
         console.log(user_description)
         console.log(avatar)
-        const img_avatar = React.createElement("img", {className : 'Profile Avatar', src : `${avatar.user_image}`});
+        const img_avatar = <canvas width="500px" height="500px" className="Profile Avatar" id="profile_img_2" />
         const title = React.createElement("h1", {className : 'Profile Username'}, `${username}`);
-        const bio_description = React.createElement("p", {className : 'Profile Bio_Description'}, `${user_description.user_description}`);
+        var bio_description = undefined
+        if (user_description.user_description) {
+        bio_description = React.createElement("p", {className : 'Profile Bio_Description'}, `${user_description.user_description}`);
+        }
+        else {
+          bio_description = React.createElement("p", {className : 'Profile Bio_Description'}, `😴`);
+        }
         const description = React.createElement("div", {className : 'Profile Bio'}, bio_description);
         const user_contener = React.createElement("div", {className : 'Profile User_Contener'}, img_avatar, title);
         const hr_1 = React.createElement("hr", {className : 'hr_2'});
@@ -231,7 +304,9 @@ function App() {
             contener,
             document.getElementById('Profile')
           );
+          draw(avatar)
         })  
+
         })  
       }
       else {

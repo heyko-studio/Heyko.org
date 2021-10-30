@@ -149,7 +149,7 @@ function NavBar() {
           <ul id="menu" className="shadow burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            { /* <li><Link to="/login">Login</Link></li> */}
           { /* <li><Link to="/connection">Login</Link></li> */}
         </ul>
         </div>
