@@ -48,7 +48,7 @@ function App() {
 
           <div className="Game">
           <div className="Home_Game background">
-            <div className="Home Game_Background">
+            <div className="Home Game_Background v1">
           <h2 className="Home_Game_Title">Five Mysteries</h2>
           </div>
           <br></br><br></br><br></br><br></br>
