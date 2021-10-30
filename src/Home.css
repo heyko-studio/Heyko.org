@@ -5,10 +5,12 @@ body {
 }
 
 .slider {
-    background-image   : url("img/Five_Mysteries_Banner_1.webp");
+    /*background-image   : url("img/Five_Mysteries_Banner_1.webp");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
+    */
+    background-color: #7CD8FF;
     z-index:0;
     position: relative;
     overflow: hidden;
@@ -174,19 +176,62 @@ body {
 }
 
 .Home_Game {
-  margin: 25px 25px 25px 70px;
-  border-radius: 12px;
-  width: fit-content;
-  padding: 30px;
-
-  background: rgb(74,71,145);
-  background: linear-gradient(40deg, rgba(74,71,145,1) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);
+    margin: 25px 25px 25px 25px;
+    border-radius: 12px;
+    width: fit-content;
+    padding: 30px;
+    width: 370px;
+    background: #50A0E8;
+    /*background: linear-gradient(40deg, rgba(74,71,145,1) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);*/
+    position: relative;
+}
+@media (max-width: 450px) {
+    .Home_Game {
+        width: calc(100% - 50px);
+    }
 }
 .Home_Game_Title {
     color: rgb(255, 255, 255);
     font-size: 35px;  
     font-weight: 600;
+    display: block;
+    position: absolute;
+    top: 10px;
+    margin-left: 25px;
 }
+.Home.Game_Background {
+    background-image   : url("img/background-fm.webp");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    display: block;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+}
+.Home.Game_Background.v2 {
+    background-image   : url("img/background-ps.webp");
+}
+.Home.Game_Background.v3 {
+    background-image   : url("img/background-h.webp");
+}
+.Home.Game_Background {
+border: 1px solid #b9b9b9;
+margin: -1px;
+}
+@media (max-width: 450px) {
+    .Home_Game_Title {
+        font-size: 25px;  
+    }
+    .Home.Game_Background {
+        height: 95px;
+    }
+}
+
+
 .Home_Game_Title_2 {
     color: rgb(12, 12, 12);
     font-size: 28px;  
@@ -211,7 +256,7 @@ body {
 
 .background_3 {
     background: rgb(255, 255, 255);
-    border: 2px solid #b9b9b9;
+    border: 1px solid #b9b9b9;
     /*
     background: rgb(42,37,170);
     background: linear-gradient(90deg, rgba(42,37,170,1) 0%, rgba(255,92,164,1) 70%, rgba(255,148,129,1) 98%);
@@ -229,8 +274,8 @@ body {
 .Description {
     margin: 25px;
     padding: 25px;
-    border: 2px solid #b9b9b9;
-    border-radius: 12px;
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
     width: fit-content;
 }
 
@@ -244,16 +289,15 @@ body {
 
 
 .Description_text_underline {
-    background: rgb(42,37,170);
-    background: linear-gradient(90deg, rgba(42,37,170,1) 0%, rgba(163,92,255,1) 42%, rgba(129,234,255,1) 100%);
+    background: rgb(194, 220, 255);
     width: 100%;
-    height: 3px;
+    height:2px;
     margin-top: -10px;
 }
 
 .Home_Social {
     padding: 5px;
-    background-color: rgb(181, 180, 206);
+    background-color: rgb(194, 220, 255);
     margin: 5px;
 }
 .Home_Social_Image {

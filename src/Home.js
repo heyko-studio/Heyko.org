@@ -34,8 +34,11 @@ function App() {
 
 
           <div className="Game">
-        <div className="Home_Game  background_3 shadow">
-          <h2 className="Home_Game_Title_2">➡️ Harmony</h2>
+        <div className="Home_Game  background_3">
+        <div className="Home Game_Background v2">
+          <h2 className="Home_Game_Title">Harmony</h2>
+          </div>
+          <br></br><br></br><br></br><br></br>
           <p className="Home_Game_Description_2">HARMONY is a game playing on gravity.<br></br> Double your ingenuity to try to complete all the levels!</p>
           <a className="Home Button Join" href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">
             Coming soon
@@ -44,8 +47,11 @@ function App() {
           </div>
 
           <div className="Game">
-          <div className="Home_Game background shadow2">
-          <h2 className="Home_Game_Title">➡️ Five Mysteries</h2>
+          <div className="Home_Game background">
+            <div className="Home Game_Background">
+          <h2 className="Home_Game_Title">Five Mysteries</h2>
+          </div>
+          <br></br><br></br><br></br><br></br>
           <p className="Home_Game_Description">In a world where imagination is real...<br></br>
           Many creatures seek absolute power through a crystal with divine powers...<br></br> But a force beyond them will soon appear...</p>
           <a className="Home Button More_2" href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">
@@ -56,8 +62,11 @@ function App() {
 
 
           <div className="Game">
-          <div className="Home_Game background_3 shadow">
-          <h2 className="Home_Game_Title_2">➡️ Poly Story</h2>
+          <div className="Home_Game background_3">
+          <div className="Home Game_Background v3">
+          <h2 className="Home_Game_Title">Poly Story</h2>
+          </div>
+          <br></br><br></br><br></br><br></br>
           <p className="Home_Game_Description_2">Poly Story is a game of exploration of a magical and immense world,<br></br> dotted with villages, caves and dragons!<br></br> Run to discover this beautiful universe!</p>
           <a className="Home Button Join" href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">
             Coming soon
@@ -66,7 +75,7 @@ function App() {
         </div>
 
         <div className="Game">
-          <div className="Home_Game background_4 shadow">
+          <div className="Home_Game background_4">
           <h2 className="Home_Game_Title_2">💬 join our discord server</h2>
           <p className="Home_Game_Description_2">To discover the community, discuss, be informed before others,<br></br> and participate in the progress of the games
           </p>
@@ -90,16 +99,14 @@ function App() {
         <h2 className="Title_2 v2">What is Heyko?</h2>
         <div className="Description">
         <p>
-          Heyko is an independent video game creation team 😋
+          Heyko is an independent video game creation team
           </p>
           <div className="Description_text_underline"></div>
           <a href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn" className="Home_Social"><img alt="Discord" className="Home_Social_Image" src="img/discord.svg"></img></a>
           <a href="https://twitter.com/heyko_studio" target="https://twitter.com/heyko_studio" className="Home_Social"><img alt="Twitter" className="Home_Social_Image" src="img/Twitter.svg"></img></a>
           <a href="https://utip.io/heykostudio/" target="https://utip.io/heykostudio/" className="Home_Social"><img alt="Utip" className="Home_Social_Image" src="img/Utip.webp"></img></a>
-         
           </div>
-
-   </>
+    </>
   );
 
 }

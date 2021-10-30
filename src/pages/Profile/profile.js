@@ -186,26 +186,29 @@ function App() {
       const password = getCookie("password")
       if (username && password) {
         const requestOptions = {
-            method: 'GET',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            body: `{"username":"${username}", "password":"${password}"}`
         };
-    fetch(`https://backend.heyko.fr/requests/user_exists?${username}?${password}`, requestOptions)
+    fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions)
     .then(response => response.json())
     .then(data => {
         console.log(data)
-      if (data.exists === "true") {
+      if (data.exists === true) {
           const requestOptions = {
-            method: 'GET',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            body: `{"username":"${username}", "password":"${password}"}`
         };
-      fetch(`https://backend.heyko.fr/requests/get_user_avatar?${username}`, requestOptions)
+      fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
             .then(response => response.json())
             .then(avatar => {
               const requestOptions = {
-                method: 'GET',
+                method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                body: `{"username":"${username}", "password":"${password}"}`
             };
-          fetch(`https://backend.heyko.fr/requests/get_user_description?${username}`, requestOptions)
+          fetch(`https://backend.heyko.fr/requests/get_user_description`, requestOptions)
                 .then(response => response.json())
                 .then(user_description => {
         console.log(user_description)

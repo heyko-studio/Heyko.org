@@ -37,16 +37,17 @@ function App() {
         const email = document.getElementById("mail").value
         const password = document.getElementById("password").value
         const requestOptions = {
-            method: 'GET',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            body: `{"username":"${email}", "password":"${password}"}`
         };
-        fetch(`https://backend.heyko.fr/requests/user_exists?${email}?${password}`, requestOptions)
+        fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions)
             .then(response => response.json())
             .then(data => connect(data))  
       }
       function connect(data) {
           console.log(data)
-        if (data.exists === "true") {
+        if (data.exists === true) {
             const title = React.createElement("h1", {}, 'Hello ' + data.username + '🎉');
             const loader = React.createElement(Loading, {}, '');
             const contener = React.createElement('div', {className : 'login default_message success'}, title, loader);
