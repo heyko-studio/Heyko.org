@@ -188,3 +188,8 @@
 .Activity.Chart {
     margin-top: 0;
 }
+
+.profile_img.get_user_avatar {
+    width: 86px;
+    height: 86px;
+}

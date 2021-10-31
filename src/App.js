@@ -11,12 +11,13 @@ import Branding from './pages/Branding/Branding';
 import Profile from './pages/Profile/profile'
 import Welcome from './pages/welcome/Welcome'
 import Welcome_End from './pages/welcome/End'
+import get_user_avatar from './pages/Profile/avatar'
 
 function App() {
   return (
     <div className="App">
       <Route 
-    render={({ location }) => !['/welcome'].includes(location.pathname)
+    render={({ location }) => !['/welcome'].includes(location.pathname) && !['/get_user_avatar'].includes(location.pathname)
         ? <NavBar/>
         : null
     }
@@ -30,8 +31,9 @@ function App() {
       <Route exact path="/profile" component={Profile}/>
       <Route exact path="/welcome" component={Welcome}/>
       <Route exact path="/welcome/end" component={Welcome_End}/>
+      <Route path="/get_user_avatar" component={get_user_avatar}/>
       <Route
-    render={({ location }) => !['/welcome'].includes(location.pathname)
+    render={({ location }) => !['/welcome'].includes(location.pathname) && !['/get_user_avatar'].includes(location.pathname)
         ? <>
         <Footer/>     
           <section id="Footer_decal"></section>
