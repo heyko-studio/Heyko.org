@@ -9,11 +9,10 @@ import Chart from "react-google-charts";
             document.getElementById("body").style = "overflow: hidden;"
             const user_id = window.location.href.split("?")[1]
             const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: `{"user_id":"${user_id}"}`
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
             };
-        fetch(`https://backend.heyko.fr/requests/get_user_avatar_by_url`, requestOptions)
+        fetch(`https://backend.heyko.fr/requests/user_avatar_by_url?${user_id}`, requestOptions)
                 .then(response => response.json())
                 .then(avatar => {
                 const draw = (data) => {
@@ -83,13 +82,14 @@ import Chart from "react-google-charts";
                 }
                 
             }
+            draw(avatar)
 
 
         })  
 
             return (
             <div>
-                    <canvas width="500px" height="500px" className="profile_img get_user_avatar" id="profile_img" />
+                    <canvas width="500px" height="500px" className="profile_img get_user_avatar" id="profile_img_2" />
             </div>
             );
         
