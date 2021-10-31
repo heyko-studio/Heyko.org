@@ -7,13 +7,13 @@ import Chart from "react-google-charts";
 
             console.log(window.location.href)
             document.getElementById("body").style = "overflow: hidden;"
-            const user_id = 1
+            const user_id = window.location.href.split("?")[1]
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: `{"user_id":"${user_id}"}`
             };
-        fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
+        fetch(`https://backend.heyko.fr/requests/get_user_avatar_by_url`, requestOptions)
                 .then(response => response.json())
                 .then(avatar => {
                 const draw = (data) => {
