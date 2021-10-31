@@ -6,7 +6,7 @@ import Chart from "react-google-charts";
     function App() {
 
             console.log(window.location.href)
-            document.getElementById("body").style = "overflow: hidden;"
+            document.getElementById("body").style = "overflow: hidden; background-color: rgba(0, 0, 0, 0.8);"
             const user_id = window.location.href.split("?")[1]
             const requestOptions = {
                 method: 'GET',

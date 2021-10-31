@@ -192,4 +192,5 @@
 .profile_img.get_user_avatar {
     width: 80px;
     height: 80px;
+    border:none;
 }
