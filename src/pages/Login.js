@@ -3,7 +3,7 @@ import reactDom from 'react-dom';
 import ReactDOM from 'react-dom';
 import './login.css';
 import {Link} from 'react-router-dom'
-
+import { useHistory } from "react-router-dom";
 
 class Ok extends React.Component {
     constructor(props) {
@@ -32,6 +32,7 @@ class Ok extends React.Component {
       }
   }
 function App() {
+  const history = useHistory();
     function handleSubmit(e) {
         e.preventDefault();
         const email = document.getElementById("mail").value
@@ -63,7 +64,7 @@ function App() {
             document.cookie = "username=" + data.username
             document.cookie = "password=" + document.getElementById("password").value
             setTimeout(function() {
-              window.location = 'profile';
+              window.open("/profile","_self");
             }, 1000);
         }
         else {

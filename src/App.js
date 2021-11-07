@@ -28,7 +28,7 @@ function App() {
       <Route exact path="/sign-up" component={SignUp}/>
       <Route exact path="/informations" component={Informations}/>
       <Route exact path="/branding" component={Branding}/>
-      <Route exact path="/profile" component={Profile}/>
+      <Route path="/profile" component={Profile}/>
       <Route exact path="/welcome" component={Welcome}/>
       <Route exact path="/welcome/end" component={Welcome_End}/>
       <Route path="/get_user_avatar" component={get_user_avatar}/>

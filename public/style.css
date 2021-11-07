@@ -292,6 +292,15 @@ body{
     text-align: center;
     font-size: 26px;
 }
+.Subtitle_2 {
+    font-size: 26px;
+    transform: rotate(2deg);
+    width: fit-content;
+    font-weight: bold;
+    color: #40464e;
+    padding: 12px;
+    margin: 60px 20px 20px 20px;
+}
 .shadow_2 {
     box-shadow: 4px 3px 6px 0 rgba(46, 161, 255, 0.5);
 }
@@ -317,5 +326,15 @@ html, body {
     margin-bottom: -25px;
     text-decoration: none;
     border: 2px solid #b61a41;
+    border-radius: 90px;
+}
+.button.liked {
+    font-weight: bold;
+    padding: 8px 40px;
+    color: white;
+    background-color: #e66a89;
+    margin-bottom: -25px;
+    text-decoration: none;
+    border: 2px solid #e66a89;
     border-radius: 90px;
 }

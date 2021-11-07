@@ -41,7 +41,7 @@ fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions2)
         const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: `{"username":"${username}"}`
+          body: `{"user_id":"${data.id}"}`
       };
       fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
           .then(response => response.json())
@@ -149,8 +149,7 @@ function NavBar() {
           <ul id="menu" className="shadow burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
-            { /* <li><Link to="/login">Login</Link></li> */}
-          { /* <li><Link to="/connection">Login</Link></li> */}
+            <li><Link to="/login">Login</Link></li>
         </ul>
         </div>
         <nav className="menu">
