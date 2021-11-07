@@ -1,10 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
+import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import './Profile.css';
 import Chart from "react-google-charts";
 import { useHistory } from "react-router-dom";
 import { username } from '../../functions/get_username';
 import { password } from '../../functions/get_password';
+import { copyTextToClipboard } from '../../functions/copy_to_clipboard'
 
 
 function App() {
@@ -369,10 +370,25 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
         const success = React.createElement(Success, {});
         const activity = React.createElement(Activity, {});
 
+        function share() {
+            // SHARE
+            copyTextToClipboard("https://heyko.fr/profile/" + user_id)
+            function click() {
+              unmountComponentAtNode(document.getElementById("message"))
+            }
+            const title = React.createElement("h1", {}, 'Link copied to clipboard');
+            const button = <button onClick={() => click()} className="login button ok wrong">Ok !</button>
+            const contener = React.createElement('div', {className : 'default_message success'}, title, button);
+            ReactDOM.render(
+                <div className="white_background">{contener}</div>,
+                document.getElementById('message')
+              );
+        }
+
         //const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, page_break, user_shop, success, activity);
         const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, 
-        <div id="button_like_contener">
-        </div>, page_break);
+        <><div style={{display: 'inline'}} id="button_like_contener">
+        </div><button onClick={() => share()} style={{marginLeft: "8px"}} className="button view">Share</button></>, page_break);
         const br = React.createElement('br', {});
         const contener = React.createElement('div', {className : 'Profile profile_contener'}, contener_1, br, br);
         ReactDOM.render(
@@ -450,6 +466,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
     return(
         <>
         <div id="Profile"></div>
+        <div id="message"></div>
         </>
     )
 }
