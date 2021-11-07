@@ -18,18 +18,33 @@
     border-radius: 12px;
     float: left;
     width: 700px;
-    max-width: 100%;
+}
+.Profile.Contener_1 {
+    margin:auto;
+    display: block;
+    width: fit-content;
+}
+@media (max-width: 750px) {
+    .Profile.Bio {
+        width: calc(100% - 50px);
+    }
+    .Profile.Contener_1 {
+        width: 100%;
+    }
+}
+@media (max-width: 408px) {
+    .Profile.button.view {
+        position:absolute;
+        left: 0;
+        margin-top: 50px;
+    }
 }
 
 .Profile.User_Contener {
     float: left;
 }
 
-.Profile.Contener_1 {
-    margin:auto;
-    display: block;
-    width: fit-content;
-}
+
 .Profile.number_icons {
     width: 35px;
     color: #b9b9b9;

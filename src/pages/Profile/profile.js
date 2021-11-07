@@ -388,7 +388,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
         //const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, page_break, user_shop, success, activity);
         const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, 
         <><div style={{display: 'inline'}} id="button_like_contener">
-        </div><button onClick={() => share()} style={{marginLeft: "8px"}} className="button view">Share</button></>, page_break);
+        </div><button onClick={() => share()} style={{marginLeft: "8px"}} className="Profile button view">Share</button></>, page_break);
         const br = React.createElement('br', {});
         const contener = React.createElement('div', {className : 'Profile profile_contener'}, contener_1, br, br);
         ReactDOM.render(
