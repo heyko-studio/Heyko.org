@@ -398,6 +398,18 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
       
           function like_end(data) {
             console.log(data)
+            if (data.result === 'error_user_not_found') {
+              function click() {
+                history.push("/login");
+              }
+              const title = React.createElement("h1", {}, 'Please log in');
+              const button = <button onClick={() => click()} className="login button ok wrong">Login</button>
+              const contener = React.createElement('div', {className : 'default_message wrong'}, title, button);
+              ReactDOM.render(
+                  contener,
+                  document.getElementById('Profile')
+                );
+            }
           }
           ReactDOM.render(
             <button onClick={() => like()} style={{marginLeft: "8px"}} className="button like">Like</button>,
