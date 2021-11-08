@@ -20,6 +20,12 @@ function NavBar() {
   
     }
     componentDidMount() {
+      function show_login_button() {
+        ReactDOM.render(
+          <button onClick={() => history.push("login")} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Login</button>,
+          document.getElementById('Profile_Button')
+        );
+      }
       function profile() {
         history.push("/profile");
       }
@@ -33,11 +39,28 @@ function NavBar() {
       .then(data => {
         console.log(data)
         if (data.exists === true) {
-          console.log("t")
           ReactDOM.render(
-            <button onClick={() => profile()} style={{marginRight:"20px"}} className="button view">Profile</button>,
+            <button onClick={() => profile()} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Profile</button>,
             document.getElementById('Profile_Button')
           );
+          class Profile_burger_link extends React.Component {
+            render() {
+              return (
+                  <>
+                  <li><a href="/profile">Profile</a></li>
+                    </> 
+              );
+            }
+          }
+          var Burger_profile_button = new Profile_burger_link();
+          ReactDOM.render(
+            <Burger_profile_button.render />,
+          document.getElementById('Profile_burger_link')
+          );
+          
+    }
+    else {
+      show_login_button()
     }
     })
     }
@@ -176,7 +199,6 @@ function NavBar() {
     }
   }
   
-  
     return(
       <div className="navbar">
         <header className="topbar shadow">
@@ -193,6 +215,7 @@ function NavBar() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
             <li><Link to="/login">Login</Link></li>
+            <div id="Profile_burger_link"></div>
         </ul>
         </div>
         <nav className="menu">

@@ -175,6 +175,13 @@ body{
     border: 1px solid #b9b9b9;
 }
 
+@media (max-width: 800px) {
+    .profile_img {
+        margin-right: -80px;
+        transform: translateX(30px);
+    }
+}
+
 .heyko_banner_1 {
     max-width:90%;
     display:block;
@@ -337,4 +344,9 @@ html, body {
     text-decoration: none;
     border: 2px solid #e66a89;
     border-radius: 90px;
+}
+@media (max-width: 374px) {
+    .NavBar_Profile_Button {
+        display: none;
+    }
 }
