@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 import './Profile.css';
-import Chart from "react-google-charts";
+// import Chart from "react-google-charts";
 import { useHistory } from "react-router-dom";
 import { username } from '../../functions/get_username';
 import { password } from '../../functions/get_password';
@@ -61,7 +61,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
       );
     }
   }
-  class User_Shop extends React.Component {
+  /*class User_Shop extends React.Component {
     render() {
       return (
         <div className="Profile User_shop">
@@ -84,6 +84,8 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
       )
     }
   }
+  */
+ /*
   class Activity extends React.Component {
     render() {
       return (
@@ -163,6 +165,8 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
       )
     }
   }
+  */
+ /*
   class Success extends React.Component {
     render() {
       return (
@@ -207,6 +211,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
       );
     }
   }
+  */
   const history = useHistory();
   const profile_id = window.location.href.split("/")[window.location.href.split("/").length - 1]
   if (!parseInt(profile_id)) {
@@ -364,11 +369,11 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
         const description = React.createElement("div", {className : 'Profile Bio'}, bio_description);
         const user_contener = React.createElement("div", {className : 'Profile User_Contener'}, img_avatar, title);
         const hr_1 = React.createElement("hr", {className : 'hr_2'});
-        const user_shop= React.createElement(User_Shop, {});
+        //const user_shop= React.createElement(User_Shop, {});
         const numbers = React.createElement(Numbers, {});
         const page_break = React.createElement("div", {className : "Profile Page_Break"});
-        const success = React.createElement(Success, {});
-        const activity = React.createElement(Activity, {});
+        //const success = React.createElement(Success, {});
+        //const activity = React.createElement(Activity, {});
 
         function share() {
             // SHARE
@@ -427,10 +432,28 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
                 );
             }
           }
-          ReactDOM.render(
-            <button onClick={() => like()} style={{marginLeft: "8px"}} className="button like">Like</button>,
-            document.getElementById('button_like_contener')
-          );
+          const requestOptions2 = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: `{"username":"${username}", "password":"${password}", "liked_user_id":"${user_id}"}`
+        };
+          fetch(`https://backend.heyko.fr/requests/already_liked`, requestOptions2)
+          .then(response => response.json())
+          .then(data => liked(data))
+          function liked(data) {
+            if (data.result === true) {
+              ReactDOM.render(
+                <button style={{marginLeft: "8px"}} className="button liked">Liked</button>,
+                document.getElementById('button_like_contener')
+              );
+            }
+            else {
+            ReactDOM.render(
+              <button onClick={() => like()} style={{marginLeft: "8px"}} className="button like">Like</button>,
+              document.getElementById('button_like_contener')
+            );
+            }
+          }
         }
         })  
 

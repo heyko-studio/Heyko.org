@@ -1,7 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import './Profile.css';
-import Chart from "react-google-charts";
 
     function App() {
 

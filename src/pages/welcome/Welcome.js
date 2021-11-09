@@ -2,7 +2,6 @@ import React from 'react'
 import './Welcome.css';
 import ReactDOM from 'react-dom';
 import Canvas from './Canvas'
-import { useEffect, useState } from "react";
 
 
 function Welcome() {

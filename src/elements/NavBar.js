@@ -10,8 +10,7 @@ import ReactDOM from 'react-dom';
 
 function NavBar() {
   const history = useHistory();
-  var user_id = 0
-  class Profile_Button extends React.Component {
+  class PROFILE_BUTTON extends React.Component {
     constructor(props) {
       super(props);
     this.state = {
@@ -52,9 +51,9 @@ function NavBar() {
               );
             }
           }
-          var Burger_profile_button = new Profile_burger_link();
+          var BURGER_PROFILE_BUTTON = new Profile_burger_link().render;
           ReactDOM.render(
-            <Burger_profile_button.render />,
+            <BURGER_PROFILE_BUTTON />,
           document.getElementById('Profile_burger_link')
           );
           
@@ -73,7 +72,7 @@ function NavBar() {
     }
   
   }
-  class Profile extends React.Component {
+  class PROFILE extends React.Component {
     constructor(props) {
       super(props);
     this.state = {
@@ -192,7 +191,7 @@ function NavBar() {
   /* className="profile_img"*/
     render() {
       return (
-        <div>
+        <div id="navbar_profile_canvas">
               <canvas width="500px" height="500px" className="profile_img" id="profile_img" />
         </div>
       );
@@ -220,9 +219,9 @@ function NavBar() {
         </div>
         <nav className="menu">
         <div className="topbar-container">
-          <Profile_Button />
+          <PROFILE_BUTTON />
           <div id="profile_image">
-        <Profile/>
+        <PROFILE/>
         </div>
         </div>
         </nav>

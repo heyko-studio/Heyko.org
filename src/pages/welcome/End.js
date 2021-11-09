@@ -1,5 +1,4 @@
 import React from "react";
-import { Profiler } from "react/cjs/react.production.min";
 import './End.css';
 import { useHistory } from "react-router-dom";
 

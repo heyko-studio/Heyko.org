@@ -1,5 +1,4 @@
-    import { Delaunay } from "d3-delaunay"
-    import React, { useRef, useEffect, useState } from 'react'
+    import React, { useRef, useEffect } from 'react'
     import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
     import { faCircle } from '@fortawesome/free-regular-svg-icons'
     import { faSquare } from '@fortawesome/free-regular-svg-icons'
@@ -7,7 +6,7 @@
     import { faRedo } from '@fortawesome/free-solid-svg-icons'
     import  { faPalette } from '@fortawesome/free-solid-svg-icons'
 
-    function MapCanvas({ initialBottomRight, initialTopLeft }) {
+    function MapCanvas() {
         let tool = 0;
         let last_action = undefined;
         let actions = []
@@ -269,7 +268,7 @@
 
     })
 
-    class UndoButton extends React.Component {
+    class UNDO_BUTTON extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -289,7 +288,7 @@
             )
         }
     }
-    class RedoButton extends React.Component {
+    class REDO_BUTTON extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -309,7 +308,7 @@
             )
         }
     }
-    class TrashButton extends React.Component {
+    class TRASH_BUTTON extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -328,7 +327,7 @@
             )
         }
     }
-    class PenButton extends React.Component {
+    class PEN_BUTTON extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -346,7 +345,7 @@
             )
         }
     }
-    class CircleButton extends React.Component {
+    class CIRCLE_BUTTON extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -362,7 +361,7 @@
             )
         }
     }
-    class SquareButton extends React.Component {
+    class SQUARE_BUTTON extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -378,7 +377,7 @@
             )
         }
     }
-    class TextButton extends React.Component {
+    class TEXT_BUTTON extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
@@ -394,7 +393,7 @@
             )
         }
     }
-    class Slider extends React.Component {
+    class SLIDER extends React.Component {
         constructor(props) {
             super(props);
         this.handleChange = this.handleChange.bind(this);
@@ -420,7 +419,7 @@
             )
         }
     }
-    class Elements extends React.Component {
+    class ELEMENTS extends React.Component {
         constructor(props) {
         super(props);
         this.state = {
@@ -462,7 +461,7 @@
             )
         }
     }
-    class Remove_element extends React.Component {
+    class REMOVE_ELEMENT extends React.Component {
             constructor(props) {
                 super(props);
             }
@@ -481,7 +480,7 @@
             }
         }
         
-        class ShowToolBar extends React.Component {
+        class SHOW_TOOLBAR extends React.Component {
             constructor(props) {
                 super(props);
             }
@@ -502,12 +501,12 @@
                 )
             }
         }
-        class Up_element extends React.Component {
+        class UP_ELEMENT extends React.Component {
             constructor(props) {
                 super(props);
             }
             click = () => {
-                if (this.props.index != 0) {
+                if (this.props.index !== 0) {
                 array_move(actions, this.props.index, this.props.index - 1);
                 draw(canvasRef.current.getContext('2d'))
                 this.props.count_elements()
@@ -522,12 +521,12 @@
                 )
             }
         }
-        class Down_element extends React.Component {
+        class DOWN_ELEMENT extends React.Component {
             constructor(props) {
                 super(props);
             }
             click = () => {
-                if (this.props.index != (actions.length - 1)) {
+                if (this.props.index !== (actions.length - 1)) {
                 array_move(actions, this.props.index, this.props.index + 1);
                 draw(canvasRef.current.getContext('2d'))
                 this.props.count_elements()
@@ -542,7 +541,7 @@
                 )
             }
         }
-        class View extends React.Component {
+        class VIEW extends React.Component {
             constructor(props) {
                 super(props);
             }
@@ -610,7 +609,7 @@
                 )
             }
         }
-    class Elements_list extends React.Component {
+    class ELEMENTS_LIST extends React.Component {
         constructor(props) {
         super(props);
         this.state = {
@@ -727,10 +726,10 @@
                     <div className="Welcome profile_tool_bar_elements_contener">
                         {this.state.elements.map((element, index) => 
                         <div className="Welcome profile_tool_bar_elements_breaker" key={"element_" + index}>
-                        <Remove_element count_elements={this.count_elements} element={element} index={index} />
-                        <Up_element count_elements={this.count_elements} element={element} index={index} />
-                        <Down_element count_elements={this.count_elements} element={element} index={index} />
-                        <View element={element} index={index} />
+                        <REMOVE_ELEMENT count_elements={this.count_elements} element={element} index={index} />
+                        <UP_ELEMENT count_elements={this.count_elements} element={element} index={index} />
+                        <DOWN_ELEMENT count_elements={this.count_elements} element={element} index={index} />
+                        <VIEW element={element} index={index} />
                             {colors(element)}
                             <p className="Welcome profile_tool_bar_item_text" key={"text_" + index}>{
                                 test(element)
@@ -776,7 +775,7 @@
         }
     return <>
     <div>
-    <ShowToolBar />
+    <SHOW_TOOLBAR />
     <button onClick={() => next()} className="button ok Welcome finish_button">Terminer</button>
     <div id="tool_bar_colors" className="Welcome profile_tool_bar_colors">
     <input defaultChecked={true} id="checkbox_fill_color" type="checkbox" className="Welcome Color_Checkbox"></input><p className="Welcome profile_tool_bar_titles">Fill color</p>
@@ -788,7 +787,7 @@
             <p className="Welcome profile_tool_bar_titles">Line color</p>
     <input id="picker_stroke_color" defaultValue="#2ea0e8" type="color" className="Welcome Color_picker"></input>
         <p className="Welcome profile_tool_bar_titles">Line width</p>
-        <Slider />
+        <SLIDER />
         <hr></hr>
         <input id="checkbox_background_color" type="checkbox" className="Welcome Color_Checkbox"></input>
             <p className="Welcome profile_tool_bar_titles">Background color</p><br></br>
@@ -798,19 +797,19 @@
     <canvas width="500px" height="500px" className="Welcome Canvas" id="canvas"
         tabIndex={0} ref={canvasRef} />
     <div className="Welcome profile_tool_bar">
-<TrashButton />
-<UndoButton />
-<RedoButton />
-<PenButton />
-<CircleButton />
-<SquareButton />
-<TextButton />
+<TRASH_BUTTON />
+<UNDO_BUTTON />
+<REDO_BUTTON />
+<PEN_BUTTON />
+<CIRCLE_BUTTON />
+<SQUARE_BUTTON />
+<TEXT_BUTTON />
 </div>
 
 <div className="Welcome profile_tool_bar_elements">
-    <Elements />
+    <ELEMENTS />
             <hr></hr>
-    <Elements_list />
+    <ELEMENTS_LIST />
     </div>
     </div>
         </>
