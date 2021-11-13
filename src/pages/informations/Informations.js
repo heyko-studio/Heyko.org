@@ -22,7 +22,7 @@ Heyko is an independent video game creation team
     <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
     
     <h1 className="Infos partner-title">Rue Des Graphistes</h1>
-    <a href="https://ruedesgraphistes.com/" target="https://ruedesgraphistes.com/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>View</button></a>
+    <a href="https://ruedesgraphistes.com/" target="https://ruedesgraphistes.com/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
     <p className="Infos partner-description"><b className="Infos bold">Rue des Graphistes</b> est un lieu de rencontre et de partage entre artistes de toutes spécialité et les met en relation avec des créateurs de contenus originaux et nécessitant une touche professionnelle dans leur projet.</p>
 
   </div>
