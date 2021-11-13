@@ -51,6 +51,7 @@ function NavBar() {
               );
             }
           }
+          document.getElementById("burger_login_page_link").style = "display:none"
           var BURGER_PROFILE_BUTTON = new Profile_burger_link().render;
           ReactDOM.render(
             <BURGER_PROFILE_BUTTON />,
@@ -214,7 +215,7 @@ function NavBar() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
             <li><Link to="/informations">Details</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            <li id="burger_login_page_link"><Link to="/login">Login</Link></li>
             <div id="Profile_burger_link"></div>
         </ul>
         </div>
