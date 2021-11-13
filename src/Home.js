@@ -1,8 +1,8 @@
 import './Home.css';
-
+import { useHistory } from "react-router-dom";
 
 function App() {
-
+  const history = useHistory();
   return (
     <>
   
@@ -105,6 +105,8 @@ function App() {
           <a href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn" className="Home_Social"><img alt="Discord" className="Home_Social_Image" src="img/discord.svg"></img></a>
           <a href="https://twitter.com/heyko_studio" target="https://twitter.com/heyko_studio" className="Home_Social"><img alt="Twitter" className="Home_Social_Image" src="img/Twitter.svg"></img></a>
           <a href="https://utip.io/heykostudio/" target="https://utip.io/heykostudio/" className="Home_Social"><img alt="Utip" className="Home_Social_Image" src="img/Utip.webp"></img></a>
+          <br></br><br></br>
+          <button onClick={() => history.push('/informations')} className="button view">More informations</button>
           </div>
     </>
   );
