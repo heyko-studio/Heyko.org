@@ -350,3 +350,21 @@ html, body {
         display: none;
     }
 }
+
+.flag_fr {
+    background-color: rgb(83, 133, 241);
+    width: 15px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.flag_fr.s2 {
+    background-color: rgb(240, 240, 240);
+    left: 15px;
+}
+.flag_fr.s3 {
+    left: 30px;
+    background-color: rgb(241, 83, 83);
+    border-bottom-right-radius: 10px;
+}

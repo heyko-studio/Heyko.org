@@ -213,6 +213,7 @@ function NavBar() {
           <ul id="menu" className="shadow burger_text">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
+            <li><Link to="/informations">Details</Link></li>
             <li><Link to="/login">Login</Link></li>
             <div id="Profile_burger_link"></div>
         </ul>
