@@ -1,5 +1,5 @@
 import React from 'react';
-import './informations.css'
+import './Games.css'
 
 function App() {
   return (
@@ -31,14 +31,12 @@ Heyko is an independent video game creation team
   <div style={{height: '310px'}}  className="Infos partner-contener">
   <div className="Infos partner-image">
     </div>
-    <div className="Infos partner-i v2"></div>
+    <div className="Infos partner-i"></div>
     <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
     
     <h1 className="Infos partner-title">Night Group</h1>
     <a href="https://ruedesgraphistes.com/" target="https://ruedesgraphistes.com/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
-    <p className="Infos partner-description"><b className="Infos bold">Night Group</b> est une source d'aide et de ressources, vous offrant même
-      une api pour les développeurs ! Et bien plus encore !
-      Nous avons plein de nouveaux projets alors qu'est ce que vous attendez ? Rejoignez-nous !</p>
+    <p className="Infos partner-description"><b className="Infos bold">Night Group</b> est un lieu de rencontre et de partage entre artistes de toutes spécialité et les met en relation avec des créateurs de contenus originaux et nécessitant une touche professionnelle dans leur projet.</p>
 
   </div>
   <br></br>

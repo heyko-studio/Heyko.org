@@ -6,8 +6,8 @@ import './Footer.css';
 function Footer() {
     return(
 
-      <footer className="footer footer_contener">
-          <div className="footer_line">
+        <footer className="footer footer_contener">
+            <div className="footer_line">
             <li className="footer line"><a href="https://discord.gg/tKypaXn" className="footer link">Discord</a></li>
             <li className="footer line"><a href="https://twitter.com/heyko_studio" className="footer link">Twitter</a></li>
             <li className="footer line"><a href="https://utip.io/heykostudio/" className="footer link">Utip</a></li>

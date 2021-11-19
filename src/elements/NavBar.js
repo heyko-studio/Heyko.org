@@ -216,6 +216,7 @@ function NavBar() {
             <li><Link to="/contacts">Contacts</Link></li>
             <li><Link to="/informations">Details</Link></li>
             <li id="burger_login_page_link"><Link to="/login">Login</Link></li>
+            <div id="burger_admin_link"></div>
             <div id="Profile_burger_link"></div>
         </ul>
         </div>

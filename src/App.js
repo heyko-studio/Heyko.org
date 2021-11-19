@@ -12,6 +12,7 @@ import Profile from './pages/Profile/profile'
 import Welcome from './pages/welcome/Welcome'
 import Welcome_End from './pages/welcome/End'
 import get_user_avatar from './pages/Profile/avatar'
+import Game_Poly_Story from './pages/games/Poly_Story'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route exact path="/welcome" component={Welcome}/>
       <Route exact path="/welcome/end" component={Welcome_End}/>
       <Route path="/get_user_avatar" component={get_user_avatar}/>
+      <Route exact path="/Games/Poly-Story" component={Game_Poly_Story}/>
       <Route
     render={({ location }) => !['/welcome'].includes(location.pathname) && !['/get_user_avatar'].includes(location.pathname)
         ? <>

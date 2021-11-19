@@ -363,3 +363,24 @@ margin: -1px;
 .Home.Banner {
     max-width: 100%;
 }
+
+.home.videos.contener {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(235, 235, 235);
+    padding: 25px;
+    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.151);
+    height: 365px;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.home.videos iframe {
+    height: 315px;
+    width: 100%;
+    max-width: 560px;
+    margin: auto;
+}

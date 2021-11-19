@@ -40,12 +40,12 @@
 }
 
 .Infos.partner-image {
-    background-color: #7CD8FF;
+    background-color: #ffffff;
     position: absolute;
     left: 0;
     top: 0;
-    height: 140px;
-    width: 140px;
+    height: 130px;
+    width: 130px;
 }
 
 .Infos.partner-title {
@@ -78,8 +78,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
+}
+.Infos.partner-i.v2 {
+    background: url("https://night-api.com/images/Logo/logo.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
 }
 .Infos.partner-description {
     position: absolute;
