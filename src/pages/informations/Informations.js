@@ -35,9 +35,9 @@ Heyko is an independent video game creation team
     <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
     
     <h1 className="Infos partner-title">Night Group</h1>
-    <a href="https://ruedesgraphistes.com/" target="https://ruedesgraphistes.com/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
+    <a href="https://discord.gg/ySbecQPWce" target="https://discord.gg/ySbecQPWce"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
     <p className="Infos partner-description"><b className="Infos bold">Night Group</b> est une source d'aide et de ressources, vous offrant même
-      une api pour les développeurs ! Et bien plus encore !
+      une api pour les développeurs, et bien plus encore !
       Nous avons plein de nouveaux projets alors qu'est ce que vous attendez ? Rejoignez-nous !</p>
 
   </div>
