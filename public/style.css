@@ -230,6 +230,9 @@ body{
     right: 0;
     z-index: 10;
 }
+.button {
+    cursor: pointer;
+}
 .button.ok {
     font-weight: bold;
     padding: 8px 40px;
@@ -368,3 +371,4 @@ html, body {
     background-color: rgb(241, 83, 83);
     border-bottom-right-radius: 10px;
 }
+
