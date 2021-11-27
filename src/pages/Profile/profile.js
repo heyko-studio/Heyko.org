@@ -410,7 +410,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
             const requestOptions2 = {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: `{"username":"${username}", "password":"${password}", "liked_user_id":"${user_id}"}`
+              body: `{"username":"${username}", "password":"${password}", "liked_user_id":${user_id}}`
           };
             fetch(`https://backend.heyko.fr/requests/like_user`, requestOptions2)
             .then(response => response.json())
