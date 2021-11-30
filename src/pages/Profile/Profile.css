@@ -32,6 +32,15 @@
         width: 100%;
     }
 }
+.Profile.button {
+
+}
+.Profile.buttons.contener {
+    display: inline;
+    line-height: 50px;
+    vertical-align: top;
+}
+/*
 @media (max-width: 408px) {
     .Profile.button.view {
         position:absolute;
@@ -39,7 +48,7 @@
         margin-top: 50px;
     }
 }
-
+*/
 .Profile.User_Contener {
     float: left;
 }
@@ -49,12 +58,13 @@
     width: 35px;
     color: #b9b9b9;
     float: left;
+    margin-top: 7px;
 }
 
 .Profile.icon_text {
     float: left;
     vertical-align: middle;
-    margin-top: 2px;
+    margin-top: 9px;
     padding: 5px;
     font-size: 16px;
 }

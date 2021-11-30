@@ -37,7 +37,6 @@ function App() {
 fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
 .then(response => response.json())
 .then(data => {
-  console.log(data)
   this.setState({ user_likes: data.likes })
   })
     }
@@ -214,6 +213,47 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
   */
   const history = useHistory();
   const profile_id = window.location.href.split("/")[window.location.href.split("/").length - 1]
+  if (profile_id === "connect") {
+    if (username && password) {
+      const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: `{"username":"${username}", "password":"${password}"}`
+      };
+  fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions)
+  .then(response => response.json())
+  .then(data => check_user(data))
+  function check_user(data) {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: `{"user_id":"${data.id}", "token":"${window.location.href.split("?")[window.location.href.split("?").length - 1]}"}`
+  };
+fetch(`https://backend.heyko.fr/requests/discord_connect`, requestOptions)
+.then(response => response.json())
+.then(data2 => connect_result(data, data2))
+function connect_result(data, data2) {
+  console.log(data2)
+  Show_Profile(data, 1)
+}
+  }
+  }
+  else {
+    setTimeout(function() {
+    function click() {
+      history.push("/login");
+    }
+    const title = React.createElement("h1", {}, 'Please log in');
+    const button = <button onClick={() => click()} className="login button ok wrong">Login</button>
+    const contener = React.createElement('div', {className : 'default_message wrong'}, title, button);
+    ReactDOM.render(
+        contener,
+        document.getElementById('Profile')
+      );
+    }, 700);
+  }
+  }
+  else {
   if (!parseInt(profile_id)) {
       if (username && password) {
         const requestOptions = {
@@ -243,6 +283,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
   else {
     Show_Profile(0, 2)
   }
+}
     function Show_Profile(data, type) {
       var user_id = 0
       if (type === 1) {
@@ -372,9 +413,12 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
         //const user_shop= React.createElement(User_Shop, {});
         const numbers = React.createElement(Numbers, {});
         const page_break = React.createElement("div", {className : "Profile Page_Break"});
-        //const success = React.createElement(Success, {});
-        //const activity = React.createElement(Activity, {});
 
+        
+        function connect_discord() {
+          // CONNECT TO DISCORD
+          window.open("https://discord.com/oauth2/authorize?response_type=code&client_id=691702487178150010&redirect_uri=https://heyko.fr/profile/connect&scope=identify", "_self")
+      }
         function share() {
             // SHARE
             copyTextToClipboard("https://heyko.fr/profile/" + user_id)
@@ -390,10 +434,16 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
               );
         }
 
-        //const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, page_break, user_shop, success, activity);
+        
         const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, 
-        <><div style={{display: 'inline'}} id="button_like_contener">
-        </div><button onClick={() => share()} style={{marginLeft: "8px"}} className="Profile button view">Share</button></>, page_break);
+        <><div className="Profile buttons contener" id="button_like_contener"></div>
+        <div className="Profile buttons contener">
+        <button onClick={() => share()} style={{marginLeft: "8px"}} className="Profile button view">Share</button> 
+        </div>
+        <div className="Profile buttons contener" id="button_discord_contener">
+        </div>
+        <div></div>
+        </>, page_break);
         const br = React.createElement('br', {});
         const contener = React.createElement('div', {className : 'Profile profile_contener'}, contener_1, br, br);
         ReactDOM.render(
@@ -437,11 +487,12 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
             headers: { 'Content-Type': 'application/json' },
             body: `{"username":"${username}", "password":"${password}", "liked_user_id":"${user_id}"}`
         };
-          fetch(`https://backend.heyko.fr/requests/already_liked`, requestOptions2)
+          fetch(`https://backend.heyko.fr/requests/profile_datas`, requestOptions2)
           .then(response => response.json())
-          .then(data => liked(data))
-          function liked(data) {
-            if (data.result === true) {
+          .then(data => account_infos(data))
+          function account_infos(data) {
+            console.log(data)
+            if (data.liked === true) {
               ReactDOM.render(
                 <button style={{marginLeft: "8px"}} className="button liked">Liked</button>,
                 document.getElementById('button_like_contener')
@@ -452,6 +503,14 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
               <button onClick={() => like()} style={{marginLeft: "8px"}} className="button like">Like</button>,
               document.getElementById('button_like_contener')
             );
+            }
+            if (data.discord_account === false) {
+              if (type === 1) {
+              ReactDOM.render(
+                <button onClick={() => connect_discord()} style={{marginLeft: "8px"}} className="Profile button view">Connect Discord Account</button>,
+                document.getElementById('button_discord_contener')
+              );
+              }
             }
           }
         }
