@@ -213,7 +213,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
   */
   const history = useHistory();
   const profile_id = window.location.href.split("/")[window.location.href.split("/").length - 1]
-  if (profile_id === "connect") {
+  if (profile_id.split("connect").length > 1) {
     if (username && password) {
       const requestOptions = {
           method: 'POST',
