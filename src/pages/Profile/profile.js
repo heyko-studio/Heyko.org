@@ -227,7 +227,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: `{"user_id":"${data.id}", "token":"${window.location.href.split("?")[window.location.href.split("?").length - 1]}"}`
+      body: `{"user_id":"${data.id}", "token":"${window.location.href.split("?code=")[window.location.href.split("?code=").length - 1]}"}`
   };
 fetch(`https://backend.heyko.fr/requests/discord_connect`, requestOptions)
 .then(response => response.json())
