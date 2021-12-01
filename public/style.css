@@ -207,6 +207,7 @@ body{
     color: white;
     z-index: 15;
     border-radius: 12px;
+    min-height: 140px;
 }
 
 

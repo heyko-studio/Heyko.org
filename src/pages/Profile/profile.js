@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { username } from '../../functions/get_username';
 import { password } from '../../functions/get_password';
 import { copyTextToClipboard } from '../../functions/copy_to_clipboard'
+import { SendMessage } from '../../elements/Messages/Success'
 
 
 function App() {
@@ -234,6 +235,9 @@ fetch(`https://backend.heyko.fr/requests/discord_connect`, requestOptions)
 .then(data2 => connect_result(data, data2))
 function connect_result(data, data2) {
   console.log(data2)
+  if (data2.result) {
+    SendMessage("Successful connection to Discord")
+  }
   Show_Profile(data, 1)
 }
   }
