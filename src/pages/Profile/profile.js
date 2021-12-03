@@ -508,14 +508,20 @@ function connect_result(data, data2) {
               document.getElementById('button_like_contener')
             );
             }
+            if (type === 1) {
             if (data.discord_account === false) {
-              if (type === 1) {
               ReactDOM.render(
                 <button onClick={() => connect_discord()} style={{marginLeft: "8px"}} className="Profile button view">Connect Discord Account</button>,
                 document.getElementById('button_discord_contener')
               );
-              }
             }
+            else {
+              ReactDOM.render(
+                <button style={{marginLeft: "8px"}} className="Profile button view clicked">Connected to Discord</button>,
+                document.getElementById('button_discord_contener')
+              );
+            }
+          }
           }
         }
         })  
