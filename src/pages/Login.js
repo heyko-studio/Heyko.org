@@ -42,7 +42,7 @@ function App() {
         };
         fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions)
             .then(response => response.json())
-            .then(data => connect(data))  
+            .then(data => connect(data))
       }
       function connect(data) {
           console.log(data)

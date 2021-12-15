@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM, { unmountComponentAtNode } from 'react-dom';
 
 export function SendMessage(content) {
-    console.log("----------------------------- -----------------------------")
+    console.log("----------------------------------------------------------")
     console.log(content)
         class Ok extends React.Component {
             constructor(props) {

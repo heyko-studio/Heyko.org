@@ -83,6 +83,9 @@
 }
 .Infos.partner-i.v2 {
     background: url("https://night-api.com/images/Logo/logo.png");
+}
+.Infos.partner-i.v3 {
+    background: url("https://www.lemondedupc.fr/assets/images/favicons/favicon-192x192.png");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
