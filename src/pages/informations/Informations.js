@@ -35,7 +35,7 @@ Heyko is an independent video game creation team
     
     <h1 className="Infos partner-title">Le Monde Du PC</h1>
     <a href="https://www.lemondedupc.fr/" target="https://www.lemondedupc.fr/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
-    <p className="Infos partner-description"><b className="Infos bold">Le Monde Du PC</b> Les sujets du numérique et du high tech ne doivent pas être compris uniquement par ceux qui les maitrisent.</p>
+    <p className="Infos partner-description"><b className="Infos bold">Le Monde Du PC</b> : Les sujets du numérique et du high tech ne doivent pas être compris uniquement par ceux qui les maitrisent.</p>
 
   </div>
 
