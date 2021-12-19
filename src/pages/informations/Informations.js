@@ -53,6 +53,18 @@ Heyko is an independent video game creation team
       Nous avons plein de nouveaux projets alors qu'est ce que vous attendez ? Rejoignez-nous !</p>
 
   </div>
+  <div style={{height: '310px'}}  className="Infos partner-contener">
+  <div className="Infos partner-image">
+    </div>
+    <div className="Infos partner-i v4"></div>
+    <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
+    
+    <h1 className="Infos partner-title">Fouderix</h1>
+    <a href="https://discord.gg/EAadBFj6jE" target="https://discord.gg/EAadBFj6jE"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
+    <p className="Infos partner-description"><b className="Infos bold">Fouderix</b> est un serveur Discord d'entraide à la programmation. Il intègre aussi la communauté de la chaîne youtube de développement Fouderix.</p>
+
+  </div>
+
   <br></br>
   </div>
   <br></br><br></br><br></br>
