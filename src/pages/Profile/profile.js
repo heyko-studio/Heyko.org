@@ -437,8 +437,6 @@ function connect_result(data, data2) {
                 document.getElementById('message')
               );
         }
-
-        
         const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, 
         <><div className="Profile buttons contener" id="button_like_contener"></div>
         <div className="Profile buttons contener">
@@ -526,6 +524,40 @@ function connect_result(data, data2) {
               );
             }
           }
+          const requestOptions2 = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: `{"user_id":"${user_id}"}`
+        };
+          fetch(`https://backend.heyko.fr/requests/get_user_items`, requestOptions2)
+          .then(response => response.json())
+          .then(data => Load_Inventory(data))
+          function Load_Inventory(data) {
+            console.log(data)
+            if (data.items) {
+              ReactDOM.render(
+                <div className='Profile Inventory Contener'>
+                  <h2 className='Profile Inventory Title'>Inventory</h2>
+                  {
+                    data.items.map((element, index) =>
+                      <div className='Profile Inventory Item' key={"Item_" + index}>
+                        <div style={{backgroundImage: `url("${element.icon}")`}} className='Profile Inventory Item_Icon'></div>
+                      </div>
+                    )
+                  }
+                </div>,
+                document.getElementById('Inventory')
+              );
+            }
+            else {
+              ReactDOM.render(
+                <div className='Profile Inventory Contener Empty'>
+                  <p className='Profile Inventory Message'>Empty inventory</p>
+                </div>,
+                document.getElementById('Inventory')
+              );
+            }
+          }
           }
         }
         })  
@@ -562,6 +594,7 @@ function connect_result(data, data2) {
     return(
         <>
         <div id="Profile"></div>
+        <div id="Inventory"></div>
         <div id="message"></div>
         </>
     )

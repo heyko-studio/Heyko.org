@@ -118,7 +118,6 @@ body{
 }
 .contact-form input::placeholder, .contact-form textarea::placeholder {
     color: rgb(122, 122, 122);
-
 }
 .contact-form textarea {
     resize: none;

@@ -219,3 +219,53 @@
     height: 80px;
     border:none;
 }
+
+.Profile.Inventory.Contener {
+    min-height: 200px;
+    margin: 25px;
+    padding: 25px;
+    border: 1px solid #b9b9b9;
+    border-radius: 12px;
+    max-width: 972px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.Profile.Inventory.Contener.Empty {
+    border: 2px dashed #afafaf;
+}
+.Profile.Inventory.Message {
+    font-size: 25px;
+    color: #737373;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+.Profile.Inventory.Item {
+    background-color: #ebebeb;
+    border-radius: 12px;
+    width: 121.4px;
+    height: 121.4px;
+    display: inline-block;
+    margin: 5px;
+    transition: 0.2s;
+    position: relative;
+}
+.Profile.Inventory.Item:hover {
+    background-color: #cecece;
+}
+.Profile.Inventory.Item_Icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+
+.Profile.Inventory.Title {
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 25px;
+}
