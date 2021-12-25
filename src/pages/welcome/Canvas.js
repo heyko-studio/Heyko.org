@@ -5,8 +5,10 @@
     import { faUndo } from '@fortawesome/free-solid-svg-icons'
     import { faRedo } from '@fortawesome/free-solid-svg-icons'
     import  { faPalette } from '@fortawesome/free-solid-svg-icons'
+    import { useHistory } from "react-router-dom";
 
     function MapCanvas() {
+        const history = useHistory();
         let tool = 0;
         let last_action = undefined;
         let actions = []
@@ -654,7 +656,7 @@
                     const requestOptions = {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: `{"username":"${username}"}`
+                    body: `{"user_id":"${data.id}"}`
                 };
                 fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
                     .then(response => response.json())
@@ -666,9 +668,19 @@
             function load_profile(data) {
                 console.log(data)
                 if (data.user_image) {
-                actions = data.user_image
-                draw(canvasRef.current.getContext('2d'))
-                count()
+                    data.user_image.forEach(element => {
+                        if (Array.isArray(element)) {
+                            actions.push(element)
+                        }
+                        else {
+                            background = true
+                            background_color = element
+                            document.getElementById("checkbox_background_color").checked = true
+                            document.getElementById("picker_background_color").value = element
+                        }
+                        draw(canvasRef.current.getContext('2d'))
+                        count()
+                    });
                 }
             }
             
@@ -769,14 +781,19 @@
             
             function save_result(data) {
                 console.log(data)
+                if (window.location.href.split("/welcome").length > 1) {
                 window.location = 'welcome/end';
+                }
+                else {
+                    history.push("../profile")
+                }
             }
         
         }
     return <>
     <div>
     <SHOW_TOOLBAR />
-    <button onClick={() => next()} className="button ok Welcome finish_button">Terminer</button>
+    <button onClick={() => next()} className="button ok Welcome finish_button">Finish</button>
     <div id="tool_bar_colors" className="Welcome profile_tool_bar_colors">
     <input defaultChecked={true} id="checkbox_fill_color" type="checkbox" className="Welcome Color_Checkbox"></input><p className="Welcome profile_tool_bar_titles">Fill color</p>
         <input id="picker_fill_color" defaultValue="#353535" type="color" className="Welcome Color_picker"></input>

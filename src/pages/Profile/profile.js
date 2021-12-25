@@ -385,7 +385,17 @@ function connect_result(data, data2) {
                 .then(user_description => {
         console.log(user_description)
         console.log(avatar)
-        const img_avatar = <canvas width="500px" height="500px" className="Profile Avatar" id="profile_img_2" />
+        var img_avatar = undefined
+        if (type === 1) {
+            img_avatar = <div className='Profile Image-Edit Contener'><canvas width="500px" height="500px" className="Profile Avatar" id="profile_img_2" /><button onClick={() => history.push("edit-profile/avatar")} className='Profile Edit_Profile_Button'>
+              <svg className="Profile Edit_Profile_Button_Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+            </button></div>
+        }
+        else {
+        img_avatar = <canvas width="500px" height="500px" className="Profile Avatar" id="profile_img_2" />
+        }
         var title = undefined
         if (type === 2) {
           const requestOptions = {
@@ -517,13 +527,14 @@ function connect_result(data, data2) {
                 document.getElementById('button_discord_contener')
               );
             }
-            else {
+          }
+          if (data.discord_account === true) {
               ReactDOM.render(
                 <button style={{marginLeft: "8px"}} className="Profile button view clicked">Connected to Discord</button>,
                 document.getElementById('button_discord_contener')
               );
             }
-          }
+          
           const requestOptions2 = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

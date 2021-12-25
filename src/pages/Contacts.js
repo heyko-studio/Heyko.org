@@ -116,8 +116,6 @@ function App() {
     <div id="background"></div>
 <div id="login_contener"></div>
 <img width="700px" className="heyko_banner_1" src="./img/heyko.png" alt="Heyko banner"></img>
-
-
 <section className="form-container">
     <h2 id="text1">Contact our team</h2>
     <div className="hr"></div>

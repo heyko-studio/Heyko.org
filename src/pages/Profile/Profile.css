@@ -270,3 +270,31 @@
     font-weight: bold;
     font-size: 25px;
 }
+
+.Profile.Edit_Profile_Button {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 165px;
+    right: -20px;
+    padding: 0;
+    transition: 0.3s;
+}
+.Profile.Edit_Profile_Button_Icon {
+    width: 40px;
+    height: 40px;
+    color: rgb(39, 39, 39);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.Profile.Edit_Profile_Button:hover {
+    background-color: rgb(0, 162, 255);
+    border-radius: 45px;
+    padding: 5px;
+}
+.Profile.Edit_Profile_Button:hover .Profile.Edit_Profile_Button_Icon {
+color: rgb(255, 255, 255);
+}
+.Profile.Image-Edit.Contener {
+    position: relative;
+}
