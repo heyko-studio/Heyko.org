@@ -35,7 +35,7 @@ function App() {
       <Route exact path="/welcome" component={Welcome}/>
       <Route exact path="/welcome/end" component={Welcome_End}/>
       <Route path="/get_user_avatar" component={get_user_avatar}/>
-      <Route exact path="/Games/Poly-Story" component={Game_Poly_Story}/>
+      <Route exact path="/games/poly-story" component={Game_Poly_Story}/>
       <Route
     render={({ location }) => !['/welcome'].includes(location.pathname) && !['/get_user_avatar'].includes(location.pathname) && !['/edit-profile/avatar'].includes(location.pathname)
         ? <>

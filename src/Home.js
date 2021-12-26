@@ -46,33 +46,34 @@ function App() {
           </div>
           </div>
 
+
+
           <div className="Game">
           <div className="Home_Game background">
-            <div className="Home Game_Background v1">
-          <h2 className="Home_Game_Title">Five Mysteries</h2>
-          </div>
-          <br></br><br></br><br></br><br></br>
-          <p className="Home_Game_Description">In a world where imagination is real...<br></br>
-          Many creatures seek absolute power through a crystal with divine powers...<br></br> But a force beyond them will soon appear...</p>
-          <a className="Home Button More_2" href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">
-            Coming soon
-          </a>
-          </div>
-          </div>
-
-
-          <div className="Game">
-          <div className="Home_Game background_3">
-          <div className="Home Game_Background v3">
+            <div className="Home Game_Background v3">
           <h2 className="Home_Game_Title">Poly Story</h2>
           </div>
           <br></br><br></br><br></br><br></br>
-          <p className="Home_Game_Description_2">Poly Story is a game of exploration of a magical and immense world,<br></br> dotted with villages, caves and dragons!<br></br> Run to discover this beautiful universe!</p>
+          <p className="Home_Game_Description">Poly Story is a game of exploration of a magical and immense world,<br></br> dotted with villages, caves and dragons!<br></br> Run to discover this beautiful universe!</p>
+          <button className="Home Button More_2" onClick={() => history.push("games/poly-story")}>
+            More
+          </button>
+          </div>
+        </div>
+
+        <div className="Game">
+        <div className="Home_Game background_3">
+          <div className="Home Game_Background">
+          <h2 className="Home_Game_Title">Five Mysteries</h2>
+          </div>
+          <br></br><br></br><br></br><br></br>
+          <p className="Home_Game_Description_2">In a world where imagination is real...<br></br>
+          Many creatures seek absolute power through a crystal with divine powers...<br></br> But a force beyond them will soon appear...</p>
           <a className="Home Button Join" href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">
             Coming soon
           </a>
           </div>
-        </div>
+          </div>
 
         <div className="Game">
           <div className="Home_Game background_4">
@@ -95,9 +96,6 @@ function App() {
         </div>
         </div>
 
-        <div className="home videos contener">
-          <iframe src="https://www.youtube.com/embed/-N-qRPPjP3E" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </div>
         <h2 className="Title_2 v2">What is Heyko?</h2>
         <div className="Description">
         <p>

@@ -1,0 +1,155 @@
+.Games.videos.contener {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.062);
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 0 10px 10px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Games.videos iframe {
+    height: 315px;
+    width: 100%;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+@media (max-width: 690px) {
+    .Games.videos iframe {
+        margin:auto;
+        display: block;
+    }
+    .Games.videos.contener {
+        padding-left: 0;
+        padding-right: 0;
+        display: block;
+    }
+}
+
+.Games.decription {
+    padding: 25px;
+    width: 100%;
+    padding: 10px;
+    color: rgb(24, 25, 27);
+    font-size: 22px;
+    display: inline-flex;
+    align-items: top;
+    justify-content: center;
+    margin-top: 50px;
+}
+.Games.descriptionImage {
+    background:  url("img/poly-story/background.webp");
+    background-size: cover;
+    width: 900px;
+    max-width: 100%;
+    aspect-ratio: calc(1095 / 500);
+}
+
+.Games.decription_text {
+    max-width: 500px;
+    margin-left: 40px;
+}
+@media (max-width: 920px) {
+    .Games.decription {
+        display: unset;
+        width: 500px;
+        justify-content: unset;
+    }
+}
+@media (max-width: 585px) {
+    .Games.decription_text {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+.Game.download {
+    display: inline-flex;
+    align-items: top;
+    justify-content: center;
+    width: 100%;
+}
+
+.Games.download_title {
+    font-size: 35px;
+    color: rgb(24, 25, 27);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.Game.Platform {
+    width: 100px;
+    height: 100px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.Game.Platform.v1 {
+    background: url("./img/Windows.png");
+    background-size: 100%;
+}
+.Game.Platform.v2 {
+    background: url("./img/Android.png");
+    background-size: 100%;
+}
+.Game.Platform.v3 {
+    background: url("./img/Linux.png");
+    background-size: 100%;
+}
+
+.Game.Device_Contener {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.Game.Devices_Contener {
+    display: inline-flex;
+    align-items: top;
+    justify-content: center;
+    width: 100%;
+}
+
+.Game.Device {
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 1;
+
+}
+.Game.Device_Description {
+    color: rgb(24, 25, 27);
+    font-size: 20px;
+    margin-left: 15px;
+}
+.Game.Device_Contener_2 {
+    display: flex;
+}
+.Game.Device.v1 {
+    background: url("./img/desktop.png");
+    background-size: 100%;
+}
+.Game.Device.v2 {
+    background: url("./img/smartphone.png");
+    background-size: 100%;
+}
+.Game.Device_Price {
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    letter-spacing: 7px;
+    color: rgb(24, 25, 27);
+    display: block;
+}
