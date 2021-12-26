@@ -80,7 +80,6 @@
     const canvasRef = useRef(null)
 
     useEffect(() => {
-        const scale = window.devicePixelRatio;
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d')
         context.scale(1, 1);
