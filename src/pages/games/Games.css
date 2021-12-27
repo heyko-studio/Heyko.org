@@ -121,13 +121,13 @@
     align-items: top;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .Game.Device {
     width: 150px;
     height: 150px;
     aspect-ratio: 1;
-
 }
 .Game.Device_Description {
     color: rgb(24, 25, 27);
