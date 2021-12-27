@@ -27,6 +27,7 @@ Heyko is an independent video game creation team
 
   </div>
 
+
   <div style={{height: '310px'}}  className="Infos partner-contener">
   <div className="Infos partner-image">
     </div>
@@ -39,6 +40,16 @@ Heyko is an independent video game creation team
 
   </div>
 
+  <div style={{height: '310px'}}  className="Infos partner-contener">
+  <div className="Infos partner-image">
+    </div>
+    <div className="Infos partner-i v5"></div>
+    <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
+    
+    <h1 className="Infos partner-title">Tech'NCode</h1>
+    <a href="https://discord.gg/Mf8ZFThSzp" target="https://discord.gg/Mf8ZFThSzp"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
+    <p className="Infos partner-description"><b className="Infos bold">Tech'NCode</b> est une communauté autour de l'informatique et de la programmation. Nous faisons aussi des jeux vidéos, pour plus d'informations, rejoignez notre Discord !</p>
+  </div>
 
   <div style={{height: '310px'}}  className="Infos partner-contener">
   <div className="Infos partner-image">

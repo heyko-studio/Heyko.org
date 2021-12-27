@@ -100,6 +100,12 @@
     background-repeat  : no-repeat;
     background-size    : cover;
 }
+.Infos.partner-i.v5 {
+    background: url("./partners_img/techncode.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
 .Infos.partner-description {
     position: absolute;
     color: rgb(146, 146, 146);
