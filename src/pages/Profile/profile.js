@@ -45,7 +45,7 @@ fetch(`https://backend.heyko.fr/requests/get_likes`, requestOptions)
       return (
         <>
           <p id="user_likes" className="Profile icon_text">{this.state.user_likes}</p>
-  <svg className="Profile number_icons" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg id="User Like Button" className="Profile number_icons button" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
   </svg>
   <p className="Profile icon_text">0</p>
@@ -448,11 +448,17 @@ function connect_result(data, data2) {
               );
         }
         const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, 
-        <><div className="Profile buttons contener" id="button_like_contener"></div>
+        <>
+                  <br className='Profile buttons br'></br><br className='Profile buttons br'></br><br className='Profile buttons br'></br>
         <div className="Profile buttons contener">
-        <button onClick={() => share()} style={{marginLeft: "8px"}} className="Profile button view">Share</button> 
+          <div className="Profile button contener" id="button_like_contener"></div>
+        <div className="Profile button contener">
+        <svg className='Profile number_icons Button' style={{marginLeft: "8px"}} onClick={() => share()} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+        </svg>
         </div>
-        <div className="Profile buttons contener" id="button_discord_contener">
+        <div className="Profile button contener" id="button_discord_contener">
+        </div>
         </div>
         <div></div>
         </>, page_break);
@@ -465,10 +471,7 @@ function connect_result(data, data2) {
           draw(avatar)
           function like() {
             ReactDOM.unmountComponentAtNode(document.getElementById("button_like_contener"))
-            ReactDOM.render(
-              <button style={{marginLeft: "8px"}} className="button liked">Liked</button>,
-              document.getElementById('button_like_contener')
-            );
+            document.getElementById("User Like Button").style.color = "#e66a89"
             const requestOptions2 = {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -506,34 +509,35 @@ function connect_result(data, data2) {
             console.log(data)
             const money = data.money
             if (data.liked === true) {
-              ReactDOM.render(
-                <button style={{marginLeft: "8px"}} className="button liked">Liked</button>,
-                document.getElementById('button_like_contener')
-              );
+              document.getElementById("User Like Button").style.color = "#e66a89"
             }
             else {
-            ReactDOM.render(
-              <button onClick={() => like()} style={{marginLeft: "8px"}} className="button like">Like</button>,
-              document.getElementById('button_like_contener')
-            );
+              document.getElementById("User Like Button").onclick = () => like()
             }
             if (money) {
               document.getElementById("number_money").innerHTML = money / 100
             }
             if (type === 1) {
-            if (data.discord_account === false) {
+            if (data.discord_account === true) {
               ReactDOM.render(
-                <button onClick={() => connect_discord()} style={{marginLeft: "8px"}} className="Profile button view">Connect Discord Account</button>,
+                <img className='Profile Discord Button' src="https://heyko.fr/img/discord.svg"></img>,
+                document.getElementById('button_discord_contener')
+              );
+            } else {
+              ReactDOM.render(
+                <svg onClick={() => connect_discord()} className='Profile Discord Button' viewBox="0 0 127.14 96.36"><g id="图层_2" data-name="图层 2"><g id="Discord_Logos" data-name="Discord Logos"><g id="Discord_Logo_-_Large_-_White" data-name="Discord Logo - Large - White"><path class="cls-1" d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></g></g></g></svg>,
                 document.getElementById('button_discord_contener')
               );
             }
           }
-          if (data.discord_account === true) {
+          else {
+            if (data.discord_account === true) {
               ReactDOM.render(
-                <button style={{marginLeft: "8px"}} className="Profile button view clicked">Connected to Discord</button>,
+                <img className='Profile Discord Button' src="https://heyko.fr/img/discord.svg"></img>,
                 document.getElementById('button_discord_contener')
               );
             }
+          }
           
           const requestOptions2 = {
             method: 'POST',
@@ -549,6 +553,7 @@ function connect_result(data, data2) {
               ReactDOM.render(
                 <div className='Profile Inventory Contener'>
                   <h2 className='Profile Inventory Title'>Inventory</h2>
+                  <div className='Profile Items Contener'>
                   {
                     data.items.map((element, index) =>
                       <div className='Profile Inventory Item' key={"Item_" + index}>
@@ -556,6 +561,7 @@ function connect_result(data, data2) {
                       </div>
                     )
                   }
+                  </div>
                 </div>,
                 document.getElementById('Inventory')
               );

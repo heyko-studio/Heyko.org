@@ -32,13 +32,17 @@
         width: 100%;
     }
 }
-.Profile.button {
-
+.Profile.buttons.br {
+    display: none;
 }
 .Profile.buttons.contener {
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Profile.button.contener {
     line-height: 50px;
     vertical-align: top;
+    border-radius: 90px;
 }
 /*
 @media (max-width: 408px) {
@@ -242,15 +246,21 @@
     line-height: 100px;
     text-align: center;
 }
+.Profile.Items.Contener {
+    display: flex;
+    flex-wrap: wrap;
+}
 .Profile.Inventory.Item {
     background-color: #ebebeb;
     border-radius: 12px;
     width: 121.4px;
     height: 121.4px;
-    display: inline-block;
-    margin: 5px;
+    margin-top: 20px;
     transition: 0.2s;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
+
 }
 .Profile.Inventory.Item:hover {
     background-color: #cecece;
@@ -297,4 +307,18 @@ color: rgb(255, 255, 255);
 }
 .Profile.Image-Edit.Contener {
     position: relative;
+}
+
+.Profile.number_icons.Button {
+    color: rgb(0, 162, 255);
+}
+
+.Profile.Discord.Button {
+    width: 37px;
+    margin-left: 14px;
+    margin-top: 10px;
+}
+
+.cls-1 {
+    fill:#b9b9b9;
 }
