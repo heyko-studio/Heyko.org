@@ -54,7 +54,7 @@ function App() {
           <h2 className="Home_Game_Title">Poly Story</h2>
           </div>
           <br></br><br></br><br></br><br></br>
-          <p className="Home_Game_Description">Poly Story is a game of exploration of a magical and immense world,<br></br> dotted with villages, caves and dragons!<br></br> Run to discover this beautiful universe!</p>
+          <p className="Home_Game_Description">Poly Story is a game of exploration of a magical and vast world, dotted with villages, caves and dragons! Run to discover this beautiful universe!<br></br> Fight with your friends, and annihilate all the enemies that cross your path!</p>
           <button className="Home Button More_2" onClick={() => {window.scrollTo(0, 0);history.push("games/poly-story")}}>
             More
           </button>
