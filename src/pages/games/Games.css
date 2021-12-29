@@ -1,3 +1,32 @@
+.Games.title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Games.title_text {
+    font-weight: bold;
+    font-size: 100px;
+}
+@media (max-width: 502px) {
+    .Games.title_text {
+        font-size: 70px;
+    }
+}
+@media (max-width: 325px) {
+    .Games.title_text {
+        font-size: 50px;
+    }
+}
+.Games.icon {
+    height: 250px;
+    width: 250px;
+}
+.Games.icon.v1 {
+    background: url("./img/poly-story/Logo.webp");
+    background-size: 100%;
+}
+
+
 .Games.videos.contener {
     margin-top: 50px;
     margin-bottom: 50px;

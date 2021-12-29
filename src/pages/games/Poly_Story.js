@@ -4,6 +4,10 @@ import './Games.css'
 function App() {
   return (
     <>
+    <div className='Games title'>
+    <div className='Games icon v1'></div>
+    <h1 className='Games title_text'>Poly Story</h1>
+    </div>
     <div className='Games decription'>
       <div className='Games descriptionImage'></div>
       <p className='Games decription_text'>
