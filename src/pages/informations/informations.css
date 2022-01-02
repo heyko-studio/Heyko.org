@@ -106,6 +106,12 @@
     background-repeat  : no-repeat;
     background-size    : cover;
 }
+.Infos.partner-i.v6 {
+    background: url("./partners_img/clasicode.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
 .Infos.partner-description {
     position: absolute;
     color: rgb(146, 146, 146);

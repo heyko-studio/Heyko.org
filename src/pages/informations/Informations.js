@@ -54,6 +54,20 @@ Heyko is an independent video game creation team
   <div style={{height: '310px'}}  className="Infos partner-contener">
   <div className="Infos partner-image">
     </div>
+    <div className="Infos partner-i v6"></div>
+    <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
+    
+    <h1 className="Infos partner-title">Clasi Code</h1>
+    <a href="https://discord.gg/wkCKyK7QYa" target="https://discord.gg/wkCKyK7QYa"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
+    <p className="Infos partner-description"><b className="Infos bold">Clasi Code</b> 
+      c'est deux amis passionés par l'informatique et le monde de la programmation. Sur ce serveur discord vous trouverez de l'aide pour vos projets / erreurs;<br></br>
+      Vous pourrez aussi y poster vos projets pour que les membres suivent votre aventure.</p>
+
+  </div>
+
+  <div style={{height: '310px'}}  className="Infos partner-contener">
+  <div className="Infos partner-image">
+    </div>
     <div className="Infos partner-i v2"></div>
     <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
     
