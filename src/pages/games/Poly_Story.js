@@ -1,9 +1,18 @@
 import React from 'react';
 import './Games.css'
+import { Helmet } from 'react-helmet';
 
 function App() {
   return (
     <>
+      <Helmet>
+        <title>Play Poly Story on mobile and computer in multiplayer - Heyko</title>
+          <meta content="Poly Story - Heyko" property="og:title" />
+          <meta content="Play Poly Story on mobile and computer in multiplayer" property="og:description" />
+          <meta content="https://heyko.fr/games/poly-story" property="og:url" />
+          <meta content="https://embed.com/embedimage.png" property="og:image" />
+          <meta content="#2ea0e8" data-react-helmet="true" name="theme-color" />
+      </Helmet>
     <div className='Games title'>
     <div className='Games icon v1'></div>
     <h1 className='Games title_text'>Poly Story</h1>
