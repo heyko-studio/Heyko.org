@@ -182,3 +182,16 @@
     color: rgb(24, 25, 27);
     display: block;
 }
+
+.Game.Download_Message.Contener {
+    background-color: #2ea0e8;
+    width: 100%;
+    padding: 15px;
+    min-height: 150px;
+}
+.Game.Download_message.description {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}

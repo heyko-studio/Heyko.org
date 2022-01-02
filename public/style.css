@@ -235,8 +235,16 @@ body{
     right: 0;
     z-index: 10;
 }
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .button {
     cursor: pointer;
+}
+.a {
+    text-decoration: none;
 }
 .Button {
     cursor: pointer;
@@ -249,6 +257,16 @@ body{
     margin-bottom: -25px;
     text-decoration: none;
     border: 2px solid #ffffff;
+    border-radius: 90px;
+}
+.button.white {
+    font-weight: bold;
+    padding: 8px 40px;
+    color: #2ea0e8;
+    background-color: white;
+    margin-bottom: -25px;
+    text-decoration: none;
+    border: none;
     border-radius: 90px;
 }
 .button.view {

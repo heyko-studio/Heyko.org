@@ -42,8 +42,13 @@ function App() {
     </div>
     <p className='Game Device_Price'>5,99 $</p>
     </div>
-
       </div>
+      <div className="Game Download_Message Contener">
+      <p className='Game Download_message description'>
+      The game is still in development and is not yet available. For more information, join our discord server 🎮
+      </p>
+      <a className='a' href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn"><button className='button white center'>Join our discord</button></a>
+    </div>
             <div className="Games videos contener">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/ftnE6xgheo8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           <iframe src="https://www.youtube.com/embed/-N-qRPPjP3E" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
