@@ -96,6 +96,11 @@ function App() {
         </div>
         </div>
 
+        <div className='InfoBlock v1'>
+            <p>Don't hesitate to visit the full version of our website 😉</p>
+            <button className='button ok' onClick={() => window.open("../", "_parent")}>Access</button>
+        </div>
+
         <h2 className="Title_2 v2">What is Heyko?</h2>
         <div className="Description">
         <p>

@@ -402,3 +402,13 @@ html, body {
     border-bottom-right-radius: 10px;
 }
 
+.InfoBlock {
+    width: 100%;
+    background:#59b3eb;
+    min-height: 160px;
+    padding: 15px;
+}
+.InfoBlock p {
+    color: white;
+    font-size: 25px;
+}
