@@ -106,7 +106,7 @@ function App() {
           <a href="https://twitter.com/heyko_studio" target="https://twitter.com/heyko_studio" className="Home_Social"><img alt="Twitter" className="Home_Social_Image" src="../img/Twitter.svg"></img></a>
           <a href="https://utip.io/heykostudio/" target="https://utip.io/heykostudio/" className="Home_Social"><img alt="Utip" className="Home_Social_Image" src="../img/Utip.webp"></img></a>
           <br></br><br></br>
-          <button onClick={() => window.open("../games/poly-story", "_parent")} className="button view">More informations</button>
+          <button onClick={() => window.open("../informations", "_parent")} className="button view">More informations</button>
           </div>
           <br></br>
     </>
