@@ -14,12 +14,13 @@ import Welcome_End from './pages/welcome/End'
 import get_user_avatar from './pages/Profile/avatar'
 import Game_Poly_Story from './pages/games/Poly_Story'
 import Edit_Profile_Avatar from './pages/Profile/Edit_Profile_Avatar'
+import Embed from './pages/informations/embed'
 
 function App() {
   return (
     <div className="App">
       <Route 
-    render={({ location }) => !['/welcome'].includes(location.pathname) && !['/get_user_avatar'].includes(location.pathname) && !['/edit-profile/avatar'].includes(location.pathname)
+    render={({ location }) => !['/welcome'].includes(location.pathname) && !['/informations/embed'].includes(location.pathname)  && !['/get_user_avatar'].includes(location.pathname) && !['/edit-profile/avatar'].includes(location.pathname)
         ? <NavBar/>
         : null
     }
@@ -36,8 +37,9 @@ function App() {
       <Route exact path="/welcome/end" component={Welcome_End}/>
       <Route path="/get_user_avatar" component={get_user_avatar}/>
       <Route exact path="/games/poly-story" component={Game_Poly_Story}/>
+      <Route exact path="/informations/embed" component={Embed}/>
       <Route
-    render={({ location }) => !['/welcome'].includes(location.pathname) && !['/get_user_avatar'].includes(location.pathname) && !['/edit-profile/avatar'].includes(location.pathname)
+    render={({ location }) => !['/welcome'].includes(location.pathname) && !['/informations/embed'].includes(location.pathname) && !['/get_user_avatar'].includes(location.pathname) && !['/edit-profile/avatar'].includes(location.pathname)
         ? <>
         <Footer/>     
           <section id="Footer_decal"></section>
