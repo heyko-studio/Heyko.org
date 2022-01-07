@@ -403,10 +403,13 @@ html, body {
 }
 
 .InfoBlock {
-    width: 100%;
+    width: fit-content;
     background:#59b3eb;
-    min-height: 160px;
-    padding: 15px;
+    height: fit-content;
+    padding:40px;
+    border-radius: 12px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 .InfoBlock p {
     color: white;
