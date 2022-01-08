@@ -97,7 +97,7 @@ function App() {
         </div>
 
         <div className='InfoBlock v1'>
-            <p>Don't hesitate to visit the full version of our website 😉</p>
+            <p>Full version of the website</p>
             <button className='button ok' onClick={() => window.open("../", "_parent")}>Access</button>
         </div>
 
