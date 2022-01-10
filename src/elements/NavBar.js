@@ -7,198 +7,220 @@ import ReactDOM from 'react-dom';
 
 
 
-
 function NavBar() {
+  var exists = undefined
   const history = useHistory();
-  class PROFILE_BUTTON extends React.Component {
-    constructor(props) {
-      super(props);
-    this.state = {
-      image_link: 'img/profile.png'
-    }
+const { useState, useRef, useEffect } = React;
+const Load = (value) => {
+  const firstUpdate = useRef(true);
   
-    }
-    componentDidMount() {
-      function show_login_button() {
-        ReactDOM.render(
-          <button onClick={() => history.push("login")} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Login</button>,
-          document.getElementById('Profile_Button')
-        );
-      }
-      function profile() {
-        history.push("/profile");
-      }
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: `{"username":"${username}", "password":"${password}"}`
-    };
-      fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        if (data.exists === true) {
-          ReactDOM.render(
-            <button onClick={() => profile()} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Profile</button>,
-            document.getElementById('Profile_Button')
-          );
-          class Profile_burger_link extends React.Component {
-            render() {
-              return (
-                  <>
-                  <li><a href="/profile">Profile</a></li>
-                    </> 
-              );
-            }
+  useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      class PROFILE_BUTTON extends React.Component {
+        constructor(props) {
+          super(props);
+        this.state = {
+          image_link: 'img/profile.png'
+        }
+      
+        }
+        componentDidMount() {
+          function show_login_button() {
+            ReactDOM.render(
+              <button onClick={() => history.push("login")} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Login</button>,
+              document.getElementById('Profile_Button')
+            );
           }
-          document.getElementById("burger_login_page_link").style = "display:none"
-          var BURGER_PROFILE_BUTTON = new Profile_burger_link().render;
-          ReactDOM.render(
-            <BURGER_PROFILE_BUTTON />,
-          document.getElementById('Profile_burger_link')
-          );
-          
-    }
-    else {
-      show_login_button()
-    }
-    })
-    }
-    render() {
-      return (
-        <div id="Profile_Button">
+          function profile() {
+            history.push("/profile");
+          }
+            if (exists) {
+              ReactDOM.render(
+                <button onClick={() => profile()} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Profile</button>,
+                document.getElementById('Profile_Button')
+              );
+              class Profile_burger_link extends React.Component {
+                render() {
+                  return (
+                      <>
+                      <li><a href="/profile">Profile</a></li>
+                        </> 
+                  );
+                }
+              }
+              document.getElementById("burger_login_page_link").style = "display:none"
+              var BURGER_PROFILE_BUTTON = new Profile_burger_link().render;
+              ReactDOM.render(
+                <BURGER_PROFILE_BUTTON />,
+              document.getElementById('Profile_burger_link')
+              );
               
-        </div>
-      );
-    }
-  
-  }
-  class PROFILE extends React.Component {
-    constructor(props) {
-      super(props);
-    this.state = {
-      image_link: 'img/profile.png'
-    }
-  
-    }
-    componentDidMount() {
-  
-      function getCookie(cName) {
-        const name = cName + "=";
-        const cDecoded = decodeURIComponent(document.cookie);
-        const cArr = cDecoded.split('; ');
-        let res;
-        cArr.forEach(val => {
-          if (val.indexOf(name) === 0) res = val.substring(name.length);
-        })
-        return res
+        }
+        else {
+          show_login_button()
+        }
+        
+        }
+        render() {
+          return (
+            <div id="Profile_Button">
+                  
+            </div>
+          );
+        }
+      
       }
-      const username = getCookie("username")
-      const password = getCookie("password")
-      if (username && password) {
-      const requestOptions2 = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: `{"username":"${username}", "password":"${password}"}`
-    };
-  fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions2)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data)
-          if (data.exists === true) {
-          const requestOptions = {
+      class PROFILE extends React.Component {
+        constructor(props) {
+          super(props);
+        this.state = {
+          image_link: 'img/profile.png'
+        }
+      
+        }
+        componentDidMount() {
+      
+          function getCookie(cName) {
+            const name = cName + "=";
+            const cDecoded = decodeURIComponent(document.cookie);
+            const cArr = cDecoded.split('; ');
+            let res;
+            cArr.forEach(val => {
+              if (val.indexOf(name) === 0) res = val.substring(name.length);
+            })
+            return res
+          }
+          const username = getCookie("username")
+          const password = getCookie("password")
+          if (username && password) {
+          const requestOptions2 = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: `{"user_id":"${data.id}"}`
+            body: `{"username":"${username}", "password":"${password}"}`
         };
-        fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
+      fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions2)
             .then(response => response.json())
-            .then(data => draw(data))  
-  
-            const draw = (data) => {
+            .then(data => {
               console.log(data)
-              const actions = data.user_image
-              if (actions) {
-              const canvas = document.getElementById("profile_img")
-              const ctx = canvas.getContext('2d')
-              var background_color = undefined
-              var background = false
-              if (!Array.isArray(actions[actions.length - 1])) {
-              background_color = actions[actions.length - 1]
-              background = true
-              }
-              this.setState({ image_link: data.user_image })
-              ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-              if (background) {
-                  ctx.fillStyle = background_color;
-                  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-              }
-              actions.forEach(element => {
-                  const tool_type = element[5]
-                  if (tool_type === 0 || tool_type === 1 ||tool_type === 2) {
-                  const x = element[0]
-                  const y = element[1]
-                  const color = element[4]
-                  if (tool_type === 0) {
-                      ctx.lineWidth = element[6]
-                      ctx.strokeStyle = color
-                      ctx.beginPath()
-                      ctx.moveTo(element[2], element[3]);
-                      ctx.lineTo(x, y);
-                      ctx.stroke()
+              exists = data.exists
+              ReactDOM.render(
+                <PROFILE_BUTTON />,
+              document.getElementById('profile_button')
+              );
+              if (data.exists === true) {
+              const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: `{"user_id":"${data.id}"}`
+            };
+            fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
+                .then(response => response.json())
+                .then(data => draw(data))  
+      
+                const draw = (data) => {
+                  console.log(data)
+                  const actions = data.user_image
+                  if (actions) {
+                  const canvas = document.getElementById("profile_img")
+                  const ctx = canvas.getContext('2d')
+                  var background_color = undefined
+                  var background = false
+                  if (!Array.isArray(actions[actions.length - 1])) {
+                  background_color = actions[actions.length - 1]
+                  background = true
                   }
-                  else {
-                      if (tool_type === 1) {
-                          ctx.strokeStyle = element[4][1]
-                          ctx.lineWidth = element[4][4]
-                          ctx.fillStyle = element[4][0]
+                  this.setState({ image_link: data.user_image })
+                  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+                  if (background) {
+                      ctx.fillStyle = background_color;
+                      ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                  }
+                  actions.forEach(element => {
+                      const tool_type = element[5]
+                      if (tool_type === 0 || tool_type === 1 ||tool_type === 2) {
+                      const x = element[0]
+                      const y = element[1]
+                      const color = element[4]
+                      if (tool_type === 0) {
+                          ctx.lineWidth = element[6]
+                          ctx.strokeStyle = color
                           ctx.beginPath()
-                          ctx.arc(element[2], element[3], (Math.abs(element[2] - x) + Math.abs(element[3] - y)), 0, 2 * Math.PI);
-                              if (element[4][2]) {
-                              ctx.fill()
-                              }
-                              if (element[4][3]) {
-                              ctx.stroke()
-                              }
-  
+                          ctx.moveTo(element[2], element[3]);
+                          ctx.lineTo(x, y);
+                          ctx.stroke()
                       }
                       else {
-                      if (tool_type === 2) {
-                          ctx.strokeStyle = element[4][1]
-                          ctx.lineWidth = element[4][4]
-                          ctx.fillStyle = element[4][0]
-                          ctx.beginPath()
-                          ctx.rect(element[2], element[3], element[0] - element[2], element[1] - element[3]);
-                              if (element[4][2]) {
-                              ctx.fill()
-                              }
-                              if (element[4][3]) {
-                              ctx.stroke()
-                              }
+                          if (tool_type === 1) {
+                              ctx.strokeStyle = element[4][1]
+                              ctx.lineWidth = element[4][4]
+                              ctx.fillStyle = element[4][0]
+                              ctx.beginPath()
+                              ctx.arc(element[2], element[3], (Math.abs(element[2] - x) + Math.abs(element[3] - y)), 0, 2 * Math.PI);
+                                  if (element[4][2]) {
+                                  ctx.fill()
+                                  }
+                                  if (element[4][3]) {
+                                  ctx.stroke()
+                                  }
+      
+                          }
+                          else {
+                          if (tool_type === 2) {
+                              ctx.strokeStyle = element[4][1]
+                              ctx.lineWidth = element[4][4]
+                              ctx.fillStyle = element[4][0]
+                              ctx.beginPath()
+                              ctx.rect(element[2], element[3], element[0] - element[2], element[1] - element[3]);
+                                  if (element[4][2]) {
+                                  ctx.fill()
+                                  }
+                                  if (element[4][3]) {
+                                  ctx.stroke()
+                                  }
+                          }
                       }
-                  }
-                  }
-                  }
-              });
+                      }
+                      }
+                  });
+                }
+              } 
+          }
+          
+              })  
             }
-          } 
-      }
+            else {
+              ReactDOM.render(
+                <PROFILE_BUTTON />,
+              document.getElementById('profile_button')
+              );
+            }
       
-          })  
+      }  
+          
+      /* className="profile_img"*/
+        render() {
+          return (
+            <div id="navbar_profile_canvas">
+                  <canvas width="500px" height="500px" className="profile_img" id="profile_img" />
+            </div>
+          );
         }
-  
-  }  
-      
-  /* className="profile_img"*/
-    render() {
-      return (
-        <div id="navbar_profile_canvas">
-              <canvas width="500px" height="500px" className="profile_img" id="profile_img" />
-        </div>
+      }
+      ReactDOM.render(
+        <PROFILE/>,
+      document.getElementById('PROFILE')
       );
+      return;
     }
-  }
-  
+  });
+
+  return (
+    <div>
+      { value }
+    </div>
+  );
+}
     return(
       <div className="navbar">
         <header className="topbar shadow">
@@ -222,14 +244,15 @@ function NavBar() {
         </div>
         <nav className="menu">
         <div className="topbar-container">
-          <PROFILE_BUTTON />
+          <div id="profile_button"></div>
           <div id="profile_image">
-        <PROFILE/>
+            <div id="PROFILE"></div>
         </div>
         </div>
         </nav>
         </div>
         </header>
+        {Load()}
         </div>
     )
 }

@@ -463,9 +463,6 @@
         }
     }
     class REMOVE_ELEMENT extends React.Component {
-            constructor(props) {
-                super(props);
-            }
             click = () => {
                 actions.splice(this.props.index, 1);
                 draw(canvasRef.current.getContext('2d'))
@@ -482,9 +479,6 @@
         }
         
         class SHOW_TOOLBAR extends React.Component {
-            constructor(props) {
-                super(props);
-            }
             click = () => {
                 const tool_bar = document.getElementById("tool_bar_colors")
                 if (tool_bar.style.display === 'block') {
@@ -503,9 +497,6 @@
             }
         }
         class UP_ELEMENT extends React.Component {
-            constructor(props) {
-                super(props);
-            }
             click = () => {
                 if (this.props.index !== 0) {
                 array_move(actions, this.props.index, this.props.index - 1);
@@ -523,9 +514,6 @@
             }
         }
         class DOWN_ELEMENT extends React.Component {
-            constructor(props) {
-                super(props);
-            }
             click = () => {
                 if (this.props.index !== (actions.length - 1)) {
                 array_move(actions, this.props.index, this.props.index + 1);
@@ -543,9 +531,6 @@
             }
         }
         class VIEW extends React.Component {
-            constructor(props) {
-                super(props);
-            }
             click = () => {
                 const ctx = canvasRef.current.getContext('2d')
                 const element = this.props.element
