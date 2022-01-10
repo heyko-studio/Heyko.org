@@ -1,8 +1,6 @@
 import '../../Home.css';
-import { useHistory } from "react-router-dom";
 
 function App() {
-  const history = useHistory();
   return (
     <>
   

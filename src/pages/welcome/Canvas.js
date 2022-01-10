@@ -151,7 +151,7 @@
             function handleMouseMove(e) {
                 const bx = canvas.getBoundingClientRect();
 
-                if (mouse_pressed = true) {
+                if (mouse_pressed) {
                 if (tool === 0) {
                     if (last_action !== undefined) {
                         draw(context)

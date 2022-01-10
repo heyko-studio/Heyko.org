@@ -520,7 +520,7 @@ function connect_result(data, data2) {
             if (type === 1) {
             if (data.discord_account === true) {
               ReactDOM.render(
-                <img className='Profile Discord Button' src="https://heyko.fr/img/discord.svg"></img>,
+                <img alt="discord logo" className='Profile Discord Button' src="https://heyko.fr/img/discord.svg"></img>,
                 document.getElementById('button_discord_contener')
               );
             } else {
@@ -533,7 +533,7 @@ function connect_result(data, data2) {
           else {
             if (data.discord_account === true) {
               ReactDOM.render(
-                <img className='Profile Discord Button' src="https://heyko.fr/img/discord.svg"></img>,
+                <img alt="discord logo" className='Profile Discord Button' src="https://heyko.fr/img/discord.svg"></img>,
                 document.getElementById('button_discord_contener')
               );
             }

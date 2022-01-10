@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 function NavBar() {
   var exists = undefined
   const history = useHistory();
-const { useState, useRef, useEffect } = React;
+const { useRef, useEffect } = React;
 const Load = (value) => {
   const firstUpdate = useRef(true);
   
@@ -81,18 +81,6 @@ const Load = (value) => {
         }
         componentDidMount() {
       
-          function getCookie(cName) {
-            const name = cName + "=";
-            const cDecoded = decodeURIComponent(document.cookie);
-            const cArr = cDecoded.split('; ');
-            let res;
-            cArr.forEach(val => {
-              if (val.indexOf(name) === 0) res = val.substring(name.length);
-            })
-            return res
-          }
-          const username = getCookie("username")
-          const password = getCookie("password")
           if (username && password) {
           const requestOptions2 = {
             method: 'POST',
