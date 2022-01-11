@@ -311,6 +311,10 @@ color: rgb(255, 255, 255);
 
 .Profile.number_icons.Button {
     color: rgb(0, 162, 255);
+    transition: 0.2s;
+}
+.Profile.number_icons.Button:hover {
+    color: rgb(43, 43, 43);
 }
 
 .Profile.Discord.Button {
