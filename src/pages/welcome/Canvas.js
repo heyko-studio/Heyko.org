@@ -86,7 +86,7 @@
 
 
         function handleMouseUp (e) {
-
+            mouse_pressed = false
             const bx = canvas.getBoundingClientRect();
             if (actions.length < 100) {
                 const width = parseInt(getComputedStyle(canvasRef.current).width.split('px')[0])
@@ -136,6 +136,7 @@
         }
 
         function handleMouseDown(e) {
+            mouse_pressed = true
             const bx = canvas.getBoundingClientRect();
             const width = parseInt(getComputedStyle(canvasRef.current).width.split('px')[0])
             const height = parseInt(getComputedStyle(canvasRef.current).height.split('px')[0])
@@ -150,7 +151,6 @@
         }
             function handleMouseMove(e) {
                 const bx = canvas.getBoundingClientRect();
-
                 if (mouse_pressed) {
                 if (tool === 0) {
                     if (last_action !== undefined) {
