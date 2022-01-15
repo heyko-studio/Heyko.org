@@ -235,7 +235,35 @@ fetch(`https://backend.heyko.fr/requests/discord_connect`, requestOptions)
 function connect_result(data, data2) {
   console.log(data2)
   if (data2.result) {
-    SendMessage("Successful connection to Discord")
+    class Ok extends React.Component {
+      constructor(props) {
+          super(props);
+          this.handleClick = this.handleClick.bind(this);
+      }
+      
+      handleClick() {
+          ReactDOM.unmountComponentAtNode(document.getElementById("message_screen"))
+          history.push("/profile")
+      }
+      
+      render() {
+          return (
+          <button className="login button ok wrong" onClick={this.handleClick}>
+              Ok
+          </button>
+          );
+      }
+  }
+const title = React.createElement('h1', {},  "Successful connection to Discord");
+const ok = React.createElement(Ok, {}, 'Ok');
+const contener = React.createElement('div', {className : 'login success default_message'}, title, ok);
+ReactDOM.render(
+  <>
+  <div className="login white_background"></div>
+  {contener}
+  </>,
+  document.getElementById('message_screen')
+);
   }
   Show_Profile(data, 1)
 }
