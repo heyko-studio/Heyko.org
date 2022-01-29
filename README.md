@@ -18,6 +18,6 @@ Website : <a href="https://heyko.fr/">heyko.fr</a>
     </a>
 </p>
   <br><br>
-  💖 ● Hi, feel free to help us with the development of the site, adding features, cleaning up the code etc
+  💖 ● Hi, feel free to help us with the development of the site, adding features, cleaning the code etc
   <br><br>
 📚 ● Note that we are not expert in website development, your help is welcome :)
