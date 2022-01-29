@@ -1,7 +1,7 @@
 # Heyko website (front end)
 
 <p align="center">
-Website : <a href="https://heyko.fr/" target="https://heyko.fr/">heyko.fr</a> Discord : <a href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">.gg/tKypaXn</a>
+Website : <a href="https://heyko.fr/">heyko.fr</a> Discord : <a href="https://discord.gg/tKypaXn">.gg/tKypaXn</a>
 </p>
 
 <h1 align="center">
