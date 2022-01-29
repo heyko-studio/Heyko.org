@@ -22,3 +22,12 @@ Website : <a href="https://heyko.fr/">heyko.fr</a> Discord : <a href="https://di
   💖 ● Hi, feel free to help us with the development of the website, adding features, cleaning the code etc
   <br><br>
 📚 ● Note that we are not expert in website development, your help is welcome :)
+
+<h1 align="center">
+Development
+</h1>
+<br>
+
+Languages : html - css - javascript
+
+Framework : React
