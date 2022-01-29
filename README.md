@@ -17,9 +17,7 @@ Website : <a href="https://heyko.fr/">heyko.fr</a>
         <img src="https://img.shields.io/discord/655099662424080384?label=chat&logo=discord"/>
     </a>
 </p>
-
-<p align="center">
+  <br><br>
   💖 ● Hi, feel free to help us with the development of the site, adding features, cleaning up the code etc
   <br><br>
 📚 ● Note that we are not expert in website development, your help is welcome
-</p>
