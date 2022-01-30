@@ -6,8 +6,6 @@ import { useHistory } from "react-router-dom";
 import { username } from '../../functions/get_username';
 import { password } from '../../functions/get_password';
 import { copyTextToClipboard } from '../../functions/copy_to_clipboard'
-import { SendMessage } from '../../elements/Messages/Success'
-
 
 function App() {
 

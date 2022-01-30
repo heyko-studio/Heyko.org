@@ -144,7 +144,6 @@
 .Profile.User_shop {
     width: 245px;
     height: 200px;
-    background-color: brown;
     display: inline-block;
     background-color: rgb(236, 236, 236);
     border-radius: 12px;
@@ -178,7 +177,7 @@
 .Profile.icon_text_numbers {
     float: left;
     vertical-align: middle;
-    margin-top: 0px;
+    margin-top: 0;
     padding: 5px;
     font-size: 16px;
 }
@@ -203,8 +202,6 @@
 }
 
 .Activity.numbers {
-    width: 30px;
-    color: rgb(43, 43, 43);
     float: left;
     font-weight: bold;
     margin-top: 34px;
