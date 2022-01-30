@@ -178,11 +178,9 @@ body {
 .Home_Game {
     margin: 25px 25px 25px 25px;
     border-radius: 12px;
-    width: fit-content;
     padding: 30px;
     width: 370px;
     background: #50A0E8;
-    /*background: linear-gradient(40deg, rgba(74,71,145,1) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);*/
     position: relative;
 }
 @media (max-width: 450px) {
@@ -211,16 +209,14 @@ body {
     left: 0;
     right: 0;
     height: 120px;
+    border: 1px solid #b9b9b9;
+margin: -1px;
 }
 .Home.Game_Background.v3 {
     background-image   : url("img/background-ps.webp");
 }
 .Home.Game_Background.v2 {
     background-image   : url("img/background-h.webp");
-}
-.Home.Game_Background {
-border: 1px solid #b9b9b9;
-margin: -1px;
 }
 .Home.Game_Background.v1 {
     border: none;
