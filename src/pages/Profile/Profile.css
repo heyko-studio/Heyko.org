@@ -44,15 +44,6 @@
     vertical-align: top;
     border-radius: 90px;
 }
-/*
-@media (max-width: 408px) {
-    .Profile.button.view {
-        position:absolute;
-        left: 0;
-        margin-top: 50px;
-    }
-}
-*/
 .Profile.User_Contener {
     float: left;
 }
@@ -129,7 +120,7 @@
     padding: 4px;
     border-radius: 12px;
     background-color: white;
-    margin: 0 5px 0 5px;
+    margin: 0 5px;
 }
 .Profile.Rewards_icon.gold {
     color: #FFD700;

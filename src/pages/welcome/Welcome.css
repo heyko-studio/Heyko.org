@@ -85,10 +85,6 @@
 .Welcome.Slider_value {
     margin-top: 12px;
 }
-.Welcome.profile_tool_bar_item_button {
-    background-color: transparent;
-    border: none;
-}
 
 .Welcome.profile_tool_bar_elements_contener {
     background-color: rgb(241, 241, 241);
@@ -100,6 +96,8 @@
     width: calc(100% - 40px);
 }
 .Welcome.profile_tool_bar_item_button {
+    background-color: transparent;
+    border: none;
     float: left;
 }
 .Welcome.profile_tool_bar_elements_breaker {
