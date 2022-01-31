@@ -339,6 +339,7 @@
     bottom: 100px;
     width: 250px;
     padding:0 20px;
+    overflow-y: scroll;
 }
 .Welcome.profile_tool_bar_elements {
     background-color: white;
@@ -439,6 +440,36 @@
 }
 .Welcome.profile_tool_bar_color_show {
     display: none;
+}
+@media (max-height: 708px) {
+    .Welcome.Title_2 {
+        font-size: 20px;
+    }
+    .Welcome.Canvas {  
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -130px;
+    }
+    .Welcome.profile_tool_bar_color_show {
+        display: block;
+        border: none;
+        margin-top:-3px;
+        background-color: white;
+        border-radius: 12px;
+        margin-left: 26px;
+
+    }
+    .profile_tool_bar_color_show_icon {
+        color: gray;
+        font-size: 35px;
+        margin: 5px;
+    }
+    .Welcome.profile_tool_bar_colors {
+        display: none;
+    }
+    .Welcome.Contener {
+        overscroll-behavior: contain;
+    }
 }
 @media (max-width: 708px) {
     .Welcome.finish_button {
