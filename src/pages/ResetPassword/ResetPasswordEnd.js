@@ -7,10 +7,11 @@ function App() {
     function handleSubmit(e) {
         e.preventDefault();
         const password = document.getElementById("password").value
+        const code = window.location.href.split("/")[window.location.href.split("/").length - 1]
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: `{"password":"${password}"}`
+            body: `{"password":"${password}", "code":"${code}"}`
         };
  fetch(`https://backend.heyko.fr/requests/reset_password`, requestOptions)
             .then(response => response.json())
