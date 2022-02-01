@@ -46,7 +46,7 @@ function App() {
 <div className="hr"></div>
 <form onSubmit={handleSubmit} className="contact-form">
     <div className="form-line1">
-        <input id="password" className="input_1" type="username" placeholder="New password" required name="password"></input>
+        <input id="password" className="input_1" type="password" placeholder="New password" required name="password"></input>
     </div>
     <div className="send-container">
         <button className="send" name="submit" type="submit">Reset</button>
