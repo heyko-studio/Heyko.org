@@ -212,18 +212,25 @@ body{
     z-index: 15;
     border-radius: 12px;
     min-height: 140px;
+    max-width: 90%;
 }
 
 
 .default_message.wrong {
     background-color: #ce6662;
     color: rgb(255, 255, 255);
-    max-width: 90%;
 }
 .default_message.success {
     background-color: #19ac4a;
     color: rgb(255, 255, 255);
-    max-width: 90%;
+}
+@media (max-width: 500px) {
+    .default_message {
+        width: 100%;
+        max-width:unset;
+        border-radius: 0;
+        font-size: 12px;
+    }
 }
 .white_background {
     background-color: rgba(255, 255, 255, 0.596);

@@ -102,19 +102,11 @@ function App() {
             <button className="send" name="submit" type="submit">Login</button>
         </div>
         <div className="form-line4">
+        <Link to="/login/reset-password" className="link">➡️ Forgot your password ?</Link>
+        <br></br>
+        <br></br>
             <Link to="/sign-up" className="link">➡️ Sign Up</Link>
         </div>
-        {
-            /*
-        <div className="form-line3">
-            <a id="text3" href="other/account/change_pass" className="link">● Forgot your password?</a>
-        </div>
-        <br></br>
-        <div className="form-line4">
-            <a id="text4" href="sign-up" className="link">● Sign up</a>
-        </div>
-        */
-}
         </form>
         </section>
 </div>

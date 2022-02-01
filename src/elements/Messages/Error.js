@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-export default function SendMessage(content) {
+export default function SendErrorMessage(content) {
         class Ok extends React.Component {
             constructor(props) {
                 super(props);
@@ -22,7 +22,7 @@ export default function SendMessage(content) {
         }
     const title = React.createElement('h1', {},  content);
     const ok = React.createElement(Ok, {}, 'Ok');
-    const contener = React.createElement('div', {className : 'login success default_message'}, title, ok, <><br></br><br></br></>);
+    const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
     ReactDOM.render(
         <>
         <div className="login white_background"></div>
