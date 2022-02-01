@@ -16,6 +16,7 @@ import Game_Poly_Story from './pages/games/Poly_Story'
 import Edit_Profile_Avatar from './pages/Profile/Edit_Profile_Avatar'
 import Embed from './pages/informations/embed'
 import ResetPassword from './pages/ResetPassword/ResetPassword'
+import ResetPasswordEnd from './pages/ResetPassword/ResetPasswordEnd'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
       <Route path="/get_user_avatar" component={get_user_avatar}/>
       <Route exact path="/games/poly-story" component={Game_Poly_Story}/>
       <Route exact path="/login/reset-password" component={ResetPassword}/>
+      <Route path="/reset-password" component={ResetPasswordEnd}/>
       <Route exact path="/informations/embed" component={Embed}/>
       <Route
     render={({ location }) => !['/welcome'].includes(location.pathname) && !['/informations/embed'].includes(location.pathname) && !['/get_user_avatar'].includes(location.pathname) && !['/edit-profile/avatar'].includes(location.pathname)
