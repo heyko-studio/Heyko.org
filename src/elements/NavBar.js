@@ -28,7 +28,7 @@ const Load = (value) => {
         componentDidMount() {
           function show_login_button() {
             ReactDOM.render(
-              <button onClick={() => history.push("login")} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Login</button>,
+              <button onClick={() => history.push("/login")} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Login</button>,
               document.getElementById('Profile_Button')
             );
           }

@@ -52,7 +52,7 @@ function App() {
             <button className="send" name="submit" type="submit">Reset</button>
         </div>
         <div className="form-line4">
-            <Link to="/login" className="link">➡️ Log in</Link>
+            <Link to="../login" className="link">➡️ Log in</Link>
         </div>
         </form>
         </section>
