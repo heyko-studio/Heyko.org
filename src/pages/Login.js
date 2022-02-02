@@ -59,8 +59,11 @@ function App() {
                   background,
                   document.getElementById('background')
                 );
-            document.cookie = "username=" + data.username
-            document.cookie = "password=" + document.getElementById("password").value
+            const d = new Date();
+            d.setTime(d.getTime() + (3*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = "username=" + data.username + ";" + expires
+            document.cookie = "password=" + document.getElementById("password").value + ";" + expires
             setTimeout(function() {
               window.open("/profile","_self");
             }, 1000);
