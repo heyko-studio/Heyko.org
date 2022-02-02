@@ -20,17 +20,10 @@ function App() {
             function result(data) {
                 console.log(data);
                 if (data.results) {
-                    SendMessage("An email has been sent to you. If you can't find it, check your spam folder.")
+                    SendMessage("Password successfully reset.")
                 }
                 else {
-                    if (data.error) {
-                        if (data.error === 1) {
-                            SendErrorMessage("You have already received 3 reset emails recently. To go further, contact our support.")
-                        }
-                    }
-                    else {
-                        SendErrorMessage("We are unable to find your account.Please check your email address or the password you specified earlier. If the problem persists, please contact us.")
-                    }
+                    SendErrorMessage("The request has expired, or the link is invalid.")
                 }
             }
       }
