@@ -105,7 +105,8 @@ body{
 @media (max-width: 376px) {
     .form-container {
       width: 100%;
-      padding: 3px;
+      padding: 20px 3px;
+      border:none;
     }
   }
 .form-container h2 {
