@@ -1,0 +1,452 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/*
+BLACK : #353535
+GREY : #737373
+BLUE_1 : #2ea0e8
+BLUE_2 : #7CD8FF
+*/
+
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.topbar {
+  background-color: white;
+  z-index: 3;
+  -webkit-box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
+  -moz-box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
+  box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
+}
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 60px;
+  z-index: 2;
+  padding: 3px;
+}
+.menu a {
+  text-decoration: none;
+  color:#737373;
+  letter-spacing: 2px;
+  padding: 0 10px;
+  margin-top: 0;
+  transition: color 0.5s;
+  font-weight: 500;
+  font-size: 20px;
+}
+.menu a:hover, .active { /* Pourquoi les changements de couleur ainsi que le margin-top ne s'appliquent pas ? */
+  color: #2EA0E8 !important;
+}
+.ombre {
+  -webkit-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+  box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+}
+
+
+
+.hr {
+  width: 100%;
+  height: 3px;
+  background-color: #0E76B8;
+}
+.hr_2 {
+  width: 100%;
+  height: 3px;
+  background-color: #737373;
+}
+.hr_3 {
+  width: 100%;
+  height: 1px;
+  background-color: #737373;
+}
+.hr_4 {
+  width: 50px;
+  height: 3px;
+  background-color: #0E76B8;
+}
+.link {
+  text-decoration: none;
+  color: #0E76B8;
+  font-weight: bold;
+}
+
+
+
+/* CONTACTS */
+.form-container {
+  background: white;
+  margin: 50px auto 200px;
+  width: 70%;
+  padding: 20px;
+  color: rgb(53, 53, 53);
+  border-radius: 4px;
+  border: 1px solid #b9b9b9;
+}
+
+@media (max-width: 600px) {
+.form-container {
+  width: 95%;
+}
+}
+@media (max-width: 376px) {
+  .form-container {
+    width: 100%;
+    padding: 20px 3px;
+    border:none;
+  }
+}
+.form-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+}
+.contact-form {
+  width: 100%;
+  margin-top: 20px;
+}
+.form-line1, .form-line2, .form-line3 {
+  display: flex;
+}
+.contact-form input, .contact-form textarea {
+  border: 2px solid #b9b9b9;
+  border-radius: 4px;
+  width: 100%;
+  background: #ffffff;
+  color: rgb(53, 53, 53);
+
+
+  margin: 20px 5px;
+  padding: 5px 10;
+  outline: none;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+  color: rgb(122, 122, 122);
+}
+.contact-form textarea {
+  resize: none;
+  padding: 0 0 100px;
+}
+.send-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.send {
+  position: absolute;
+  right: 0;
+  background: #383838;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 7px 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(206, 206, 206); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2ea0e8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2ea0e8; 
+}
+
+
+
+.profile_img {
+  width: 80px;
+  height: 80px;
+  border-radius: 90px;
+  display: inline-block;
+  border: 1px solid #b9b9b9;
+}
+
+@media (max-width: 800px) {
+  .profile_img {
+      margin-right: -80px;
+      transform: translateX(30px);
+  }
+}
+
+.heyko_banner_1 {
+  max-width:90%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: rgb(245, 245, 245);
+  margin-top: 40px;
+  border-radius: 15px;
+}
+
+.input_1 {
+  padding: 5px;
+}
+.default_message {
+  background-color: #2ea0e8;
+  text-align: center;
+  width: fit-content;
+  padding: 15px 50px;
+  margin-top: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  z-index: 15;
+  border-radius: 12px;
+  min-height: 140px;
+  max-width: 90%;
+}
+
+
+.default_message.wrong {
+  background-color: #ce6662;
+  color: rgb(255, 255, 255);
+}
+.default_message.success {
+  background-color: #19ac4a;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 500px) {
+  .default_message {
+      width: 100%;
+      max-width:unset;
+      border-radius: 0;
+      font-size: 12px;
+  }
+}
+.white_background {
+  background-color: rgba(255, 255, 255, 0.596);
+  position:fixed;
+  backdrop-filter: blur(5px);
+  left:0;
+  bottom: 0;
+  top:0;
+  right: 0;
+  z-index: 10;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button {
+  cursor: pointer;
+}
+.a {
+  text-decoration: none;
+}
+.Button {
+  cursor: pointer;
+}
+.button.ok {
+  font-weight: bold;
+  padding: 8px 40px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  margin-bottom: -25px;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  border-radius: 90px;
+}
+.button.white {
+  font-weight: bold;
+  padding: 8px 40px;
+  color: #2ea0e8;
+  background-color: white;
+  margin-bottom: -25px;
+  text-decoration: none;
+  border: none;
+  border-radius: 90px;
+}
+.button.view {
+  font-weight: bold;
+  padding: 8px 40px;
+  color: #2ea0e8;
+  background-color: transparent;
+  margin-bottom: -25px;
+  text-decoration: none;
+  border: 2px solid #2ea0e8;
+  border-radius: 90px;
+}
+.button.view.clicked {
+  background-color: #2ea0e8;
+  color: white;
+}
+.button.Next {
+  font-weight: bold;
+  padding: 8px 40px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  margin-bottom: -25px;
+  text-decoration: none;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 90px;
+}
+/*
+.button.wrong.ok {
+  background-color: #ff3c3c;
+}
+.button.success.ok {
+  background-color: #19ac4a;
+}
+*/
+
+.Title_1 {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(53, 53, 53);
+  font-weight: bold;
+}
+.Title_1_min {
+  font-size: 30px;
+  color: rgb(53, 53, 53);  
+  margin: 20px;
+}
+
+.Title_2 {
+  margin:25px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 40px;
+  background-color: #2ea0e8;
+  width: fit-content;
+  padding: 10px;
+  transform: rotate(-5deg);
+}
+.Title_2.v2 {
+  transform: rotate(1deg);
+}
+
+.Subtitle_1 {
+  text-align: center;
+  font-size: 26px;
+}
+.Subtitle_2 {
+  font-size: 26px;
+  transform: rotate(2deg);
+  width: fit-content;
+  font-weight: bold;
+  color: #40464e;
+  padding: 12px;
+  margin: 60px 20px 20px;
+}
+.shadow_2 {
+  box-shadow: 4px 3px 6px 0 rgba(46, 161, 255, 0.5);
+}
+
+#App {
+  position: relative;
+  min-height:100%; 
+}
+
+html, body {
+  height:100%;
+}
+
+#Footer_decal {
+  padding-bottom: 44px;
+}
+
+.button.like {
+  font-weight: bold;
+  padding: 8px 40px;
+  color: #b61a41;
+  background-color: transparent;
+  margin-bottom: -25px;
+  text-decoration: none;
+  border: 2px solid #b61a41;
+  border-radius: 90px;
+}
+.button.liked {
+  font-weight: bold;
+  padding: 8px 40px;
+  color: white;
+  background-color: #e66a89;
+  margin-bottom: -25px;
+  text-decoration: none;
+  border: 2px solid #e66a89;
+  border-radius: 90px;
+}
+@media (max-width: 374px) {
+  .NavBar_Profile_Button {
+      display: none;
+  }
+}
+
+.flag_fr {
+  background-color: rgb(83, 133, 241);
+  width: 15px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flag_fr.s2 {
+  background-color: rgb(240, 240, 240);
+  left: 15px;
+}
+.flag_fr.s3 {
+  left: 30px;
+  background-color: rgb(241, 83, 83);
+  border-bottom-right-radius: 10px;
+}
+
+.InfoBlock {
+  width: fit-content;
+  background:#59b3eb;
+  height: fit-content;
+  padding:40px;
+  border-radius: 12px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.InfoBlock p {
+  color: white;
+  font-size: 25px;
+}
