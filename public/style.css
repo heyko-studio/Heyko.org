@@ -17,10 +17,11 @@ html {
 }
 body{
     margin: 0;
-    background: white;
+    background: rgb(255, 255, 255);
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: overlay;
 }
+
 
 .topbar {
     background-color: white;
@@ -167,14 +168,9 @@ body{
     height: 10px;
 }
 
-  /* Track */
-::-webkit-scrollbar-track {
-    background: rgb(206, 206, 206); 
-}
-
   /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #2ea0e8;
+    background: #2ea1e894;
 }
 
   /* Handle on hover */
@@ -313,14 +309,6 @@ body{
     border: 2px solid rgb(255, 255, 255);
     border-radius: 90px;
 }
-/*
-.button.wrong.ok {
-    background-color: #ff3c3c;
-}
-.button.success.ok {
-    background-color: #19ac4a;
-}
-*/
 
 .Title_1 {
     text-align: center;
