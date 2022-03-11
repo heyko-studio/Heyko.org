@@ -181,6 +181,12 @@ function App() {
         <div className="form-line2">
             <input id="mail" className="input_1" type="email" placeholder="Email adress" required name="email"></input>
         </div>
+        <div className="form-line3">
+            <Link to="/terms" className="link">✅ Terms of service</Link>
+        </div>
+        <div className="form-line3">
+            <Link to="/privacy" className="link">✅ Privacy Policy</Link>
+        </div>
         <div className="send-container">
             <button className="send" name="submit" type="submit">Sign Up</button>
         </div>
