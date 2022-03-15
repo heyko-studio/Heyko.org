@@ -209,6 +209,18 @@ const Load = (value) => {
     </div>
   );
 }
+
+function ErrorBanner() {
+  const old_name = "heyko.fr"
+  if (window.location.hostname == old_name) {
+    const new_location = window.location.href.split(old_name).join('heyko.org')
+    return <div className="ErrorBannerSwitchDomain contnainer">
+      <p className="ErrorBannerSwitchDomain text">We are changing our domain name. heyko.fr -{">"} heyko.org. </p>
+      <a href={new_location}><button className="ErrorBannerSwitchDomain button">Switch</button></a>
+    </div>
+  }
+}
+
     return(
       <div className="navbar">
         <header className="topbar shadow">
@@ -241,6 +253,7 @@ const Load = (value) => {
         </div>
         </header>
         {Load()}
+        {ErrorBanner()}
         </div>
     )
 }

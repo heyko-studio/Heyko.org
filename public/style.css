@@ -26,9 +26,9 @@ body{
 .topbar {
     background-color: white;
     z-index: 3;
-    -webkit-box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
-    -moz-box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
-    box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.7);
+    -moz-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.7);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.7);
 }
 .topbar-container {
     display: flex;
@@ -422,4 +422,29 @@ html, body {
 .InfoBlock p {
     color: white;
     font-size: 25px;
+}
+
+.ErrorBannerSwitchDomain.contnainer {
+    background-color:#64ccf8;
+    padding: 6px 30px;
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 4;
+}
+.ErrorBannerSwitchDomain.text {
+    color: white;
+    font-size: 25px;
+}
+.ErrorBannerSwitchDomain.button {
+    font-size: 20px;
+    background-color:white;
+    padding: 6px 30px;
+    border: none;
+    margin-bottom: 12px;
+    margin-top: -8px;
 }
