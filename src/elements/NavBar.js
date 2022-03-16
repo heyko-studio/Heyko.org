@@ -212,7 +212,7 @@ const Load = (value) => {
 
 function ErrorBanner() {
   const old_name = "heyko.fr"
-  if (window.location.hostname == old_name) {
+  if (window.location.hostname === old_name) {
     const new_location = window.location.href.split(old_name).join('heyko.org')
     return <div className="ErrorBannerSwitchDomain contnainer">
       <p className="ErrorBannerSwitchDomain text">We are changing our domain name. heyko.fr -{">"} heyko.org. </p>
