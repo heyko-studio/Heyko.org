@@ -142,6 +142,9 @@ body {
     .Home_Sub_Title {
         font-size: 45px;
     }
+    .Home_Title {
+        margin-top:-50px
+    }
 }
 @media (max-width: 740px) {
     .Strip_3 {
