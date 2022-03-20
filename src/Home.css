@@ -51,6 +51,9 @@ body {
 .Home_Bottom_Arrow:hover {
     color: #2ea0e8;
 }
+.Home.Banner {
+    max-width: 100%;
+}
 
 @keyframes Bottom_Arrow_2 {
 
@@ -142,8 +145,8 @@ body {
     .Home_Sub_Title {
         font-size: 45px;
     }
-    .Home_Title {
-        margin-top:-50px
+    .Home.Banner {
+        margin-top:-120px;
     }
 }
 @media (max-width: 740px) {
@@ -359,6 +362,4 @@ margin: -1px;
     } 
 }
 
-.Home.Banner {
-    max-width: 100%;
-}
+
