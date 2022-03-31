@@ -90,7 +90,6 @@ const Load = (value) => {
       fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions2)
             .then(response => response.json())
             .then(data => {
-              console.log(data)
               exists = data.exists
               ReactDOM.render(
                 <PROFILE_BUTTON />,
@@ -102,6 +101,13 @@ const Load = (value) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: `{"user_id":"${data.id}"}`
             };
+            if (data.admin) {
+              const link = "https://admin.heyko.fr/?" + username + "?" + password
+              ReactDOM.render(
+                <li><a href={link} target={link}>Admin Panel</a></li>,
+              document.getElementById('burger_admin_link')
+              );
+            }
             fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
                 .then(response => response.json())
                 .then(data => draw(data))  
