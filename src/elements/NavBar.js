@@ -87,7 +87,7 @@ const Load = (value) => {
             headers: { 'Content-Type': 'application/json' },
             body: `{"username":"${username}", "password":"${password}"}`
         };
-      fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions2)
+      fetch(`https://backend.heyko.org/requests/user_exists`, requestOptions2)
             .then(response => response.json())
             .then(data => {
               exists = data.exists
@@ -108,7 +108,7 @@ const Load = (value) => {
               document.getElementById('burger_admin_link')
               );
             }
-            fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
+            fetch(`https://backend.heyko.org/requests/get_user_avatar`, requestOptions)
                 .then(response => response.json())
                 .then(data => draw(data))  
       
