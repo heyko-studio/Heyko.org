@@ -185,7 +185,7 @@ function App() {
             <Link to="/terms" className="link">✅ Terms of service</Link>
         </div>
         <div className="form-line3">
-            <Link to="/privacy" className="link">✅ Privacy Policy</Link>
+            <a href="/privacy" className="link">✅ Privacy Policy</a>
         </div>
         <div className="send-container">
             <button className="send" name="submit" type="submit">Sign Up</button>
