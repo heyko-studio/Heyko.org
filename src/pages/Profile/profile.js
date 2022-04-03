@@ -460,7 +460,7 @@ ReactDOM.render(
       }
         function share() {
             // SHARE
-            copyTextToClipboard("https://heyko.fr/profile/" + user_id)
+            copyTextToClipboard("https://heyko.org/profile/" + user_id)
             function click() {
               unmountComponentAtNode(document.getElementById("message"))
             }
