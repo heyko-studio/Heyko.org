@@ -456,7 +456,7 @@ ReactDOM.render(
         
         function connect_discord() {
           // CONNECT TO DISCORD
-          window.open("https://discord.com/oauth2/authorize?response_type=code&client_id=691702487178150010&redirect_uri=https://heyko.fr/profile/connect&scope=identify", "_self")
+          window.open("https://discord.com/oauth2/authorize?response_type=code&client_id=691702487178150010&redirect_uri=https://heyko.org/profile/connect&scope=identify", "_self")
       }
         function share() {
             // SHARE
@@ -545,7 +545,7 @@ ReactDOM.render(
             if (type === 1) {
             if (data.discord_account === true) {
               ReactDOM.render(
-                <img alt="discord logo" className='Profile Discord Button' src="https://heyko.fr/img/discord.svg"></img>,
+                <img alt="discord logo" className='Profile Discord Button' src="https://heyko.org/img/discord.svg"></img>,
                 document.getElementById('button_discord_contener')
               );
             } else {
@@ -564,7 +564,7 @@ ReactDOM.render(
             );
             if (data.discord_account === true) {
               ReactDOM.render(
-                <img alt="discord logo" className='Profile Discord Button' src="https://heyko.fr/img/discord.svg"></img>,
+                <img alt="discord logo" className='Profile Discord Button' src="https://heyko.org/img/discord.svg"></img>,
                 document.getElementById('button_discord_contener')
               );
             }
