@@ -5,7 +5,6 @@ function App() {
   const history = useHistory();
   return (
     <>
-  
   <div className="content-slider">
         <div className="slider">
         <div className="Strip_1"></div>
@@ -27,7 +26,7 @@ function App() {
         <svg className="Home Separator" viewBox="0 0 1920 200" fill="#7CD8FF"><path d="M 0 200 L 1007 159 L 1007 0 L 0 0 Z" strokeWidth="0"></path> <path d="M 1006 159 L 1920 119 L 1920 0 L 1006 0 Z" strokeWidth="0"></path> </svg>
 
 
-        <div id="games">
+        <section id="games">
 
 
           <h1 className="Title_2">Our games</h1>
@@ -85,15 +84,7 @@ function App() {
           </a>
           </div>
         </div>
-
-{
-  /*
-<div className="Home shape_1">
-</div>
-*/
-}
-
-        </div>
+        </section>
         </div>
 
         <h2 className="Title_2 v2">What is Heyko?</h2>

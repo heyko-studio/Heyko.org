@@ -329,37 +329,3 @@ margin: -1px;
     margin-bottom: -25px;
     text-decoration: none;
 }
-
-
-
-
-
-.Home.shape_1 {
-    border-radius: 30% 70% 67% 33% / 30% 30% 70% 70%;
-    position: absolute;
-    right: 0;
-    top: 450px;
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(40deg, rgb(0, 129, 250) 0%, rgba(92,158,255,1) 35%, rgba(129,234,255,1) 100%);
-    color: white;
-    padding: 50px;
-    font-size: 25px;
-    font-weight: bold;
-    animation: 5s move_1 infinite;
-    z-index: 0;
-}
-@keyframes move_1 {
-
-    0% {
-        transform: rotate(7deg);
-    }
-    50% {
-        transform: rotate(-7deg);
-    }
-    100% {
-        transform: rotate(7deg);
-    } 
-}
-
-
