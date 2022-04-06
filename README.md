@@ -1,12 +1,12 @@
 # Heyko website (front end)
 
 <p align="center">
-Website : <a href="https://heyko.fr/">heyko.fr</a> Discord : <a href="https://discord.gg/tKypaXn">.gg/tKypaXn</a>
+Website : <a href="https://heyko.org/">heyko.org</a> Discord : <a href="https://discord.gg/tKypaXn">.gg/tKypaXn</a>
 </p>
 
 <h1 align="center">
   <br>
-  <img src="https://heyko.fr/img/heyko.png" alt="heyko.fr logo" width="512">
+  <img src="https://heyko.org/img/heyko.png" alt="heyko.fr logo" width="512">
   <br>
 </h1>
 
