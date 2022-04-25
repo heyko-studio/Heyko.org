@@ -118,6 +118,13 @@
     background-repeat  : no-repeat;
     background-size    : cover;
 }
+.Infos.partner-i.v8 {
+    background: url("./partners_img/worldcloud.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+
 .Infos.partner-description {
     position: absolute;
     color: rgb(146, 146, 146);

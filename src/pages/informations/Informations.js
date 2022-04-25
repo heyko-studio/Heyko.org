@@ -79,6 +79,22 @@ Heyko is an independent video game creation team
   <div style={{height: '310px'}}  className="Infos partner-contener">
   <div className="Infos partner-image">
     </div>
+    <div className="Infos partner-i v8"></div>
+    <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
+    
+    <h1 className="Infos partner-title">World Cloud</h1>
+    <a href="https://manager.world-cloud.fr/" target="https://manager.world-cloud.fr/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
+    <p className="Infos partner-description">
+    🚀 Serveurs de jeux, web et VPS.<br></br>
+    🔒 N'ayez pas peur de perdre vos données, elles sont sécurisées.<br></br>
+    👲 Association ou étudiant ? Des réductions vous attendent !
+    </p>
+
+  </div>
+
+  <div style={{height: '310px'}}  className="Infos partner-contener">
+  <div className="Infos partner-image">
+    </div>
     <div className="Infos partner-i v2"></div>
     <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
     
