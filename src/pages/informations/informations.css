@@ -82,20 +82,8 @@
     height: 130px;
     border-radius: 12px;
 }
-.Infos.partner-i.v2 {
-    background: url("https://night-api.com/images/Logo/logo.png");
-    background-position: center;
-    background-repeat  : no-repeat;
-    background-size    : cover;
-}
 .Infos.partner-i.v3 {
     background: url("https://www.lemondedupc.fr/assets/images/favicons/favicon-192x192.png");
-    background-position: center;
-    background-repeat  : no-repeat;
-    background-size    : cover;
-}
-.Infos.partner-i.v4 {
-    background: url("./partners_img/fouderix.png");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;

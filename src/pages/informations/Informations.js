@@ -88,10 +88,6 @@ Heyko is an independent video game creation team
     <a href="https://kwixstudio.ml/" target="https://kwixstudio.ml/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
     <p className="Infos partner-description"><b className="Infos bold">Kwix</b> est un studio indépendant de développement d'applications et de jeux vidéos mobiles fondé en 2020, en France</p>
   </div>
-
-  <div style={{height: '310px'}}  className="Infos partner-contener">
-  <div className="Infos partner-image">
-    </div>
   <br></br>
   </div>
   <br></br><br></br><br></br>
