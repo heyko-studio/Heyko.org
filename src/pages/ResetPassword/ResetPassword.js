@@ -18,16 +18,16 @@ fetch(`https://backend.heyko.fr/requests/send_reset_link`, requestOptions)
             function result(data) {
                 console.log(data);
                 if (data.results) {
-                    sendMessage("Success", "An email has been sent to you. If you can't find it, check your spam folder.")
+                    sendMessage("", "Please check your emails", "An email has been sent to you. If you can't find it, check your spam folder.")
                 }
                 else {
                     if (data.error) {
                         if (data.error === 1) {
-                            sendMessage("Wrong", "You have already received 3 reset emails recently. To go further, contact our support.")
+                            sendMessage("Wrong", "Error", "You have already received 3 reset emails recently. To go further, contact our support.")
                         }
                     }
                     else {
-                        sendMessage("Wrong", "We are unable to find your account.Please check your email address or the password you specified earlier. If the problem persists, please contact us.")
+                        sendMessage("Wrong", "Error", "We are unable to find your account.Please check your email address or the password you specified earlier. If the problem persists, please contact us.")
                     }
                 }
             }
