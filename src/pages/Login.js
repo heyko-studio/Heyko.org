@@ -27,7 +27,7 @@ function App() {
             let expires = "expires="+ d.toUTCString();
             document.cookie = "username=" + data.username + ";" + expires
             document.cookie = "password=" + document.getElementById("password").value + ";" + expires
-            history.push('/profile')
+            window.open('/profile', '_self');
         }
         else {
           sendMessage("Wrong", "Login error", "Wrong email address/username or password. Contact us on discord for help")
