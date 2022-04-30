@@ -10,9 +10,24 @@ import ReactDOM from 'react-dom';
 function NavBar() {
   var exists = undefined
   const history = useHistory();
-const { useRef, useEffect } = React;
-const Load = (value) => {
+  const { useRef, useEffect } = React;
+  const Load = (value) => {
   const firstUpdate = useRef(true);
+
+  // Change navbar color on scroll
+  window.addEventListener("scroll", () => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
+    const navbar = document.querySelector("#navbar");
+    if (window.scrollY > 100) {
+      navbar.classList.add("light");
+    } else {
+      navbar.classList.remove("light");
+    }
+  });
+  
   
   useEffect(() => {
     if (firstUpdate.current) {
@@ -228,9 +243,8 @@ function ErrorBanner() {
 }
 
     return(
-      <div className="navbar">
-        <header className="topbar shadow">
-      
+      <>
+        <header id="navbar" className="topbar shadow">
   <div className="topbar-container">
       <div id="menuToggle">
           
@@ -260,7 +274,7 @@ function ErrorBanner() {
         </header>
         {Load()}
         {ErrorBanner()}
-        </div>
+        </>
     )
 }
 

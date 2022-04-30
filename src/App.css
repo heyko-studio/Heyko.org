@@ -33,10 +33,32 @@ body{
 .topbar {
   background-color: white;
   z-index: 3;
-  -webkit-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.7);
-  -moz-box-shadow: 0 3px 6px 0 rgba(0,0,0,0.7);
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.7);
+  transition: 0.4s;
+  transition-delay: 0.4s;
+  border: 1px solid rgba(255, 255, 255, 0);
 }
+
+#navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.topbar.light {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.25 );
+  backdrop-filter: blur( 8px );
+  -webkit-backdrop-filter: blur( 8px );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.4);
+  transition-delay: 0.1s;
+}
+
 .topbar-container {
   display: flex;
   justify-content: space-between;
@@ -45,6 +67,7 @@ body{
   z-index: 2;
   padding: 3px;
 }
+
 .menu a {
   text-decoration: none;
   color:#737373;
@@ -340,7 +363,6 @@ body{
   padding: 8px 40px;
   color: rgb(255, 255, 255);
   background-color: transparent;
-  margin-bottom: -25px;
   text-decoration: none;
   border: 2px solid #ffffff;
   border-radius: 90px;
@@ -350,7 +372,6 @@ body{
   padding: 8px 40px;
   color: #2ea0e8;
   background-color: white;
-  margin-bottom: -25px;
   text-decoration: none;
   border: none;
   border-radius: 90px;
@@ -360,7 +381,6 @@ body{
   padding: 8px 40px;
   color: #2ea0e8;
   background-color: transparent;
-  margin-bottom: -25px;
   text-decoration: none;
   border: 2px solid #2ea0e8;
   border-radius: 90px;
