@@ -132,6 +132,7 @@ body{
     width: 290px;
     height: 74px;
     text-align: left;
+    transform: translateX(4px);
 }
 .recaptcha.button {
     position: relative;
