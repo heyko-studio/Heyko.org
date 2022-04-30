@@ -297,8 +297,8 @@ body{
   border: 1px solid rgba(255, 165, 165, 0.582);
   color: rgb(255, 255, 255);
 }
-.Global.Message.Contener.Wrong {
-  background: rgba(75, 255, 75, 0.63);
+.Global.Message.Contener.Success {
+  background: rgba(24, 136, 24, 0.63);
   box-shadow: 0 8px 32px 0 rgba(111, 255, 75, 0.158);
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 4px );
