@@ -26,12 +26,12 @@ function App() {
         <svg className="Home Separator" viewBox="0 0 1920 200" fill="#7CD8FF"><path d="M 0 200 L 1007 159 L 1007 0 L 0 0 Z" strokeWidth="0"></path> <path d="M 1006 159 L 1920 119 L 1920 0 L 1006 0 Z" strokeWidth="0"></path> </svg>
 
 
-        <section id="games">
+        <section className='Home Games' id="games">
 
 
           <h1 className="Title_2">Our games</h1>
 
-
+          <div className="Global Break"></div>
           <div className="Game">
         <div className="Home_Game  background_3">
         <div className="Home Game_Background v2">

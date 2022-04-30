@@ -183,11 +183,15 @@ body {
 
 .Home_Game {
     margin: 25px;
-    border-radius: 12px;
     padding: 30px;
     width: 370px;
     background: #50A0E8;
     position: relative;
+    background: rgba(0, 153, 255, 0.808);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.205);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 @media (max-width: 450px) {
     .Home_Game {
@@ -215,8 +219,6 @@ body {
     left: 0;
     right: 0;
     height: 120px;
-    border: 1px solid #b9b9b9;
-margin: -1px;
 }
 .Home.Game_Background.v3 {
     background-image   : url("img/background-ps.webp");
@@ -225,9 +227,8 @@ margin: -1px;
     background-image   : url("img/background-h.webp");
 }
 .Home.Game_Background.v1 {
-    border: none;
     margin: 0;
-    }
+}
 @media (max-width: 450px) {
     .Home_Game_Title {
         font-size: 25px;  
@@ -262,7 +263,6 @@ margin: -1px;
 
 .background_3 {
     background: rgb(255, 255, 255);
-    border: 1px solid #b9b9b9;
     /*
     background: rgb(42,37,170);
     background: linear-gradient(90deg, rgba(42,37,170,1) 0%, rgba(255,92,164,1) 70%, rgba(255,148,129,1) 98%);
@@ -271,17 +271,22 @@ margin: -1px;
 
 .background_4 {
     background: rgb(255, 255, 255);
-    border: 1px solid #b9b9b9;
 }
-.Game {
-    display: inline-block;
+.Home.Games {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .Description {
     margin: 25px;
     padding: 25px;
-    border: 1px solid #b9b9b9;
-    border-radius: 6px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.2 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     width: fit-content;
 }
 
@@ -313,7 +318,6 @@ margin: -1px;
 .Home.Button.Join {
     background-color: #2ea0e8;
     border: none;
-    border-radius: 8px;
     padding: 8px 40px;
     color: white;
     margin-bottom: -25px;
@@ -322,7 +326,6 @@ margin: -1px;
 .Home.Button.More_2 {
     background-color: white;
     border: none;
-    border-radius: 8px;
     padding: 8px 40px;
     color: #2ea0e8;
     font-weight: bold;
