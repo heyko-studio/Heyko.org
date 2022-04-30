@@ -1,6 +1,4 @@
 import React from 'react';
-import reactDom from 'react-dom';
-import ReactDOM from 'react-dom';
 import './login.css';
 import { Link } from 'react-router-dom'
 import { sendMessage } from '../elements/Messages/sendMessage';

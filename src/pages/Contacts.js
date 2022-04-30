@@ -1,48 +1,7 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import React from 'react';
-import reactDom from 'react-dom';
-import ReactDOM from 'react-dom';
 import { sendMessage } from '../elements/Messages/sendMessage';
 const recaptchaRef = React.createRef();
-
-class Ok extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-      }
-    
-      handleClick() {
-        reactDom.unmountComponentAtNode(document.getElementById("login_contener"))
-        reactDom.unmountComponentAtNode(document.getElementById("background")) 
-      }
-    
-      render() {
-        return (
-          <button className="button wrong ok" onClick={this.handleClick}>
-              Ok
-          </button>
-        );
-      }
-  }
-  class Ok_success extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-      }
-    
-      handleClick() {
-        reactDom.unmountComponentAtNode(document.getElementById("login_contener"))
-        reactDom.unmountComponentAtNode(document.getElementById("background")) 
-      }
-    
-      render() {
-        return (
-          <button className="button success ok" onClick={this.handleClick}>
-              Ok
-          </button>
-        );
-      }
-  }
 function App() {
   
     function handleSubmit(e) {
