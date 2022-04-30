@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 import { username } from '../functions/get_username';
 import { password } from '../functions/get_password';
+import { User } from '../elements/Icons';
 import ReactDOM from 'react-dom';
 
 
@@ -200,9 +201,16 @@ function NavBar() {
             }
             else {
               ReactDOM.render(
-                <PROFILE_BUTTON />,
+                <>
+                  <PROFILE_BUTTON />
+                </>
+                ,
               document.getElementById('profile_button')
               );
+              ReactDOM.render(
+                User("Global Icon Medium"),
+                document.getElementById('PROFILE')
+              )
             }
       
       }  
@@ -263,17 +271,20 @@ function ErrorBanner() {
         </ul>
         </div>
         <nav className="menu">
-        <div className="topbar-container">
+        <div style={{margin: 0}} className="topbar-container">
           <div id="profile_button"></div>
+          <Link to="/profile">
           <div id="profile_image">
             <div id="PROFILE"></div>
-        </div>
+          </div>
+          </Link>
         </div>
         </nav>
         </div>
         </header>
         {Load()}
         {ErrorBanner()}
+        <br></br>
         <br></br>
         <br></br>
         <br></br>

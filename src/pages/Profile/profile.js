@@ -110,7 +110,7 @@ sendMessage("Succes", "Success !", "Successful connection to Discord :D")
   }
   else {
     history.push("/login");
-    sendMessage("Wrong", "Please log in", "Please log in");
+    sendMessage("Wrong", "Error while accessing your profile", "Please log in");
   }
   }
   else {
@@ -127,7 +127,7 @@ sendMessage("Succes", "Success !", "Successful connection to Discord :D")
     }
     else {
       history.push("/login");
-      sendMessage("Wrong", "Please log in", "Please log in");
+      sendMessage("Wrong", "Error while accessing your profile", "Please log in");
     }
   }
   else {
@@ -332,16 +332,8 @@ sendMessage("Succes", "Success !", "Successful connection to Discord :D")
           function like_end(data) {
             console.log(data)
             if (data.result === 'error_user_not_found') {
-              function click() {
-                history.push("/login");
-              }
-              const title = React.createElement("h1", {}, 'Please log in');
-              const button = <button onClick={() => click()} className="login button ok wrong">Login</button>
-              const contener = React.createElement('div', {className : 'default_message wrong'}, title, button);
-              ReactDOM.render(
-                  contener,
-                  document.getElementById('Profile')
-                );
+              history.push("/login");
+              sendMessage("Wrong", "Error while accessing your profile", "Please log in");
             }
           }
           const requestOptions2 = {
@@ -441,13 +433,8 @@ sendMessage("Succes", "Success !", "Successful connection to Discord :D")
         
         setTimeout(() => {
           if (type === 1) {
-        const title = React.createElement("h1", {}, 'Please log in');
-        const button = <button onClick={() => click()} className="login button ok wrong">Login</button>
-        const contener = React.createElement('div', {className : 'default_message wrong'}, title, button);
-        ReactDOM.render(
-            contener,
-            document.getElementById('Profile')
-          );
+            history.push("/login");
+            sendMessage("Wrong", "Error while accessing your profile", "Please log in");
         }
         else {
           const title = React.createElement("h1", {}, 'Page not found');

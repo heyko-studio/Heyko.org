@@ -2,10 +2,8 @@ import React from 'react';
 import './login.css';
 import { Link } from 'react-router-dom'
 import { sendMessage } from '../elements/Messages/sendMessage';
-import { useHistory } from 'react-router-dom';
 
 function App() {
-    const history = useHistory()
     function handleSubmit(e) {
         e.preventDefault();
         const email = document.getElementById("mail").value
