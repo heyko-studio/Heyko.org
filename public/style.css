@@ -127,16 +127,16 @@ body{
     margin-top: 20px;
 }
 .recaptcha.contener {
-    position: relative;
-    width: 315px;
-    height: 90px;
-    border: solid 10px rgb(255, 255, 255);
+    display: inline-block;
+    overflow: hidden;
+    width: 290px;
+    height: 74px;
+    text-align: left;
 }
-.test {
-    position: absolute;
-    top: -5px;
-    left: -3px;
-    z-index: 1;
+.recaptcha.button {
+    position: relative;
+    top: -1px;
+    left: -10px;
 }
 .form-line1, .form-line2, .form-line3 {
     display: flex;

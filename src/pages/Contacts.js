@@ -132,7 +132,7 @@ function App() {
                 <textarea id="content" placeholder="Your message" required name="message"></textarea>
             </div>
             <div className="recaptcha contener">
-              <ReCAPTCHA className="test" sitekey="6LdOR5AcAAAAAF80awkaFKClF2lkD95wsmvYyBWX" ref={recaptchaRef}/>
+              <ReCAPTCHA className="recaptcha button" sitekey="6LdOR5AcAAAAAF80awkaFKClF2lkD95wsmvYyBWX" ref={recaptchaRef}/>
             </div>
         <div className="send-container">
             <button className="send" name="submit" id="text2">Send</button>
