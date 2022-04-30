@@ -131,7 +131,9 @@ function App() {
             <div className="form-line3">
                 <textarea id="content" placeholder="Your message" required name="message"></textarea>
             </div>
-            <ReCAPTCHA sitekey="6LdOR5AcAAAAAF80awkaFKClF2lkD95wsmvYyBWX" ref={recaptchaRef}/>
+            <div className="recaptcha contener">
+              <ReCAPTCHA className="test" sitekey="6LdOR5AcAAAAAF80awkaFKClF2lkD95wsmvYyBWX" ref={recaptchaRef}/>
+            </div>
         <div className="send-container">
             <button className="send" name="submit" id="text2">Send</button>
         </div>

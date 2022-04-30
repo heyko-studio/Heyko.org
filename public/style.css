@@ -61,7 +61,7 @@ body{
 
 .hr {
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: #0E76B8;
 }
 .hr_2 {
@@ -126,6 +126,18 @@ body{
     width: 100%;
     margin-top: 20px;
 }
+.recaptcha.contener {
+    position: relative;
+    width: 315px;
+    height: 90px;
+    border: solid 10px rgb(255, 255, 255);
+}
+.test {
+    position: absolute;
+    top: -5px;
+    left: -3px;
+    z-index: -1;
+}
 .form-line1, .form-line2, .form-line3 {
     display: flex;
 }
@@ -135,8 +147,6 @@ body{
     width: 100%;
     background: #ffffff;
     color: rgb(53, 53, 53);
-
-
     margin: 20px 5px;
     padding: 5px 10;
     outline: none;
