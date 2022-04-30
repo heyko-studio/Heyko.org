@@ -274,6 +274,10 @@ function ErrorBanner() {
         </header>
         {Load()}
         {ErrorBanner()}
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         </>
     )
 }
