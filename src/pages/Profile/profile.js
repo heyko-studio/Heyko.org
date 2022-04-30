@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { username } from '../../functions/get_username';
 import { password } from '../../functions/get_password';
 import { copyTextToClipboard } from '../../functions/copy_to_clipboard'
+import { sendMessage } from '../../elements/Messages/sendMessage';
 
 function App() {
 
@@ -101,34 +102,15 @@ function connect_result(data, data2) {
           );
       }
   }
-const title = React.createElement('h1', {},  "Successful connection to Discord");
-const ok = React.createElement(Ok, {}, 'Ok');
-const contener = React.createElement('div', {className : 'login success default_message'}, title, ok);
-ReactDOM.render(
-  <>
-  <div className="login white_background"></div>
-  {contener}
-  </>,
-  document.getElementById('message_screen')
-);
+sendMessage("Succes", "Success !", "Successful connection to Discord :D")
   }
   Show_Profile(data, 1)
 }
   }
   }
   else {
-    setTimeout(function() {
-    function click() {
-      history.push("/login");
-    }
-    const title = React.createElement("h1", {}, 'Please log in');
-    const button = <button onClick={() => click()} className="login button ok wrong">Login</button>
-    const contener = React.createElement('div', {className : 'default_message wrong'}, title, button);
-    ReactDOM.render(
-        contener,
-        document.getElementById('Profile')
-      );
-    }, 700);
+    history.push("/login");
+    sendMessage("Wrong", "Please log in", "Please log in");
   }
   }
   else {
@@ -144,18 +126,8 @@ ReactDOM.render(
     .then(data => Show_Profile(data, 1))
     }
     else {
-      setTimeout(function() {
-      function click() {
-        history.push("/login");
-      }
-      const title = React.createElement("h1", {}, 'Please log in');
-      const button = <button onClick={() => click()} className="login button ok wrong">Login</button>
-      const contener = React.createElement('div', {className : 'default_message wrong'}, title, button);
-      ReactDOM.render(
-          contener,
-          document.getElementById('Profile')
-        );
-      }, 700);
+      history.push("/login");
+      sendMessage("Wrong", "Please log in", "Please log in");
     }
   }
   else {
