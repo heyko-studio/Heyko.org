@@ -26,8 +26,9 @@ body{
   background: rgb(255, 255, 255);
   overflow-x: hidden;
   overflow-y: overlay;
+  position:relative;
+  min-height:100vh;
 }
-
 
 .topbar {
   background-color: white;
@@ -96,7 +97,7 @@ body{
 
 /* CONTACTS */
 .form-container {
-  margin: 50px auto 200px;
+  margin: 50px auto 50px;
   width: 70%;
   padding: 20px;
   color: rgb(53, 53, 53);
@@ -231,13 +232,19 @@ body{
 }
 
 .heyko_banner_1 {
-  max-width:90%;
+  max-width:calc(90% - 200px);
   display:block;
   margin-left:auto;
   margin-right:auto;
   background-color: rgb(245, 245, 245);
   margin-top: 40px;
   border-radius: 15px;
+}
+
+@media (max-width: 600px) {
+  .heyko_banner_1 {
+    max-width:calc(95%);
+  }
 }
 
 .input_1 {

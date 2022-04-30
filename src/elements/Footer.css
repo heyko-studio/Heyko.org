@@ -7,7 +7,8 @@
         min-height: 44px;
         position: absolute;
         left: 0;
-        width: 100%;
+        right: 0;
+        bottom: 0;
     }
 
     .footer_line {
@@ -22,6 +23,7 @@
     .footer.line {
         margin-left: auto;
         margin-right: auto;
+        margin-top: auto;
         display: block;
     }
 
