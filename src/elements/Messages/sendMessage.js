@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
+import { Alert } from './Icons'
 
-export default function SendMessage(content) {
+export function sendMessage(type, title, content) {
         class Ok extends React.Component {
             constructor(props) {
                 super(props);
@@ -14,19 +15,21 @@ export default function SendMessage(content) {
             
             render() {
                 return (
-                <button className="login button ok wrong" onClick={this.handleClick}>
+                <button className="Global Message Button" onClick={this.handleClick}>
                     Ok
                 </button>
                 );
             }
         }
-    const title = React.createElement('h1', {},  content);
-    const ok = React.createElement(Ok, {}, 'Ok');
-    const contener = React.createElement('div', {className : 'login success default_message'}, title, ok, <><br></br><br></br></>);
     ReactDOM.render(
         <>
-        <div className="login white_background"></div>
-        {contener}
+        <div className="Global whiteBackground"></div>
+        <div className={'Global Message Contener ' + type}>
+            <Alert />
+            <h1>{title}</h1>
+            <p>{content}</p>
+            <Ok />
+            </div>
         </>,
         document.getElementById('message_screen')
     );

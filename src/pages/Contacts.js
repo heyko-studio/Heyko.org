@@ -2,6 +2,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import React from 'react';
 import reactDom from 'react-dom';
 import ReactDOM from 'react-dom';
+import { sendMessage } from '../elements/Messages/sendMessage';
 const recaptchaRef = React.createRef();
 
 class Ok extends React.Component {
@@ -63,51 +64,16 @@ function App() {
             .then(response => response.json())
             .then(data => {
                 if (data.results === "captcha_error") {
-                    const title = React.createElement('h1', {}, 'Please wait before sending us another email');
-                    const ok = React.createElement(Ok, {}, 'Ok');
-                    const contener = React.createElement('div', {className : 'default_message wrong'}, title, ok);
-                    ReactDOM.render(
-                        contener,
-                        document.getElementById('login_contener')
-                      );
-                      const background = React.createElement('div', {className : 'white_background'}, '');
-                      ReactDOM.render(
-                          background,
-                          document.getElementById('background')
-                        );
+                    sendMessage("Wrong", "Error when sending the email", "Please wait before sending us another email");
                   }
                   else {
-                    if (data.results === "sent") {
-                        const title = React.createElement('h1', {}, 'Mail sent successfully');
-                        const ok = React.createElement(Ok_success, {}, 'Ok');
-                        const contener = React.createElement('div', {className : 'default_message success'}, title, ok);
-                        ReactDOM.render(
-                            contener,
-                            document.getElementById('login_contener')
-                          );
-                          const background = React.createElement('div', {className : 'white_background'}, '');
-                          ReactDOM.render(
-                              background,
-                              document.getElementById('background')
-                            );
-                      }
+                    if (data.results === "sent") sendMessage("Success", "Mail sent successfully", "We will contact you as soon as possible");
                   }
                 
             })  
       }
       else {
-        const title = React.createElement('h1', {}, 'Please complete the Captcha');
-        const ok = React.createElement(Ok, {}, 'Ok');
-        const contener = React.createElement('div', {className : 'default_message wrong'}, title, ok);
-        ReactDOM.render(
-            contener,
-            document.getElementById('login_contener')
-          );
-          const background = React.createElement('div', {className : 'white_background'}, '');
-          ReactDOM.render(
-              background,
-              document.getElementById('background')
-            );
+        sendMessage("Wrong", "Error when sending the email", "Please complete the Captcha");
       }
     }
   return (

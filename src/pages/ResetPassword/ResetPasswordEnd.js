@@ -1,8 +1,7 @@
 import React from 'react';
 import './ResetPassword.css';
 import {Link} from 'react-router-dom'
-import SendErrorMessage from '../../elements/Messages/Error'
-import SendMessage from '../../elements/Messages/Success'
+import { sendMessage } from '../../elements/Messages/sendMessage';
 function App() {
     function handleSubmit(e) {
         e.preventDefault();
@@ -20,14 +19,14 @@ function App() {
             function result(data) {
                 console.log(data);
                 if (data.results) {
-                    SendMessage("Password successfully reset.")
+                    sendMessage("Success", "Success !", "Password successfully reset.")
                 }
                 else {
-                    SendErrorMessage("The request has expired, or the link is invalid.")
+                    sendMessage("Wrong", "Error", "The request has expired, or the link is invalid.")
                 }
             }
-      }
-  return (
+    }
+    return (
     <>
     <div id="background"></div>
 <div id="login_contener">

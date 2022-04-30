@@ -2,35 +2,12 @@ import React from 'react';
 import reactDom from 'react-dom';
 import ReactDOM from 'react-dom';
 import './login.css';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { sendMessage } from '../elements/Messages/sendMessage';
+import { useHistory } from 'react-router-dom';
 
-class Ok extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-      }
-    
-      handleClick() {
-        reactDom.unmountComponentAtNode(document.getElementById("login_contener"))
-        reactDom.unmountComponentAtNode(document.getElementById("background")) 
-      }
-    
-      render() {
-        return (
-          <button className="login button ok wrong" onClick={this.handleClick}>
-              Ok
-          </button>
-        );
-      }
-  }
-  class Loading extends React.Component {
-      render() {
-        return (
-            <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        );
-      }
-  }
 function App() {
+    const history = useHistory()
     function handleSubmit(e) {
         e.preventDefault();
         const email = document.getElementById("mail").value
@@ -47,41 +24,15 @@ function App() {
       function connect(data) {
           console.log(data)
         if (data.exists === true) {
-            const title = React.createElement("h1", {}, 'Hello ' + data.username + '🎉');
-            const loader = React.createElement(Loading, {}, '');
-            const contener = React.createElement('div', {className : 'login default_message success'}, title, loader);
-            ReactDOM.render(
-                contener,
-                document.getElementById('login_contener')
-              );
-              const background = React.createElement('div', {className : 'login white_background'}, '');
-              ReactDOM.render(
-                  background,
-                  document.getElementById('background')
-                );
             const d = new Date();
             d.setTime(d.getTime() + (3*24*60*60*1000));
             let expires = "expires="+ d.toUTCString();
             document.cookie = "username=" + data.username + ";" + expires
             document.cookie = "password=" + document.getElementById("password").value + ";" + expires
-            setTimeout(function() {
-              window.open("/profile","_self");
-            }, 1000);
+            history.push('/profile')
         }
         else {
-            const title = React.createElement('h1', {}, 'Wrong email address/username or password. Contact us on discord for help');
-            const ok = React.createElement(Ok, {}, 'Ok');
-            const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
-            ReactDOM.render(
-                contener,
-                document.getElementById('login_contener')
-              );
-              const background = React.createElement('div', {className : 'login white_background'}, '');
-              ReactDOM.render(
-                  background,
-                  document.getElementById('background')
-                );
-                
+          sendMessage("Wrong", "Login error", "Wrong email address/username or password. Contact us on discord for help")
         }
       }
   return (

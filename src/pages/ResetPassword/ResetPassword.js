@@ -1,8 +1,7 @@
 import React from 'react';
 import './ResetPassword.css';
 import {Link} from 'react-router-dom'
-import SendErrorMessage from '../../elements/Messages/Error'
-import SendMessage from '../../elements/Messages/Success'
+import { sendMessage } from '../../elements/Messages/sendMessage';
 function App() {
     function handleSubmit(e) {
         e.preventDefault();
@@ -12,29 +11,29 @@ function App() {
             headers: { 'Content-Type': 'application/json' },
             body: `{"username":"${email}"}`
         };
- fetch(`https://backend.heyko.fr/requests/send_reset_link`, requestOptions)
+fetch(`https://backend.heyko.fr/requests/send_reset_link`, requestOptions)
             .then(response => response.json())
             .then(data => result(data))
             
             function result(data) {
                 console.log(data);
                 if (data.results) {
-                    SendMessage("An email has been sent to you. If you can't find it, check your spam folder.")
+                    sendMessage("Success", "An email has been sent to you. If you can't find it, check your spam folder.")
                 }
                 else {
                     if (data.error) {
                         if (data.error === 1) {
-                            SendErrorMessage("You have already received 3 reset emails recently. To go further, contact our support.")
+                            sendMessage("Wrong", "You have already received 3 reset emails recently. To go further, contact our support.")
                         }
                     }
                     else {
-                        SendErrorMessage("We are unable to find your account.Please check your email address or the password you specified earlier. If the problem persists, please contact us.")
+                        sendMessage("Wrong", "We are unable to find your account.Please check your email address or the password you specified earlier. If the problem persists, please contact us.")
                     }
                 }
             }
-      }
-  return (
-      <>
+    }
+    return (
+    <>
         <div id="background"></div>
 <div id="login_contener">
 </div>
