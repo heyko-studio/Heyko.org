@@ -231,7 +231,7 @@ body{
     width: fit-content;
     padding: 15px 50px;
     margin-top: 20px;
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     color: white;
