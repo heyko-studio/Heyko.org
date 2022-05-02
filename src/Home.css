@@ -49,7 +49,7 @@ body {
     
 }
 .Home_Bottom_Arrow:hover {
-    color: #2ea0e8;
+    opacity: 0.3;
 }
 .Home.Banner {
     max-width: 100%;
