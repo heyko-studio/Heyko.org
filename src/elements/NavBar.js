@@ -53,7 +53,7 @@ function NavBar() {
           }
             if (exists) {
               ReactDOM.render(
-                <button onClick={() => profile()} style={{marginRight:"20px"}} className="button view NavBar_Profile_Button">Profile</button>,
+                <button onClick={() => profile()} style={{marginRight:"5px"}} className="button view NavBar_Profile_Button">Profile</button>,
                 document.getElementById('Profile_Button')
               );
               class Profile_burger_link extends React.Component {
@@ -231,7 +231,7 @@ function NavBar() {
       return;
     }
   });
-
+  document.getElementById("App").style.paddingTop = "70px"
   return (
     <div>
       { value }
@@ -271,7 +271,7 @@ function ErrorBanner() {
         </ul>
         </div>
         <nav className="menu">
-        <div style={{margin: 0}} className="topbar-container">
+        <div className="topbar-container">
           <div id="profile_button"></div>
           <Link to="/profile">
           <div id="profile_image">
@@ -284,11 +284,6 @@ function ErrorBanner() {
         </header>
         {Load()}
         {ErrorBanner()}
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
         </>
     )
 }
