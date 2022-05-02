@@ -10,7 +10,8 @@ BLUE_2 : #7CD8FF
 * {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
-  font-weight: 500;}
+  font-weight: 500;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -36,7 +37,6 @@ body {
   transition: 0.4s;
   transition-delay: 0.4s;
   border: 1px solid rgba(255, 255, 255, 0);
-  min-height: 80px;
 }
 
 #navbar {
@@ -260,8 +260,8 @@ body {
 
 
 .profile_img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 90px;
   display: inline-block;
   border: 1px solid #b9b9b9;
@@ -276,13 +276,6 @@ body {
   top:0;
   right: 0;
   z-index: 10;
-}
-
-@media (max-width: 800px) {
-  .profile_img {
-      margin-right: -80px;
-      transform: translateX(30px);
-  }
 }
 
 .heyko_banner_1 {
@@ -502,7 +495,7 @@ html, body {
   border: 2px solid #e66a89;
   border-radius: 90px;
 }
-@media (max-width: 348px) {
+@media (max-width: 321px) {
   .NavBar_Profile_Button {
       display: none;
   }
