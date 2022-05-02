@@ -29,7 +29,7 @@ function App() {
         <section className='Home Games' id="games">
 
 
-          <h1 className="Title_2">Our games</h1>
+          <h1 className="Global Title v2">Our games</h1>
 
           <div className="Global Break"></div>
           <div className="Game">
@@ -76,7 +76,7 @@ function App() {
 
         <div className="Game">
           <div className="Home_Game background_4">
-          <h2 className="Home_Game_Title_2">💬 join our discord server</h2>
+          <h2 className="Home_Game_Global Title v2">💬 join our discord server</h2>
           <p className="Home_Game_Description_2">To discover the community, discuss, be informed before others,<br></br> and participate in the progress of the games
           </p>
           <a className="Home Button Join" href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">
@@ -87,7 +87,7 @@ function App() {
         </section>
         </div>
 
-        <h2 className="Title_2 v2">What is Heyko?</h2>
+        <h2 className="Global Title v2 v2">What is Heyko?</h2>
         <div className="Description">
         <p>
           Heyko is an independent video game creation team
