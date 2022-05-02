@@ -104,7 +104,7 @@ body {
   font-weight: bold;
 } 
 .Global.Title.v2 {
-  margin:25px;
+  margin:25px auto;
   font-weight: bold;
   color: #ffffff;
   font-size: 40px;
@@ -112,7 +112,7 @@ body {
   width: fit-content;
   padding: 10px;
 } 
-@media (max-width: 600px) {
+@media (max-width: 840px) {
   .Global.Title.v2 {
     margin: 25px;
     width: calc(100% - 50px);
