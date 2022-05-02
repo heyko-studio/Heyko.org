@@ -10,7 +10,9 @@ function App() {
         <div className="Strip_1"></div>
         <div className="Strip_2"></div>
         <div className="Strip_3"></div>
-        <br></br><br></br><br></br><br></br><br></br>
+        <br></br><br></br><br></br>
+        <br></br>
+        <br></br>
         
             <h1 className="Home_Sub_Title" >
             <img className="Home Banner" src="img/heyko.png" alt="Heyko's Banner" width="450px"></img><br></br>
