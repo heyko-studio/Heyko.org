@@ -119,6 +119,10 @@
     left: 10px;
     right: 10px;
     top: 120px;
+    font-size: 16px;
+}
+.Infos.partner-description.v2 {
+    font-size: 14px;
 }
 
 .Infos.bold {
