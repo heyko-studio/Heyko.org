@@ -2,7 +2,6 @@ import React from 'react';
 import './login.css';
 import { Link } from 'react-router-dom'
 import { sendMessage } from '../elements/Messages/sendMessage';
-
 function App() {
     function handleSubmit(e) {
         e.preventDefault();

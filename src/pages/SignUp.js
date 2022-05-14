@@ -2,6 +2,7 @@ import React from 'react';
 import reactDom from 'react-dom';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom'
+import { sendMessage } from '../elements/Messages/sendMessage';
 class Ok extends React.Component {
     constructor(props) {
         super(props);
@@ -46,71 +47,21 @@ function App() {
         console.log(data)
         if (data.results === "error") {
           if (data.error === "username_too_long") {
-            const title = React.createElement('h1', {}, 'Username too long');
-            const ok = React.createElement(Ok, {}, 'Ok');
-            const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
-            ReactDOM.render(
-                contener,
-                document.getElementById('login_contener')
-              );
-              const background = React.createElement('div', {className : 'login white_background'}, '');
-              ReactDOM.render(
-                  background,
-                  document.getElementById('background')
-                );
+            sendMessage("Wrong", "Registration error", "Username too long")
           }
           else {
             if (data.error === "email_too_long") {
-              const title = React.createElement('h1', {}, 'Email adress too long');
-              const ok = React.createElement(Ok, {}, 'Ok');
-              const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
-              ReactDOM.render(
-                  contener,
-                  document.getElementById('login_contener')
-                );
-                const background = React.createElement('div', {className : 'login white_background'}, '');
-                ReactDOM.render(
-                    background,
-                    document.getElementById('background')
-                  );
+              sendMessage("Wrong", "Registration error", "Email address too long")
             }
             else {
               if (data.error === "password_too_long") {
-                const title = React.createElement('h1', {}, 'Password too long');
-                const ok = React.createElement(Ok, {}, 'Ok');
-                const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
-                ReactDOM.render(
-                    contener,
-                    document.getElementById('login_contener')
-                  );
-                  const background = React.createElement('div', {className : 'login white_background'}, '');
-                  ReactDOM.render(
-                      background,
-                      document.getElementById('background')
-                    );
+                sendMessage("Wrong", "Registration error", "Password too long")
               }
             }
           }
           }
           else  {
-            const title = React.createElement('h1', {}, 'Welcome 😃');
-            const ok = React.createElement(Loading, {});
-            const contener = React.createElement('div', {className : 'login default_message'}, title, ok);
-            ReactDOM.render(
-                contener,
-                document.getElementById('login_contener')
-              );
-              const background = React.createElement('div', {className : 'login white_background'}, '');
-              ReactDOM.render(
-                  background,
-                  document.getElementById('background')
-                );
-                const username = document.getElementById("username").value
-                document.cookie = "username=" + username
-                document.cookie = "password=" + document.getElementById("password").value
-                setTimeout(function() {
-                  window.location = 'welcome';
-                }, 1000);
+              window.location = 'welcome';
           }
       }
       function check_1(data) {
@@ -130,33 +81,11 @@ function App() {
         }
         else {
             if (data.results === "username") {
-                const title = React.createElement('h1', {}, 'This username is already in use');
-                const ok = React.createElement(Ok, {}, 'Ok');
-                const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
-                ReactDOM.render(
-                    contener,
-                    document.getElementById('login_contener')
-                  );
-                  const background = React.createElement('div', {className : 'login white_background'}, '');
-                  ReactDOM.render(
-                      background,
-                      document.getElementById('background')
-                    );
+                sendMessage("Wrong", "Registration error", "This username is already in use")
             }   
             else {
                 if (data.results === "email") {
-                    const title = React.createElement('h1', {}, 'This email address is already in use');
-                    const ok = React.createElement(Ok, {}, 'Ok');
-                    const contener = React.createElement('div', {className : 'login wrong default_message'}, title, ok);
-                    ReactDOM.render(
-                        contener,
-                        document.getElementById('login_contener')
-                      );
-                      const background = React.createElement('div', {className : 'login white_background'}, '');
-                      ReactDOM.render(
-                          background,
-                          document.getElementById('background')
-                        );
+                    sendMessage("Wrong", "Registration error", "This email address is already in use")
                 }  
             } 
         }
@@ -179,7 +108,7 @@ function App() {
             <input id="password" className="input_1" type="password" placeholder="Password" required name="password"></input>
         </div>
         <div className="form-line2">
-            <input id="mail" className="input_1" type="email" placeholder="Email adress" required name="email"></input>
+            <input id="mail" className="input_1" type="email" placeholder="Email address" required name="email"></input>
         </div>
         <div className="form-line3">
             <Link to="/terms" className="link">✅ Terms of service</Link>

@@ -304,7 +304,7 @@ body {
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
   border: 1px solid rgba(148, 212, 255, 0.582);
-  width: fit-content;
+  width: calc(100% - 20px);
   padding: 15px 50px 25px;
   margin-top: 20px;
   position: fixed;
@@ -317,6 +317,12 @@ body {
   max-width: 700px;
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .Global.Message.Contener {
+    padding: 20px 10px;
+  }
 }
 
 .Global.Message.Icon {
