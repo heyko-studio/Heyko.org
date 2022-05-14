@@ -1,34 +1,6 @@
 import React from 'react';
-import reactDom from 'react-dom';
-import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom'
 import { sendMessage } from '../elements/Messages/sendMessage';
-class Ok extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-      }
-    
-      handleClick() {
-        reactDom.unmountComponentAtNode(document.getElementById("login_contener"))
-        reactDom.unmountComponentAtNode(document.getElementById("background")) 
-      }
-    
-      render() {
-        return (
-          <button className="login button ok wrong" onClick={this.handleClick}>
-              Ok
-          </button>
-        );
-      }
-  }
-  class Loading extends React.Component {
-    render() {
-      return (
-          <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-      );
-    }
-}
 function App() {
     function handleSubmit(e) {
         e.preventDefault();

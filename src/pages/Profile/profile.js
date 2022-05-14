@@ -83,25 +83,6 @@ fetch(`https://backend.heyko.fr/requests/discord_connect`, requestOptions)
 function connect_result(data, data2) {
   console.log(data2)
   if (data2.result) {
-    class Ok extends React.Component {
-      constructor(props) {
-          super(props);
-          this.handleClick = this.handleClick.bind(this);
-      }
-      
-      handleClick() {
-          ReactDOM.unmountComponentAtNode(document.getElementById("message_screen"))
-          history.push("/profile")
-      }
-      
-      render() {
-          return (
-          <button className="login button ok wrong" onClick={this.handleClick}>
-              Ok
-          </button>
-          );
-      }
-  }
 sendMessage("Succes", "Success !", "Successful connection to Discord :D")
   }
   Show_Profile(data, 1)
@@ -285,13 +266,7 @@ sendMessage("Succes", "Success !", "Successful connection to Discord :D")
             function click() {
               unmountComponentAtNode(document.getElementById("message"))
             }
-            const title = React.createElement("h1", {}, 'Link copied to clipboard');
-            const button = <button onClick={() => click()} className="login button ok wrong">Ok !</button>
-            const contener = React.createElement('div', {className : 'default_message success'}, title, button);
-            ReactDOM.render(
-                <div className="white_background">{contener}</div>,
-                document.getElementById('message')
-              );
+            sendMessage("Success", "Link copied to the clipboard", "Feel free to share it around, so everyone can see the beautiful avatar you drew 😎")
         }
         const contener_1 = React.createElement("div", {className : 'Profile Contener_1'}, user_contener, description, hr_1, numbers, 
         <>
