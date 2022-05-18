@@ -19,6 +19,7 @@ import Embed from './pages/informations/embed'
 import ResetPassword from './pages/ResetPassword/ResetPassword'
 import ResetPasswordEnd from './pages/ResetPassword/ResetPasswordEnd'
 import Terms from './pages/Terms'
+import FindFriends from './pages/Profile/FindFriends'
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
       <Route exact path="/games/poly-story" component={Game_Poly_Story}/>
       <Route exact path="/login/reset-password" component={ResetPassword}/>
       <Route path="/reset-password" component={ResetPasswordEnd}/>
+      <Route path="/find-friends" component={FindFriends}/>
       <Route exact path="/terms" component={Terms}/>
       <Route exact path="/informations/embed" component={Embed}/>
       <Route

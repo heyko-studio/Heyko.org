@@ -4,9 +4,9 @@ import Canvas from '../welcome/Canvas'
 import ReactDOM from 'react-dom';
 
 function App() {
-  var error_screen = 0
-  document.getElementById("body").style.overscrollBehavior = 'contain'
-  setTimeout(function() {
+    var error_screen = 0
+    document.getElementById("body").style.overscrollBehavior = 'contain'
+    setTimeout(function() {
     reportWindowSize()
     }, 100)
     function reportWindowSize() {

@@ -30,6 +30,11 @@ body {
   min-height:100vh;
 }
 
+a {
+  color: unset;
+  text-decoration: none;
+}
+
 .topbar {
   background-color: white;
   z-index: 3;
@@ -85,6 +90,10 @@ body {
   -webkit-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
   -moz-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
   box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
+}
+
+.Global.Scroll {
+  overflow-y: scroll;
 }
 
 .Global.Icon.Medium {
@@ -297,6 +306,51 @@ body {
 .input_1 {
   padding: 5px;
 }
+
+.Global.Cover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.Global.Background.Gradient {
+  background: rgb(46,160,232);
+  background: linear-gradient(33deg, rgba(46,160,232,1) 0%, rgba(124,216,255,1) 100%);
+}
+.Global.Element.Contener {
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin: 15px;
+  padding: 15px;
+}
+.Global.Element.Tag {
+  background-color: white;
+  width: fit-content;
+  border-radius: 90px;
+  padding: 4px 10px;
+}
+.Global.Element.Line {
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin: 15px;
+  padding: 5px 15px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+.Global.Element.Line:hover {
+  background: rgba(255, 255, 255, 0.451);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.7 );
+}
 .Global.Message.Contener {
   background: rgba( 46, 160, 232, 0.63 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.158 );
@@ -317,6 +371,11 @@ body {
   max-width: 700px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.anchor.right {
+  position: absolute;
+  right: 15px;
 }
 
 @media (max-width: 600px) {
@@ -365,6 +424,9 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(183, 255, 165, 0.582);
   color: rgb(255, 255, 255);
+}
+.Global.Contener.FullSize {
+  
 }
 @media (max-width: 500px) {
   .default_message {
@@ -416,7 +478,8 @@ body {
   border-radius: 90px;
 }
 .button.view.clicked {
-  background-color: #2ea0e8;
+  border: 0;
+  background-color: #2ea1e870;
   color: white;
 }
 .button.Next {
