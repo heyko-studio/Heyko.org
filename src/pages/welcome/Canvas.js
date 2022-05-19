@@ -804,7 +804,7 @@
 <PEN_BUTTON />
 <CIRCLE_BUTTON />
 <SQUARE_BUTTON />
-<TEXT_BUTTON />
+{/*<TEXT_BUTTON />*/}
 </div>
 
 <div className="Welcome profile_tool_bar_elements">
