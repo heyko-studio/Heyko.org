@@ -22,6 +22,7 @@ function NavBar() {
       return;
     }
     const navbar = document.querySelector("#navbar");
+    if (!navbar) return 
     if (window.scrollY > 100) {
       navbar.classList.add("light");
     } else {
@@ -231,7 +232,7 @@ function NavBar() {
       return;
     }
   });
-  document.getElementById("App").style.paddingTop = "70px"
+  //document.getElementById("App").style.paddingTop = "70px"
   return (
     <div>
       { value }
@@ -284,6 +285,10 @@ function ErrorBanner() {
         </header>
         {Load()}
         {ErrorBanner()}
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         </>
     )
 }

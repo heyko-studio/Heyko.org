@@ -2,6 +2,7 @@ import React from 'react'
 import './Profile.css';
 import Canvas from '../welcome/Canvas'
 import ReactDOM from 'react-dom';
+import { sendMessage } from '../../elements/Messages/sendMessage'
 
 function App() {
     var error_screen = 0
@@ -13,20 +14,13 @@ function App() {
         if (window.innerHeight < 516) {
             if (error_screen !== 1) {
                 error_screen = 1
-                ReactDOM.render(
-                    <>
-                    <div className="white_background">
-                    </div>
-                    <div className="default_message wrong">Please rotate your phone</div>
-                    </>,
-                    document.getElementById('error_screen')
-                );
+                sendMessage("Wrong", "Please rotate your phone", "Your phone should be upright.")
             }
         }
         else {
             if (error_screen === 1) {
                 error_screen = 0
-                ReactDOM.unmountComponentAtNode(document.getElementById("error_screen")) 
+                ReactDOM.unmountComponentAtNode(document.getElementById("message_screen")) 
             }
         }
     }

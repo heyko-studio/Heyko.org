@@ -53,6 +53,7 @@ body {
 }
 .Home.Banner {
     max-width: 100%;
+    margin-top: -100px;
 }
 
 @keyframes Bottom_Arrow_2 {
