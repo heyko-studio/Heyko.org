@@ -42,6 +42,18 @@ Heyko is an independent video game creation team
   <div style={{height: '310px'}}  className="Infos partner-contener">
   <div className="Infos partner-image">
     </div>
+    <div className="Infos partner-i v9"></div>
+    <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
+    
+    <h1 className="Infos partner-title">The Lord Of Shadow</h1>
+    <a href="https://discord.gg/wFT4sHknNT" target="https://discord.gg/wFT4sHknNT"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
+    <p className="Infos partner-description"><b className="Infos bold">The Lord Of Shadow</b> est un jeu réalisé par équipe indépendante. Découvrez dès maintenant cet Action RPG scénarisé et incarnez Herumor, le seigneur de l'ombre !</p>
+  </div>
+
+
+  <div style={{height: '310px'}}  className="Infos partner-contener">
+  <div className="Infos partner-image">
+    </div>
     <div className="Infos partner-i v8"></div>
     <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
     
