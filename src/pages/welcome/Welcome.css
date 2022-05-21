@@ -434,7 +434,7 @@
 }
 .Welcome.profile_tool_bar {
     margin-left: 0;
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     left: 10px;
 }

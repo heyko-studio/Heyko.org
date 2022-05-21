@@ -8,7 +8,6 @@
     import { useHistory } from "react-router-dom";
 
     function MapCanvas() {
-        window.scrollTo(0, 1);
         const history = useHistory();
         let tool = 0;
         let last_action = undefined;
