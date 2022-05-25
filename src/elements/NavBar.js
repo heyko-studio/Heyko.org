@@ -61,8 +61,8 @@ function NavBar() {
                 render() {
                   return (
                       <>
-                      <li><a href="/profile">Profile</a></li>
-                        </> 
+                        <li onClick={() => history.push("/profile")}>Profile</li>
+                      </> 
                   );
                 }
               }

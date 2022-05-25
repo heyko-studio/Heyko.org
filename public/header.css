@@ -18,15 +18,15 @@
   user-select: none;
 }
 
-#menuToggle a
+#menuToggle li
 {
   text-decoration: none;
   color: #232323;
-  
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
-#menuToggle a:hover
+#menuToggle li:hover
 {
   color: #0E76B8;
 }
