@@ -186,10 +186,25 @@
 
 }
 @media (max-width: 662px) {
-
-.header_element2 {
-  visibility: hidden;
-  position:absolute;
+  .header_element2 {
+    visibility: hidden;
+    position:absolute;
+  }
 }
 
+#navbar_profile_canvas {
+  position: relative;
+}
+
+.Navbar.notifs {
+  position: absolute;
+  background-color: rgb(255, 28, 28);
+  color: white;
+  font-size: 15px;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  bottom: 0;
+  text-align: center;
 }

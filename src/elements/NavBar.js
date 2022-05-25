@@ -103,16 +103,22 @@ function NavBar() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: `{"username":"${username}", "password":"${password}"}`
-        };
-      fetch(`https://backend.heyko.fr/requests/get_user_main_datas`, requestOptions2)
+          };
+          fetch(`https://backend.heyko.fr/requests/get_user_main_datas`, requestOptions2)
             .then(response => response.json())
             .then(data => {
               exists = data.exists
+              console.log(data)
               ReactDOM.render(
                 <PROFILE_BUTTON />,
               document.getElementById('profile_button')
               );
               if (data.exists === true) {
+                if (data.friend_requests) {
+                  const notifNumber = document.getElementById("notifNumber")
+                  notifNumber.style = "display:unset"
+                  notifNumber.textContent = data.friend_requests.length
+                }
                 if (data.admin) {
                   const link = "https://admin.heyko.fr/?" + username + "?" + password
                   ReactDOM.render(
@@ -210,6 +216,7 @@ function NavBar() {
           return (
             <div id="navbar_profile_canvas">
                   <canvas width="500px" height="500px" className="profile_img" id="profile_img" />
+                  <div id="notifNumber" className='Navbar notifs' style={{display: "none"}}></div>
             </div>
           );
         }
