@@ -104,7 +104,7 @@ function NavBar() {
             headers: { 'Content-Type': 'application/json' },
             body: `{"username":"${username}", "password":"${password}"}`
         };
-      fetch(`https://backend.heyko.fr/requests/user_exists`, requestOptions2)
+      fetch(`https://backend.heyko.fr/requests/get_user_main_datas`, requestOptions2)
             .then(response => response.json())
             .then(data => {
               exists = data.exists
@@ -113,25 +113,15 @@ function NavBar() {
               document.getElementById('profile_button')
               );
               if (data.exists === true) {
-              const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: `{"user_id":"${data.id}"}`
-            };
-            if (data.admin) {
-              const link = "https://admin.heyko.fr/?" + username + "?" + password
-              ReactDOM.render(
-                <li><a href={link} target={link}>Admin Panel</a></li>,
-              document.getElementById('burger_admin_link')
-              );
-            }
-            fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
-                .then(response => response.json())
-                .then(data => draw(data))  
-      
+                if (data.admin) {
+                  const link = "https://admin.heyko.fr/?" + username + "?" + password
+                  ReactDOM.render(
+                    <li><a href={link} target={link}>Admin Panel</a></li>,
+                  document.getElementById('burger_admin_link')
+                  );
+                }
                 const draw = (data) => {
-                  console.log(data)
-                  const actions = data.user_image
+                  const actions = JSON.parse(data.user_image)
                   if (actions) {
                   const canvas = document.getElementById("profile_img")
                   const ctx = canvas.getContext('2d')
@@ -174,7 +164,7 @@ function NavBar() {
                                   if (element[4][3]) {
                                   ctx.stroke()
                                   }
-      
+
                           }
                           else {
                           if (tool_type === 2) {
@@ -196,6 +186,7 @@ function NavBar() {
                   });
                 }
               } 
+              draw(data)
           }
           
               })  
@@ -214,9 +205,7 @@ function NavBar() {
               )
             }
       
-      }  
-          
-      /* className="profile_img"*/
+      }
         render() {
           return (
             <div id="navbar_profile_canvas">
@@ -232,7 +221,6 @@ function NavBar() {
       return;
     }
   });
-  //document.getElementById("App").style.paddingTop = "70px"
   return (
     <div>
       { value }
