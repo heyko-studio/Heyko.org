@@ -83,7 +83,7 @@ fetch(`https://backend.heyko.fr/requests/discord_connect`, requestOptions)
 function connect_result(data, data2) {
   console.log(data2)
   if (data2.result) {
-sendMessage("Succes", "Success !", "Successful connection to Discord :D")
+sendMessage("Success", "Success !", "Successful connection to Discord :D")
   }
   Show_Profile(data, 1)
 }
@@ -345,8 +345,23 @@ sendMessage("Succes", "Success !", "Successful connection to Discord :D")
             }
           }
           else {
+            function requestFriend() {
+              const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: `{"username":"${username}", "password":"${password}", "target_user_id":${user_id}}`
+            };
+              fetch(`https://backend.heyko.fr/requests/request_friend`, requestOptions)
+              .then(response => response.json())
+              .then(data => {
+                if (data.results) return sendMessage("Info", "Friendship request sent", "Your (future) friend just has to login and accept the invitation !")
+                if (!data.error) return
+                if (data.error === 1) return sendMessage("Wrong", "Error", "This user has received too many invitations!")
+                if (data.error === 2) return sendMessage("Wrong", "Error", "You have sent too many friendship requests!")
+              })
+            }
             ReactDOM.render(
-              <svg className="Profile number_icons Button" style={{marginLeft: "10px"}} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg onClick={() => requestFriend()} className="Profile number_icons Button" style={{marginLeft: "10px"}} fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
             </svg>,
               document.getElementById('Follow Button Contener')
