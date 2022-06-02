@@ -9,7 +9,6 @@ import { copyTextToClipboard } from '../../functions/copy_to_clipboard'
 import { sendMessage } from '../../elements/Messages/sendMessage';
 
 function App() {
-
   var profile_user_id = undefined
 
   class Numbers extends React.Component {
@@ -81,7 +80,6 @@ fetch(`https://backend.heyko.fr/requests/discord_connect`, requestOptions)
 .then(response => response.json())
 .then(data2 => connect_result(data, data2))
 function connect_result(data, data2) {
-  console.log(data2)
   if (data2.result) {
 sendMessage("Success", "Success !", "Successful connection to Discord :D")
   }
@@ -118,14 +116,12 @@ sendMessage("Success", "Success !", "Successful connection to Discord :D")
     function Show_Profile(data, type) {
       var user_id = 0
       if (type === 1) {
-        console.log(data)
         user_id = data.id
         profile_user_id = data.id
       }
       if (type === 2) {
         user_id = parseInt(profile_id)
       }
-      console.log(user_id)
       if (data.exists === true ||type === 2) {
           const requestOptions = {
             method: 'POST',
@@ -141,7 +137,6 @@ sendMessage("Success", "Success !", "Successful connection to Discord :D")
                 body: `{"user_id":"${user_id}"}`
             };
             const draw = (data) => {
-              console.log(data)
               const actions = data.user_image
               if (actions) {
               const canvas = document.getElementById("profile_img_2")
@@ -210,8 +205,6 @@ sendMessage("Success", "Success !", "Successful connection to Discord :D")
           fetch(`https://backend.heyko.fr/requests/get_user_description`, requestOptions)
                 .then(response => response.json())
                 .then(user_description => {
-        console.log(user_description)
-        console.log(avatar)
         var img_avatar = undefined
         if (type === 1) {
             img_avatar = <div className='Profile Image-Edit Contener'><canvas width="500px" height="500px" className="Profile Avatar" id="profile_img_2" /><button onClick={() => history.push("edit-profile/avatar")} className='Profile Edit_Profile_Button'>

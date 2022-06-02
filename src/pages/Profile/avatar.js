@@ -2,15 +2,14 @@ import React from 'react'
 import './Profile.css';
 
     function App() {
-
-            console.log(window.location.href)
             document.getElementById("body").style = "overflow: hidden; background-color: rgba(0, 0, 0, 0.8);"
             const user_id = window.location.href.split("?")[1]
             const requestOptions = {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/json' }
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: '{ "user_id": ' + user_id + '}'
             };
-        fetch(`https://backend.heyko.fr/requests/user_avatar_by_url?${user_id}`, requestOptions)
+        fetch(`https://backend.heyko.fr/requests/get_user_avatar`, requestOptions)
                 .then(response => response.json())
                 .then(avatar => {
                 const draw = (data) => {
