@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+.Infos.partnersContener {
+    background-color: #F5F5F5;
+    padding: 50px;
+}
+
+.Infos.partnersContenerTitle {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: #2ea0e8;
+    padding: 10px 30px;
+    width: fit-content;
+    border-radius: 9px;
+}
+@media (max-width: 465px) {
+    .Infos.partnersContenerTitle {
+        margin-left: 10px;
+    }
+    .Infos.Title_1 {
+        font-size: 30px;
+    }
+}
+
+.Infos.partnerContener {
+    background-color: #ffffff;
+    padding: 50px;
+    width: 340px;
+    height: 140px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.082);
+    transition: 1s;
+    transition-delay:0.1s;
+    border-radius: 12px;
+}
+
+.Infos.partnerContener:hover {
+    transform: translateY(-15px);
+    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.178);
+}
+
+.Infos.partnerImage {
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 130px;
+    width: 130px;
+}
+
+.Infos.partnerTitle {
+    position: absolute;
+    top: 0;
+    left: 145px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2ea0e8;
+}
+
+@media (max-width: 465px) {
+    .Infos.partnerContener {
+        padding: 0;
+        width: calc(100% - 20px);
+    }
+    .Infos.partnersContener {
+        padding: 20px 0 0;
+    }
+    .Infos.partnerTitle {
+        font-size: 18px;
+    }
+}
+
+.Infos.partner_i {
+    background: url("../public/img/partners/rdg.jpeg");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+    border-radius: 12px;
+}
+.Infos.partner_i.v3 {
+    background: url("https://www.lemondedupc.fr/assets/images/favicons/favicon-192x192.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+.Infos.partner_i.v5 {
+    background: url("../public/img/partners/techncode.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+.Infos.partner_i.v6 {
+    background: url("../public/img/partners/clasicode.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+.Infos.partner_i.v7 {
+    background: url("../public/img/partners/kwix.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+.Infos.partner_i.v8 {
+    background: url("../public/img/partners/worldcloud.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+.Infos.partner_i.v9 {
+    background: url("../public/img/partners/theLordOfShadow.png");
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+
+.Infos.partnerDescription {
+    position: absolute;
+    color: rgb(146, 146, 146);
+    left: 10px;
+    right: 10px;
+    top: 120px;
+    font-size: 18px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+.Infos.partnerDescription.v2 {
+    font-size: 16px;
+}
+
+.Infos.partnerDescription.v3 {
+    font-size: 14.5px;
+}
+
+
+.Infos.bold {
+    font-weight: bold;
+    letter-spacing: 4px;
+}

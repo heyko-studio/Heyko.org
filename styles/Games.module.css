@@ -1,0 +1,196 @@
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.title_text {
+    font-weight: bold;
+    font-size: 100px;
+}
+@media (max-width: 502px) {
+    .title_text {
+        font-size: 70px;
+    }
+}
+@media (max-width: 325px) {
+    .title_text {
+        font-size: 50px;
+    }
+}
+.icon {
+    height: 250px;
+    width: 250px;
+}
+.icon.v1 {
+    background: url("../public/img/poly-story/Logo.webp");
+    background-size: 100%;
+}
+
+
+.videos.contener {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.062);
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: 0 10px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.videos iframe {
+    height: 315px;
+    width: 100%;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+@media (max-width: 690px) {
+    .videos iframe {
+        margin:auto;
+        display: block;
+    }
+    .videos.contener {
+        padding-left: 0;
+        padding-right: 0;
+        display: block;
+    }
+}
+
+.decription {
+    width: 100%;
+    padding: 10px;
+    color: rgb(24, 25, 27);
+    font-size: 22px;
+    display: inline-flex;
+    align-items: top;
+    justify-content: center;
+    margin-top: 50px;
+}
+.descriptionImage {
+    background:  url("../public/img/poly-story/background.webp");
+    background-size: cover;
+    width: 900px;
+    max-width: 100%;
+    aspect-ratio: calc(1095 / 500);
+}
+
+.decription_text {
+    max-width: 500px;
+    margin-left: 40px;
+}
+@media (max-width: 920px) {
+    .decription {
+        display: unset;
+        width: 500px;
+        justify-content: unset;
+    }
+}
+@media (max-width: 585px) {
+    .decription_text {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+.download {
+    display: inline-flex;
+    align-items: top;
+    justify-content: center;
+    width: 100%;
+}
+
+.download_title {
+    font-size: 35px;
+    color: rgb(24, 25, 27);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.Platform {
+    width: 100px;
+    height: 100px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.Platform.v1 {
+    background: url("../public/img/platforms/Windows.png");
+    background-size: 100%;
+}
+.Platform.v2 {
+    background: url("../public/img/platforms/Android.png");
+    background-size: 100%;
+}
+.Platform.v3 {
+    background: url("../public/img/platforms/Linux.png");
+    background-size: 100%;
+}
+
+.Device_Contener {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.Devices_Contener {
+    display: inline-flex;
+    align-items: top;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.Device {
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 1;
+}
+.Device_Description {
+    color: rgb(24, 25, 27);
+    font-size: 20px;
+    margin-left: 15px;
+}
+.Device_Contener_2 {
+    display: flex;
+}
+.Device.v1 {
+    background: url("../public/img/platforms/desktop.png");
+    background-size: 100%;
+}
+.Device.v2 {
+    background: url("../public/img/platforms/smartphone.png");
+    background-size: 100%;
+}
+.Device_Price {
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    letter-spacing: 7px;
+    color: rgb(24, 25, 27);
+    display: block;
+}
+
+.Download_Message.Contener {
+    background-color: #2ea0e8;
+    width: 100%;
+    padding: 15px;
+    min-height: 150px;
+}
+.Download_message.description {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}

@@ -1,0 +1,83 @@
+import React from 'react'
+import Link from 'next/link'
+import username from '../functions/get_username';
+import password from '../functions/get_password';
+import { User } from './Icons';
+import styles from '../styles/Navbar.module.css'
+import { useState } from 'react'
+
+function NavBar() {
+  const [userDatas, setUserDatas] = useState()
+
+  function ErrorBanner() {
+  const old_name = "heyko.fr"
+    if (typeof window === 'undefined') return
+    if (window.location.hostname === old_name) {
+      const new_location = window.location.href.split(old_name).join('heyko.org')
+      return <div className="ErrorBannerSwitchDomain contnainer">
+        <p className="ErrorBannerSwitchDomain text">We are changing our domain name. heyko.fr -{">"} heyko.org. </p>
+        <a href={new_location}><button className="ErrorBannerSwitchDomain button">Switch</button></a>
+      </div>
+    }
+  }
+
+  (username && password && !userDatas) ? fetch(`https://backend.heyko.fr/requests/get_user_main_datas`, {method: 'POST',headers: { 'Content-Type': 'application/json' },body: `{"username":"${username}", "password":"${password}"}`})
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    //setUserDatas(data)
+  }) : null
+
+  return (
+    <>
+      <header id="navbar" className={`${styles.topbar} ${styles.container} shadow`}>
+        <label>
+          <input type="checkbox" />
+          <span className={styles.menu}> <span className={styles.hamburger}></span> </span>
+          <ul>
+              <Link href="/">
+                <li> 
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                  Home
+                </li>
+              </Link>
+            
+              <Link href="/about">
+                <li> 
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  About
+                </li>
+              </Link>
+              <Link href="/contacts">
+                <li> 
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Contacts
+                </li>
+              </Link>
+          </ul>
+        </label>
+        {/*
+        !userDatas ? <Link href="/login"><button style={{marginRight:"20px"}} className={"button view NavBar_Profile_Button " + styles.right}>Login</button></Link>
+        : <Link href="/profile">
+          <button style={{marginRight:"20px"}} className={"button view NavBar_Profile_Button " + styles.right}>Profile</button>
+        </Link>*/
+        }
+        {/*<div className={styles.avatarContainer}>
+          {!userDatas && User(("Global Icon Medium"))}
+      </div>*/}
+      </header>
+      {ErrorBanner()}
+      <br></br>
+      <br></br>
+      <br></br>
+    </>
+  )
+}
+
+export default NavBar

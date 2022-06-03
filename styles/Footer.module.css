@@ -1,0 +1,18 @@
+.footer_container {
+    background-color: white;
+    padding: 15px 15px 10px 15px;
+    -webkit-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.062);
+    -moz-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.062);
+    box-shadow: 0 3px 6px 10px rgba(0, 0, 0, 0.062);
+    min-height: 35px;
+}
+
+.footer_line {
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #2ea0e8;
+}
