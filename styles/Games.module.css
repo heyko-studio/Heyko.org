@@ -7,14 +7,39 @@
     font-weight: bold;
     font-size: 100px;
 }
+.title_text.v2 {
+    font-weight: bold;
+    font-size: 100px;
+}
+@media (max-width: 755px) {
+    .title_text.v2 {
+        font-size: 70px;
+    }
+}
+@media (max-width: 600px) {
+    .title_text.v2 {
+        font-size: 60px;
+    }
+}
 @media (max-width: 502px) {
     .title_text {
         font-size: 70px;
     }
+    .title_text.v2 {
+        font-size: 50px;
+    }
 }
-@media (max-width: 325px) {
+@media (max-width: 400px) {
+    .title_text.v2 {
+        font-size: 40px;
+    }
+}
+@media (max-width: 360px) {
     .title_text {
         font-size: 50px;
+    }
+    .title_text.v2 {
+        font-size: 35px;
     }
 }
 .icon {
@@ -71,13 +96,15 @@
     margin-top: 50px;
 }
 .descriptionImage {
-    background:  url("/img/poly-story/background.webp");
+    background-image:  url("/img/poly-story/background.webp");
     background-size: cover;
     width: 900px;
     max-width: 100%;
     aspect-ratio: calc(1095 / 500);
 }
-
+.descriptionImage.v2 {
+    background-image:  url("/img/five-mysteries/background.webp");
+}
 .decription_text {
     max-width: 500px;
     margin-left: 40px;
