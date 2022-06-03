@@ -34,7 +34,7 @@
 }
 .Home.Banner {
     max-width: 100%;
-    margin-top: -100px;
+    margin-top: -70px;
 }
 
 @keyframes Bottom_Arrow_2 {
@@ -125,9 +125,6 @@
 @media (max-width: 700px) {
     .Home_Sub_Title {
         font-size: 45px;
-    }
-    .Home.Banner {
-        margin-top:-120px;
     }
 }
 @media (max-width: 740px) {
