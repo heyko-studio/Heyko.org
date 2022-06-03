@@ -73,7 +73,7 @@
 }
 
 .Infos.partner_i {
-    background: url("../public/img/partners/rdg.jpeg");
+    background: url("/img/partners/rdg.jpeg");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
@@ -91,31 +91,31 @@
     background-size    : cover;
 }
 .Infos.partner_i.v5 {
-    background: url("../public/img/partners/techncode.png");
+    background: url("/img/partners/techncode.png");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
 }
 .Infos.partner_i.v6 {
-    background: url("../public/img/partners/clasicode.png");
+    background: url("/img/partners/clasicode.png");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
 }
 .Infos.partner_i.v7 {
-    background: url("../public/img/partners/kwix.png");
+    background: url("/img/partners/kwix.png");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
 }
 .Infos.partner_i.v8 {
-    background: url("../public/img/partners/worldcloud.png");
+    background: url("/img/partners/worldcloud.png");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
 }
 .Infos.partner_i.v9 {
-    background: url("../public/img/partners/theLordOfShadow.png");
+    background: url("/img/partners/theLordOfShadow.png");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;

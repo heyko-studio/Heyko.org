@@ -203,7 +203,7 @@
     margin-left: 25px;
 }
 .Home.Game_Background {
-    background-image   : url("../public/img/background-fm.webp");
+    background-image   : url("/img/background-fm.webp");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
@@ -216,10 +216,10 @@
     height: 120px;
 }
 .Home.Game_Background.v3 {
-    background-image   : url("../public/img/background-ps.webp");
+    background-image   : url("/img/background-ps.webp");
 }
 .Home.Game_Background.v2 {
-    background-image   : url("../public/img/background-h.webp");
+    background-image   : url("/img/background-h.webp");
 }
 .Home.Game_Background.v1 {
     margin: 0;

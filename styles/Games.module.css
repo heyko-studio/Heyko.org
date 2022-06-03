@@ -22,7 +22,7 @@
     width: 250px;
 }
 .icon.v1 {
-    background: url("../public/img/poly-story/Logo.webp");
+    background: url("/img/poly-story/Logo.webp");
     background-size: 100%;
 }
 
@@ -71,7 +71,7 @@
     margin-top: 50px;
 }
 .descriptionImage {
-    background:  url("../public/img/poly-story/background.webp");
+    background:  url("/img/poly-story/background.webp");
     background-size: cover;
     width: 900px;
     max-width: 100%;
@@ -122,15 +122,15 @@
 }
 
 .Platform.v1 {
-    background: url("../public/img/platforms/Windows.png");
+    background: url("/img/platforms/Windows.png");
     background-size: 100%;
 }
 .Platform.v2 {
-    background: url("../public/img/platforms/Android.png");
+    background: url("/img/platforms/Android.png");
     background-size: 100%;
 }
 .Platform.v3 {
-    background: url("../public/img/platforms/Linux.png");
+    background: url("/img/platforms/Linux.png");
     background-size: 100%;
 }
 
@@ -166,11 +166,11 @@
     display: flex;
 }
 .Device.v1 {
-    background: url("../public/img/platforms/desktop.png");
+    background: url("/img/platforms/desktop.png");
     background-size: 100%;
 }
 .Device.v2 {
-    background: url("../public/img/platforms/smartphone.png");
+    background: url("/img/platforms/smartphone.png");
     background-size: 100%;
 }
 .Device_Price {
