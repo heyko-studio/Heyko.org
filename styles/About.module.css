@@ -135,8 +135,13 @@
 }
 
 .Infos.partnerDescription.v3 {
+    font-size: 15px;
+}
+
+.Infos.partnerDescription.v4 {
     font-size: 14.5px;
 }
+
 
 
 .Infos.bold {

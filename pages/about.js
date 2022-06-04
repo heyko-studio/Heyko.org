@@ -25,7 +25,7 @@ function App() {
             <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
             <h1 className={`${styles.Infos} ${styles.partnerTitle}`}>Rue Des Graphistes</h1>
             <a href="https://ruedesgraphistes.com/" target="https://ruedesgraphistes.com/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
-            <p className={`${styles.Infos} ${styles.partnerDescription} ${styles.v2}`}><b className={`${styles.Infos} ${styles.bold}`}>Rue des Graphistes</b> est un lieu de rencontre et de partage entre artistes de toutes spécialité et les met en relation avec des créateurs de contenus originaux et nécessitant une touche professionnelle dans leur projet.</p>
+            <p className={`${styles.Infos} ${styles.partnerDescription} ${styles.v3}`}><b className={`${styles.Infos} ${styles.bold}`}>Rue des Graphistes</b> est un lieu de rencontre et de partage entre artistes de toutes spécialité et les met en relation avec des créateurs de contenus originaux et nécessitant une touche professionnelle dans leur projet.</p>
           </div>
 
           <div style={{height: '310px'}} className={`${styles.Infos} ${styles.partnerContener}`}>
@@ -42,7 +42,7 @@ function App() {
           <div className={`${styles.Infos} ${styles.partnerImage}`}>
             </div>
             <div className={`${styles.Infos} ${styles.partner_i} ${styles.v9}`}></div>
-            <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
+            <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s"></div>
             <h1 className={`${styles.Infos} ${styles.partnerTitle}`}>The Lord Of Shadow</h1>
             <a href="https://discord.gg/wFT4sHknNT" target="https://discord.gg/wFT4sHknNT"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
             <p className={`${styles.Infos} ${styles.partnerDescription} ${styles.v2}`}><b className={`${styles.Infos} ${styles.bold}`}>The Lord Of Shadow</b> est un jeu réalisé par une équipe indépendante. Découvrez dès maintenant cet Action RPG scénarisé et incarnez Herumor, le seigneur de l'ombre !</p>
@@ -79,8 +79,8 @@ function App() {
             <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
             <h1 className={`${styles.Infos} ${styles.partnerTitle}`}>Clasi Code</h1>
             <a href="https://discord.gg/wkCKyK7QYa" target="https://discord.gg/wkCKyK7QYa"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
-            <p className={`${styles.Infos} ${styles.partnerDescription} ${styles.v3}`}><b className={`${styles.Infos} ${styles.bold}`}>Clasi Code</b> 
-              c'est deux amis passionés par l'informatique et le monde de la programmation. Sur ce serveur discord vous trouverez de l'aide pour vos projets / erreurs;<br></br>
+            <p className={`${styles.Infos} ${styles.partnerDescription} ${styles.v4}`}><b className={`${styles.Infos} ${styles.bold}`}>Clasi Code</b> 
+              c'est deux amis passionés par l'informatique et le monde de la prorammation. Sur ce serveur discord vous trouverez de l'aide pour vos projets / erreurs;<br></br>
               Vous pourrez aussi y poster vos projets pour que les membres suivent votre aventure.</p>
           </div>
 
