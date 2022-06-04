@@ -124,6 +124,10 @@
     max-width: 500px;
     margin-left: 40px;
 }
+.description.right .description_text {
+    margin-left: 0;
+    margin-right: 40px;
+}
 @media (max-width: 920px) {
     .description {
         display: unset;
