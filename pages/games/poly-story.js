@@ -11,9 +11,9 @@ function App() {
         <div className={[styles.icon, styles.v1].join(" ")}></div>
         <h1 className={styles.title_text}>Poly Story</h1>
         </div>
-        <div className={styles.decription}>
+        <div className={styles.description}>
           <div className={styles.descriptionImage}></div>
-          <p className={styles.decription_text}>
+          <p className={styles.description_text}>
             Poly Story is a game of exploration of a magical and vast world,
           dotted with villages, caves and dragons!
           Run to discover this beautiful universe!

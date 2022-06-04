@@ -31,7 +31,7 @@
         font-size: 60px;
     }
 }
-@media (max-width: 502px) {
+@media (max-width: 514px) {
     .title_text {
         font-size: 70px;
     }
@@ -95,7 +95,7 @@
     }
 }
 
-.decription {
+.description {
     width: 100%;
     padding: 10px;
     color: rgb(24, 25, 27);
@@ -105,7 +105,7 @@
     justify-content: center;
     margin-top: 50px;
 }
-.decription.right {
+.description.right {
     flex-direction: row-reverse;
     text-align: right;
 }
@@ -120,28 +120,28 @@
     background-image:  url("/img/five-mysteries/background.webp");
 }
 
-.decription_text {
+.description_text {
     max-width: 500px;
     margin-left: 40px;
 }
 @media (max-width: 920px) {
-    .decription {
+    .description {
         display: unset;
         width: 100%;
         justify-content: unset;
     }
-    .decription_text {
+    .description_text {
         text-align: center !important;
         width: 100%;
         max-width: 100%;
-        margin: 0;
+        margin: 0 !important;
     }
     .imageContener.character {
         margin: auto;
     }
 }
 @media (max-width: 585px) {
-    .decription_text {
+    .description_text {
         margin-left: 5px;
         margin-right: 5px;
     }
