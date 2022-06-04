@@ -24,18 +24,7 @@ function App() {
       <section className={`${styles.Home} ${styles.Games}`} id="games">
         <h1 className="Title v2">Our games</h1>
         <div className="Break"></div>
-        <div className={styles.Game}>
-        <div className={`${styles.Home_Game} ${styles.background_3}`}>
-          <div className={`${styles.Home} ${styles.Game_Background} ${styles.v2}`}>
-            <h2 className={styles.Home_Game_Title}>Harmony</h2>
-            </div>
-            <br></br><br></br><br></br><br></br>
-            <p className={styles.Home_Game_Description}>HARMONY is a game playing on gravity.<br></br> Double your ingenuity to try to complete all the levels!</p>
-            <a className={`${styles.Home} ${styles.Button} ${styles.Join}`} href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">
-              Coming soon
-            </a>
-          </div>
-        </div>
+
         <div className={styles.Game}>
           <div className={`${styles.Home_Game} ${styles.background_3}`}>
             <div className={`${styles.Home} ${styles.Game_Background} ${styles.v3}`}>
@@ -48,6 +37,7 @@ function App() {
             </Link>
           </div>
         </div>
+
         <div className={styles.Game}>
         <div className={`${styles.Home_Game} ${styles.background_3}`}>
         <div className={`${styles.Home} ${styles.Game_Background} ${styles.v1}`}>
@@ -56,11 +46,25 @@ function App() {
           <br></br><br></br><br></br><br></br>
           <p className={styles.Home_Game_Description}>In a world where imagination is real...<br></br>
           Many creatures seek absolute power through a crystal with divine powers...<br></br> But a force beyond them will soon appear...</p>
+            <Link href="games/five-mysteries">
+              <p className="button default blue" style={{width: 'fit-content', marginBottom: '-12px'}}>More</p>
+            </Link>
+          </div>
+        </div>
+
+        <div className={styles.Game}>
+        <div className={`${styles.Home_Game} ${styles.background_3}`}>
+          <div className={`${styles.Home} ${styles.Game_Background} ${styles.v2}`}>
+            <h2 className={styles.Home_Game_Title}>Harmony</h2>
+            </div>
+            <br></br><br></br><br></br><br></br>
+            <p className={styles.Home_Game_Description}>HARMONY is a game playing on gravity.<br></br> Double your ingenuity to try to complete all the levels!</p>
             <a className={`${styles.Home} ${styles.Button} ${styles.Join}`} href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn">
               Coming soon
             </a>
           </div>
         </div>
+
         <div className={styles.Game}>
         <div className={`${styles.Home_Game} ${styles.background_4}`}>
         <h2 className={`${styles.Home_Game_Title} ${styles.v2}`}>💬 join our discord server</h2>
@@ -72,6 +76,7 @@ function App() {
           </a>
           </div>
         </div>
+        
         </section>
         </div>
         <h2 className="Title v2">What is Heyko?</h2>

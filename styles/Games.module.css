@@ -11,6 +11,16 @@
     font-weight: bold;
     font-size: 100px;
 }
+
+.imageContener {
+    position: relative;
+    width: 900px;
+    max-width: 100%;
+}
+.imageContener.character {
+    width: 300px;
+}
+
 @media (max-width: 755px) {
     .title_text.v2 {
         font-size: 70px;
@@ -90,10 +100,14 @@
     padding: 10px;
     color: rgb(24, 25, 27);
     font-size: 22px;
-    display: inline-flex;
+    display: flex;
     align-items: top;
     justify-content: center;
     margin-top: 50px;
+}
+.decription.right {
+    flex-direction: row-reverse;
+    text-align: right;
 }
 .descriptionImage {
     background-image:  url("/img/poly-story/background.webp");
@@ -105,6 +119,7 @@
 .descriptionImage.v2 {
     background-image:  url("/img/five-mysteries/background.webp");
 }
+
 .decription_text {
     max-width: 500px;
     margin-left: 40px;
@@ -112,8 +127,17 @@
 @media (max-width: 920px) {
     .decription {
         display: unset;
-        width: 500px;
+        width: 100%;
         justify-content: unset;
+    }
+    .decription_text {
+        text-align: center !important;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+    .imageContener.character {
+        margin: auto;
     }
 }
 @media (max-width: 585px) {
