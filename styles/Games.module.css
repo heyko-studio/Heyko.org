@@ -242,6 +242,8 @@
 .Download_message.description {
     font-size: 24px;
     color: white;
-    text-align: center;
+    display: block;
+    margin: 0;
+    text-align: center !important;
     width: 100%;
 }
