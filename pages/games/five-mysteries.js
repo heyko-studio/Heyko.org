@@ -87,7 +87,7 @@ function App() {
 
         <div className={[styles.Download_Message, styles.Contener].join(" ")}>
           <p className={[styles.Download_message, styles.description].join(" ")}>
-            The game is still in development and is not yet available. For more information, join our discord server! 🎮 <br></br>
+            The game is still in development and is not yet available.<br></br>
             Would you like to participate in the creation of the game, or propose ideas? Join our Discord server!✨
           </p>
           <a className={styles.a} href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn"><button className='button white center'>Join our discord</button></a>
