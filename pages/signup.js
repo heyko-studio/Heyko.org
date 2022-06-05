@@ -1,6 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import { sendMessage } from '../elements/Messages/sendMessage';
+import Link from 'next/link'
+import { sendMessage } from '../functions/sendMessage';
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+import setCookie from '../functions/setCookie';
+
 function App() {
     function handleSubmit(e) {
         e.preventDefault();
@@ -16,7 +20,6 @@ function App() {
             .then(data => check_1(data))  
       }
       function add_user(data) {
-        console.log(data)
         if (data.results === "error") {
           if (data.error === "username_too_long") {
             sendMessage("Wrong", "Registration error", "Username too long")
@@ -37,11 +40,12 @@ function App() {
           }
       }
       function check_1(data) {
-          console.log(data)
         if (data.results === "unused") {
           const email = document.getElementById("mail").value
           const username = document.getElementById("username").value
           const password = document.getElementById("password").value
+          setCookie("username", username, 3)
+          setCookie("password", password, 3)
           const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -63,41 +67,38 @@ function App() {
         }
       }
   return (
-      
-<div>
+  <>
+    <Navbar/>
     <div id="background"></div>
-<div id="login_contener">
-</div>
-<img width="700px" className="heyko_banner_1" src="./img/heyko.png" alt="Heyko banner"></img>
-
-
-<section className="form-container">
-    <h2 id="text1">Sign Up</h2>
-    <div className="hr"></div>
-    <form onSubmit={handleSubmit} className="contact-form">
-        <div className="form-line1">
-            <input id="username" className="input_1" type="username" placeholder="Username" required name="username"></input>
-            <input id="password" className="input_1" type="password" placeholder="Password" required name="password"></input>
-        </div>
-        <div className="form-line2">
-            <input id="mail" className="input_1" type="email" placeholder="Email address" required name="email"></input>
-        </div>
-        <div className="form-line3">
-            <Link to="/terms" className="link">✅ Terms of service</Link>
-        </div>
-        <div className="form-line3">
-            <a href="/privacy" className="link">✅ Privacy Policy</a>
-        </div>
-        <div className="send-container">
-            <button className="send" name="submit" type="submit">Sign Up</button>
-        </div>
-        <div className="form-line4">
-            <Link to="/login" className="link">➡️ Log in</Link>
-        </div>
-
-        </form>
-        </section>
-</div>
+    <div id="login_contener"></div>
+    <img width="700px" className="heyko_banner_1" src="./img/heyko.png" alt="Heyko banner"></img>
+    <section className="form-container">
+      <h2 id="text1">Sign Up</h2>
+      <div className="hr"></div>
+      <form onSubmit={handleSubmit} className="contact-form">
+          <div className="form-line1">
+              <input id="username" className="input_1" type="username" placeholder="Username" required name="username"></input>
+              <input id="password" className="input_1" type="password" placeholder="Password" required name="password"></input>
+          </div>
+          <div className="form-line2">
+              <input id="mail" className="input_1" type="email" placeholder="Email address" required name="email"></input>
+          </div>
+          <div className="form-line3">
+              <Link href="/terms">✅ Terms of service</Link>
+          </div>
+          <div className="form-line3">
+              <a href="/privacy.html">✅ Privacy Policy</a>
+          </div>
+          <div className="send-container">
+              <button className="send" name="submit" type="submit">Sign Up</button>
+          </div>
+          <div className="form-line4">
+              <Link href="/login">➡️ Already have an account ?</Link>
+          </div>
+      </form>
+    </section>
+    <Footer/>
+  </>
   );
 }
 

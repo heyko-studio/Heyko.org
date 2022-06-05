@@ -3,22 +3,20 @@ import ReactDOM from 'react-dom';
 import { Alert, Popup } from '../components/Icons'
 import { Leaf } from '../components/Icons'
 
-export function sendMessage(type, title, content) {
+export function sendMessage(type, title, content, datas) {
     class Ok extends React.Component {
         constructor(props) {
             super(props);
             this.handleClick = this.handleClick.bind(this);
         }
-        
         handleClick() {
-            ReactDOM.unmountComponentAtNode(document.getElementById("message_screen"))
+            ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
         }
-        
         render() {
             return (
-            <button className="Global Message Button" onClick={this.handleClick}>
-                Ok
-            </button>
+                <button className="Global Message Button" onClick={this.handleClick}>
+                    Ok
+                </button>
             );
         }
     }
@@ -29,15 +27,16 @@ export function sendMessage(type, title, content) {
     }
     ReactDOM.render(
         <>
-        <div className="Global whiteBackground"></div>
-        <div className={'Global Message Contener ' + type}>
-            {symbol()}
-            <h1>{title}</h1>
-            <p>{content}</p>
-            <Ok />
+        <div className="Global whiteBackground">
+            <div className={'Global Message Contener ' + type}>
+                {symbol()}
+                <h1>{title}</h1>
+                <p>{content}</p>
+                {(datas && datas.hideButton) ? null : <Ok />}
+                </div>
             </div>
         </>,
-        document.getElementById('message_screen')
+        document.getElementById('popup')
     );
 }
 

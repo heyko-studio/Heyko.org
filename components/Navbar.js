@@ -5,12 +5,13 @@ import password from '../functions/get_password';
 import { User } from './Icons';
 import styles from '../styles/Navbar.module.css'
 import { useState } from 'react'
+import Avatar from "../components/Avatar"
 
 function NavBar() {
   const [userDatas, setUserDatas] = useState()
-
+  console.log(userDatas)
   function ErrorBanner() {
-  const old_name = "heyko.fr"
+    const old_name = "heyko.fr"
     if (typeof window === 'undefined') return
     if (window.location.hostname === old_name) {
       const new_location = window.location.href.split(old_name).join('heyko.org')
@@ -24,10 +25,8 @@ function NavBar() {
   (username && password && !userDatas) ? fetch(`https://backend.heyko.fr/requests/get_user_main_datas`, {method: 'POST',headers: { 'Content-Type': 'application/json' },body: `{"username":"${username}", "password":"${password}"}`})
   .then(response => response.json())
   .then(data => {
-    console.log(data)
-    //setUserDatas(data)
+    setUserDatas(data)
   }) : null
-
   return (
     <>
       <header id="navbar" className={`${styles.topbar} ${styles.container} shadow`}>
@@ -60,17 +59,30 @@ function NavBar() {
                 Contacts
                 </li>
               </Link>
+              <Link href={userDatas ? "/profile" : "/signup"}>
+                <li> 
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                  {userDatas ? "Profile" : "Sign up"}
+                </li>
+              </Link>
           </ul>
         </label>
-        {/*
+        {
         !userDatas ? <Link href="/login"><button style={{marginRight:"20px"}} className={"button view NavBar_Profile_Button " + styles.right}>Login</button></Link>
         : <Link href="/profile">
           <button style={{marginRight:"20px"}} className={"button view NavBar_Profile_Button " + styles.right}>Profile</button>
-        </Link>*/
+        </Link>
         }
-        {/*<div className={styles.avatarContainer}>
-          {!userDatas && User(("Global Icon Medium"))}
-      </div>*/}
+        <div className={styles.avatarContainer}>
+          {
+          !userDatas ? User(("Global Icon Medium " + styles.profileIconPlaceholder)) : <Link href="/profile"><div className={styles.avatar}>
+              <Avatar customId={"navbarAvatar"} actions={userDatas.user_image && JSON.parse(userDatas.user_image)} width={500} height={500} />
+            </div>
+            </Link>
+          }
+        </div>
       </header>
       {ErrorBanner()}
       <br></br>

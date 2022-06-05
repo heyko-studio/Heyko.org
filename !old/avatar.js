@@ -1,5 +1,4 @@
 import React from 'react'
-import './Profile.css';
 
     function App() {
             document.getElementById("body").style = "overflow: hidden; background-color: rgba(0, 0, 0, 0.8);"

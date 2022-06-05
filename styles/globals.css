@@ -12,10 +12,6 @@ BLUE_2 : #7CD8FF
   font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-  height:100%;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -27,28 +23,15 @@ body {
   overflow-x: hidden;
   overflow-y: overlay;
   position:relative;
+
+  display:grid;
+  grid-template-rows: auto 1fr auto;
   min-height:100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 a {
-  color: unset;
+  color: #2EA0E8;
   text-decoration: none;
-}
-
-.menu a {
-  text-decoration: none;
-  color:#737373;
-  letter-spacing: 2px;
-  padding: 0 10px;
-  margin-top: 0;
-  transition: color 0.5s;
-  font-weight: 500;
-  font-size: 20px;
-}
-.menu a:hover, .active { /* Pourquoi les changements de couleur ainsi que le margin-top ne s'appliquent pas ? */
-  color: #2EA0E8 !important;
 }
 .shadow {
   -webkit-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.329);
@@ -112,14 +95,6 @@ a {
   height: 3px;
   background-color: #0E76B8;
 }
-.link {
-  text-decoration: none;
-  color: #0E76B8;
-  font-weight: bold;
-  padding: 5px;
-}
-
-
 
 /* CONTACTS */
 .form-container {
@@ -494,9 +469,6 @@ a {
 #App {
   position: relative;
   min-height:100%; 
-}
-#Footer_decal {
-  padding-bottom: 44px;
 }
 
 .button.like {

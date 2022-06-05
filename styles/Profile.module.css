@@ -1,16 +1,10 @@
-.Profile.Avatar {
-    border-radius: 180px;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-    border: 5px solid #2ea0e8;
-}
 
-.Profile.Username {
+
+.Username {
     margin: 10px;
 }
 
-.Profile.Bio {
+.Bio {
     height: 200px;
     margin: 25px;
     padding: 25px;
@@ -19,44 +13,44 @@
     float: left;
     width: 700px;
 }
-.Profile.Contener_1 {
+.Contener_1 {
     margin:auto;
     display: block;
     width: fit-content;
 }
 @media (max-width: 750px) {
-    .Profile.Bio {
+    .Bio {
         width: calc(100% - 50px);
     }
-    .Profile.Contener_1 {
+    .Contener_1 {
         width: 100%;
     }
 }
-.Profile.buttons.br {
+.buttons.br {
     display: none;
 }
-.Profile.buttons.contener {
+.buttons.contener {
     display: flex;
     flex-wrap: wrap;
 }
-.Profile.button.contener {
+.button.contener {
     line-height: 50px;
     vertical-align: top;
     border-radius: 90px;
 }
-.Profile.User_Contener {
+.User_Contener {
     float: left;
 }
 
 
-.Profile.number_icons {
+.number_icons {
     width: 35px;
     color: #b9b9b9;
     float: left;
     margin-top: 7px;
 }
 
-.Profile.icon_text {
+.icon_text {
     float: left;
     vertical-align: middle;
     margin-top: 9px;
@@ -64,11 +58,11 @@
     font-size: 16px;
 }
 
-.Profile.Page_Break {
+.Page_Break {
     clear: left;
 }
 
-.Profile.Success {
+.Success {
     height: 200px;
     padding: 25px;
     background-color: rgb(236, 236, 236);
@@ -80,12 +74,12 @@
     margin-top: -200px;
 }
 
-.Profile .Success_icon {
+ .Success_icon {
     width: 50px;
     color: rgb(43, 43, 43);
 }
 
-.Profile .Rewards {
+ .Rewards {
     display: inline;
     position: absolute;
     margin: 12px;
@@ -94,45 +88,45 @@
 }
 
 
-.Profile .Rewards_box {
+ .Rewards_box {
     position: relative;
     width: 100%;
     height: 95px;
     padding: 25px 25px 25px 80px;
 }
 
-.Profile.Arrows {
+.Arrows {
     width: 75px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: rgb(43, 43, 43);
 }
-.Profile.Arrows.Left_Arrow {
+.Arrows.Left_Arrow {
     left: 0;
 }
-.Profile.Arrows.Right_Arrow {
+.Arrows.Right_Arrow {
     right: 0;
 }
 
-.Profile.Rewards_icon {
+.Rewards_icon {
     width: 45px;
     padding: 4px;
     border-radius: 12px;
     background-color: white;
     margin: 0 5px;
 }
-.Profile.Rewards_icon.gold {
+.Rewards_icon.gold {
     color: #FFD700;
 }
-.Profile.Rewards_icon.bronze {
+.Rewards_icon.bronze {
     color: #CD7F32;
 }
-.Profile.Rewards_icon.silver {
+.Rewards_icon.silver {
     color: #C0C0C0;
 }
 
-.Profile.User_shop {
+.User_shop {
     width: 245px;
     height: 200px;
     display: inline-block;
@@ -141,11 +135,11 @@
     padding: 25px;
     position: relative;
 }
-.Profile.Shop_icon {
+.Shop_icon {
     width: 50px;
     color: rgb(43, 43, 43);
 }
-.Profile.Shop_icon_text {
+.Shop_icon_text {
     display: inline;
     position: absolute;
     margin: 16px;
@@ -153,19 +147,19 @@
     font-weight: bold;
 }
 
-.Profile.decal_1 {
+.decal_1 {
     position: absolute;
     bottom: 40px;
     right: 25px;
 }
 
-.Profile.Shop_icon_numbers {
+.Shop_icon_numbers {
     width: 30px;
     color: #2ea0e8;
     float: left;
 }
 
-.Profile.icon_text_numbers {
+.icon_text_numbers {
     float: left;
     vertical-align: middle;
     margin-top: 0;
@@ -173,7 +167,7 @@
     font-size: 16px;
 }
 
-.Profile.Activity {
+.Activity {
     height: 200px;
     margin: 25px;
     padding: 25px;
@@ -212,7 +206,7 @@
     border:none;
 }
 
-.Profile.Inventory.Contener {
+.Inventory.Contener {
     min-height: 200px;
     margin: 25px;
     padding: 25px;
@@ -224,21 +218,21 @@
     margin-right: auto;
     position: relative;
 }
-.Profile.Inventory.Contener.Empty {
+.Inventory.Contener.Empty {
     border: 2px dashed #afafaf;
 }
-.Profile.Inventory.Message {
+.Inventory.Message {
     font-size: 25px;
     color: #737373;
     height: 100px;
     line-height: 100px;
     text-align: center;
 }
-.Profile.Items.Contener {
+.Items.Contener {
     display: flex;
     flex-wrap: wrap;
 }
-.Profile.Inventory.Item {
+.Inventory.Item {
     background-color: #ebebeb;
     border-radius: 12px;
     width: 121.4px;
@@ -250,10 +244,10 @@
     position: relative;
 
 }
-.Profile.Inventory.Item:hover {
+.Inventory.Item:hover {
     background-color: #cecece;
 }
-.Profile.Inventory.Item_Icon {
+.Inventory.Item_Icon {
     width: 100%;
     height: 100%;
     border-radius: 12px;
@@ -263,54 +257,65 @@
     cursor: pointer;
 }
 
-.Profile.Inventory.Title {
+.Inventory.Title {
     margin-left: 5px;
     font-weight: bold;
     font-size: 25px;
 }
+.ImageEdit.Contener {
+    position: relative;
+    width: fit-content;
+}
 
-.Profile.Edit_Profile_Button {
+.ImageEdit.Contener canvas {
+    border-radius: 180px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 4px solid #2ea0e8;
+}
+
+.ImageEdit.Contener button {
     border: none;
     background-color: transparent;
     position: absolute;
     top: 165px;
-    right: -20px;
-    padding: 0;
+    right: -5px;
     transition: 0.3s;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    border-radius: 90px;
 }
-.Profile.Edit_Profile_Button_Icon {
+.ImageEdit.Contener button:hover {
+    background-color: rgb(0, 162, 255);
+}
+
+.ImageEdit.Contener button svg {
     width: 40px;
     height: 40px;
     color: rgb(39, 39, 39);
     transition: 0.3s;
     cursor: pointer;
-}
-.Profile.Edit_Profile_Button:hover {
-    background-color: rgb(0, 162, 255);
-    border-radius: 45px;
     padding: 5px;
 }
-.Profile.Edit_Profile_Button:hover .Profile.Edit_Profile_Button_Icon {
-color: rgb(255, 255, 255);
-}
-.Profile.Image-Edit.Contener {
-    position: relative;
+.ImageEdit.Contener button:hover svg {
+    color: rgb(255, 255, 255);
+    padding: 10px;
 }
 
-.Profile.number_icons.Button {
+.number_icons.Button {
     color: rgb(0, 162, 255);
     transition: 0.2s;
 }
-.Profile.number_icons.Button:hover {
+
+.number_icons.Button:hover {
     color: rgb(43, 43, 43);
 }
 
-.Profile.Discord.Button {
+.Discord.Button {
     width: 37px;
     margin-left: 14px;
-    margin-top: 10px;
-}
-
-.cls-1 {
-    fill:#b9b9b9;
+    margin-top: 7px;
+    cursor: pointer;
 }

@@ -1,13 +1,12 @@
 import React from 'react'
 import styles from '../styles/Footer.module.css';
 
-
-
 function Footer() {
     return(
         <>
-        <br></br>
-        <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <footer className={`${styles.footer} ${styles.footer_container}`}>
                 <div className={styles.footer_line}>
                 <li className={styles.footer_line}><a href="https://discord.gg/tKypaXn" className={`${styles.footer} ${styles.link}`}>Discord</a></li>

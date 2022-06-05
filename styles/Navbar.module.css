@@ -16,13 +16,38 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.avatarContainer {
-  background-color: rgb(221, 221, 221);
+.avatar {
+  background-color: rgba(255, 255, 255, 0.555);
   width: 60px;
   height: 60px;
   border-radius: 90px;
   margin-right: 15px;
+  animation: fadeIn 0.3s;
 }
+
+.profileIconPlaceholder {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.avatar canvas {
+  width: 60px;
+  height: 60px;
+  border-radius: 90px;
+  cursor: pointer;
+}
+
 
 .right {
   margin-left: auto;
@@ -34,7 +59,7 @@
   top: -100px;
   z-index: 100;
   width: 200px;
-  height: 200px;
+  height: 384px;
   background: rgba(255, 255, 255, 0);
   border-radius: 50%;
   -webkit-transition: .5s ease-in-out;
@@ -78,7 +103,6 @@
 
 .topbar input:checked + .menu {
   width: 288px;
-  height: 338px;
   border-radius: 16px;
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.25 );
   background-color: rgb(255, 255, 255);

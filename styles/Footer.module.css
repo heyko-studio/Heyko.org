@@ -5,6 +5,10 @@
     -moz-box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.062);
     box-shadow: 0 3px 6px 10px rgba(0, 0, 0, 0.062);
     min-height: 35px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer_line {

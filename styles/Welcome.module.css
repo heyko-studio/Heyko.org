@@ -1,4 +1,4 @@
-.Welcome.Contener {
+.Contener {
     overflow-x:hidden;
     overflow-y: hidden;
     width:100%;
@@ -7,10 +7,18 @@
     position: relative;
 }
 
+.title {
+    margin:25px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 40px;
+    background-color: #2ea0e8;
+    width: fit-content;
+    padding: 10px;
+    transform: rotate(-4deg);
+}
 
-
-
-.Welcome.Background {
+.Background {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,44 +26,44 @@
     height: 0;
     z-index: -1;
 }
-.Welcome.Background.v1 {
+.Background.v1 {
     animation: 2s Transition_1;
     height: 100%;
 }
-.Welcome.Background.v2 {
+.Background.v2 {
     background-color: rgb(53, 53, 53);
     animation: 3s Transition_1;
     height: 100%;
 }
 
 
-.Welcome.Color_picker {
+.Color_picker {
     background-color: transparent;
     border: none;
     width:100%;
     -webkit-appearance: none;
 	height: 32px;
 }
-.Welcome.Color_picker[type="color"]::-webkit-color-swatch-wrapper {
+.Color_picker[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
 }
 
-.Welcome.Color_picker[type="color"]::-webkit-color-swatch {
+.Color_picker[type="color"]::-webkit-color-swatch {
     border-radius:4px;
     border: 2px solid #b9b9b9;
 }
-.Welcome.profile_tool_bar_titles {
+.profile_tool_bar_titles {
     font-weight: bold;
     font-size: 17px;
     color: #353535;
     display: inline-block;
 }
 
-.Welcome.Color_Checkbox {
+.Color_Checkbox {
     display: inline-block;
 }
 
-.Welcome.Slider_1 {
+.Slider_1 {
     -webkit-appearance: none;
     width: 95px;
     height: 25px;
@@ -69,11 +77,11 @@
     margin-top: -35px;
 }
 
-.Welcome.Slider_1:hover {
+.Slider_1:hover {
     opacity: 1;
 }
 
-.Welcome.Slider_1::-webkit-slider-thumb {
+.Slider_1::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
@@ -82,11 +90,11 @@
     cursor: pointer;
 }
 
-.Welcome.Slider_value {
+.Slider_value {
     margin-top: 12px;
 }
 
-.Welcome.profile_tool_bar_elements_contener {
+.profile_tool_bar_elements_contener {
     background-color: rgb(241, 241, 241);
     padding: 15px;
     overflow-y: scroll;
@@ -95,21 +103,21 @@
     top: 80px;
     width: calc(100% - 40px);
 }
-.Welcome.profile_tool_bar_item_button {
+.profile_tool_bar_item_button {
     background-color: transparent;
     border: none;
     float: left;
 }
-.Welcome.profile_tool_bar_elements_breaker {
+.profile_tool_bar_elements_breaker {
     clear: left;
 }
-.Welcome.profile_tool_bar_elements_color {
+.profile_tool_bar_elements_color {
     width: 15px;
     height: 15px;
     margin: 4px;
     border-radius: 12px;
 }
-.Welcome.profile_tool_bar2_item_button {
+.profile_tool_bar2_item_button {
     border: none;
     float: left;
     margin-top:-3px;
@@ -118,16 +126,16 @@
     margin-left: 26px;
 }
 
-.Welcome.profile_tool_bar_item_text {
+.profile_tool_bar_item_text {
     clear: left;
     font-weight: bold;
 }
-.Welcome.Background.v3 {
+.Background.v3 {
     background-color: #8fd4ff;
     animation: 4s Transition_1;
     height: 100%;
 }
-.Welcome.Background.v4 {
+.Background.v4 {
     background-color: rgb(53, 53, 53);
     bottom: 0;
     height: 100%;
@@ -305,21 +313,24 @@
         opacity: 1;
     }
 }
-.Welcome.example {
+.example {
     font-weight: bold;
     color: white;
-    font-size: 25px;
+    font-size: 24px;
     position: absolute;
     left: 50px;
     width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
-.Welcome.Title_1 {
+.Title_1 {
     animation: 5s Title_Anim;
     font-size: 75px;
     color: rgb(255, 255, 255);
     font-weight: 0;
+    text-align: center;
 }
-.Welcome.Canvas {   
+.Canvas {   
     background-color: #ffffff; 
     width: 500px; 
     height: 500px;
@@ -330,7 +341,7 @@
     border-radius: 400px;
     border: 1px solid #b9b9b9;
 } 
-.Welcome.profile_tool_bar_colors {
+.profile_tool_bar_colors {
     background-color: white;
     border-radius: 12px;
     position: absolute;
@@ -342,7 +353,7 @@
     overflow-y: scroll;
     z-index: 10;
 }
-.Welcome.profile_tool_bar_elements {
+.profile_tool_bar_elements {
     background-color: white;
     border-radius: 12px;
     position: absolute;
@@ -353,46 +364,46 @@
     padding:0 20px;
 }
 @media (max-width: 860px) {
-    .Welcome.Title_1 {
+    .Title_1 {
         font-size: 40px;
         color: rgb(53, 53, 53);
         font-weight: bold;
     }
 }
 @media (max-width: 459px) {
-    .Welcome.Title_1 {
+    .Title_1 {
         font-size: 25px;
         color: rgb(53, 53, 53);
         font-weight: bold;
     }
 }
 @media (max-width: 434px) {
-    .Welcome.example {
+    .example {
         font-size: 16px;
     }
 }
-.Welcome.profile_tool_bar_item {
+.profile_tool_bar_item {
     width: 40px;
     display: inline-block;
     padding: 4px;
     font-size: 40px;
 }
-.Welcome.profile_tool_bar_item.v2 {
+.profile_tool_bar_item.v2 {
     margin-top: 1px;
     margin-bottom: 3px;
 }
-.Welcome.T {
+.T {
     font-size: 39px;
     margin: 0;
     padding: 0;
     transform: translateY(-3.5px);
 }
-.Welcome.T:hover {
+.T:hover {
     font-weight: bold;
 }
 
 
-.Welcome.profile_tool_bar {
+.profile_tool_bar {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -404,54 +415,52 @@
     height: 62px;
 }
 
-.Welcome.finish_button {
+.finish_button {
     bottom: 40px;
     position: absolute;
     left: 10px;
-    font-size: 25px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 @media (max-width: 1354px) {
-.Welcome.profile_tool_bar_elements {
+.profile_tool_bar_elements {
     display: none;
 }
-.Welcome.Canvas {  
+.Canvas {  
     margin-left: auto;
     margin-right: 0;
 }
-.Welcome.finish_button {
+.finish_button {
     left: unset;
     bottom:unset;
     top: 40px;
     right: 10px;
     font-size: 16px;
 }
-.Welcome.profile_tool_bar_colors {
+.profile_tool_bar_colors {
     position: absolute;
     left: 0;
     height: fit-content;
     padding:  15px;
     width: 200px;
 }
-.Welcome.profile_tool_bar {
+.profile_tool_bar {
     margin-left: 0;
     position: fixed;
     bottom: 10px;
     left: 10px;
 }
 }
-.Welcome.profile_tool_bar_color_show {
+.profile_tool_bar_color_show {
     display: none;
 }
 @media (max-height: 708px) {
-    .Welcome.Title_2 {
-        font-size: 20px;
-    }
-    .Welcome.Canvas {  
+    .Canvas {  
         margin-left: auto;
         margin-right: auto;
         margin-top: 0;
     }
-    .Welcome.profile_tool_bar_color_show {
+    .profile_tool_bar_color_show {
         display: block;
         border: none;
         margin-top:-3px;
@@ -465,25 +474,27 @@
         font-size: 35px;
         margin: 5px;
     }
-    .Welcome.profile_tool_bar_colors {
+    .profile_tool_bar_colors {
         display: none;
     }
-    .Welcome.Contener {
+    .Contener {
         overscroll-behavior: contain;
+    }
+}
+@media (max-width: 800px) {
+    .title {
+        font-size: 30px;
     }
 }
 @media (max-width: 708px) {
-    .Welcome.finish_button {
+    .finish_button {
         top: 95px;
     }
-    .Welcome.Title_2 {
-        font-size: 20px;
-    }
-    .Welcome.Canvas {  
+    .Canvas {  
         margin-left: auto;
         margin-right: auto;
     }
-    .Welcome.profile_tool_bar_color_show {
+    .profile_tool_bar_color_show {
         display: block;
         border: none;
         margin-top:-3px;
@@ -497,35 +508,39 @@
         font-size: 35px;
         margin: 5px;
     }
-    .Welcome.profile_tool_bar_colors {
+    .profile_tool_bar_colors {
         display: none;
     }
-    .Welcome.Contener {
+    .Contener {
         overscroll-behavior: contain;
     }
 }
 
-@media (max-width: 537px) {
-    .Welcome.Title_2 {
-        font-size: 20px;
-    }
-}
 @media (max-width: 500px) {
-    .Welcome.Canvas {  
+    .Canvas {  
         max-width: 400px;
         height:400px
     }
+    .title {
+        font-size: 20px;
+        transform: rotate(0);
+        width: calc(100% - 50px);
+        text-align: center;
+    }
 }
 @media (max-width: 400px) {
-    .Welcome.Canvas {  
+    .Canvas {  
         max-width: 350px;
         height:350px
     }
 }
 @media (max-width: 350px) {
-    .Welcome.Canvas {  
+    .Canvas {  
         max-width: 300px;
         height:300px
+    }
+    .title {
+        font-size: 16px;
     }
 }
 @media (min-width: 861px) {
@@ -547,27 +562,27 @@
     }
 }
 }
-.Welcome.profile_tool_bar_item:hover {
+.profile_tool_bar_item:hover {
     width: 40px;
     display: inline-block;
     padding: 0;
 }
 @media (max-width: 399px) {
-    .Welcome.profile_tool_bar_item {
+    .profile_tool_bar_item {
         width: 20px;
         display: inline-block;
         padding: 4px;
         font-size: 20px;
     }
-    .Welcome.profile_tool_bar {
+    .profile_tool_bar {
         height: 43px;
         width: 213px;
     }
-    .Welcome.T {
+    .T {
         font-size: 18px;
         margin-top: 4px;
     }
-    .Welcome.profile_tool_bar_item:hover {
+    .profile_tool_bar_item:hover {
         width: 20px;
         display: inline-block;
         padding: 0;
@@ -575,7 +590,7 @@
 }
 
 
-.Welcome.example.v1 {
+.example.v1 {
     margin-top: 50px;
     animation: 6s Infos_Anim_1;
 }
@@ -591,7 +606,7 @@
     
     }
 }
-.Welcome.example.v2 {
+.example.v2 {
     margin-top: 100px;
     animation: 7s Infos_Anim_2;
 }
@@ -607,7 +622,7 @@
     
     }
 }
-.Welcome.example.v3 {
+.example.v3 {
     margin-top: 150px;
     animation: 8s Infos_Anim_3;
 }
@@ -623,7 +638,7 @@
     
     }
 }
-.Welcome.example.v4 {
+.example.v4 {
     margin-top: 200px;
     animation: 9s Infos_Anim_4;
 }
@@ -639,14 +654,14 @@
     
     }
 }
-.Welcome.examples {
+.examples {
     position: absolute;
     top:50%;
     transform: translateY(-50%);
     height: 285px;
     width: 400px;
 }
-.Welcome.decal_1 {
+.decal_1 {
     margin-top: 275px;
     margin-left: 50px;
     animation: 1s Next_anim;
@@ -662,7 +677,7 @@
     }
 }
 
-.Welcome.transition_2 {
+.transition_2 {
     background-color: white;
     position: absolute;
     z-index: 5;
@@ -681,9 +696,9 @@
     
     }
 }
-.Welcome.transition_3 {
+.transition_3 {
     background-color: #2ea0e8;
-    background-image   : url("../../img/Five_Mysteries_Banner_1.webp");
+    background-image   : url("/img/Five_Mysteries_Banner_1.webp");
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
