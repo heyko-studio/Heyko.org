@@ -14,8 +14,8 @@ export default function App () {
             <meta property="og:type" content="website" />
             <meta property="og:description" content="Heyko is an independent video game creation team" />
             <meta property="og:url" content="%PUBLIC_URL%" />
-            <meta content="/img/Five_Mysteries_Banner_1.webp" property="og:image" />
-            <meta name="twitter:card" content="/img/Five_Mysteries_Banner_1.webp"></meta>
+            <meta property="og:image" content="/img/Five_Mysteries_Banner_1.webp" />
+            <meta name="twitter:card" content="https://heyko.org/img/Five_Mysteries_Banner_1.webp"></meta>
             <meta name="description" content="Heyko is an independent video game creation team" />
             <link rel="icon" href="/favicon.ico" />
 
