@@ -3,10 +3,17 @@ import Image from 'next/image'
 import styles from '../../styles/Games.module.css'
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import Head from 'next/head'
 
 function App() {
   return (
     <>
+      <Head>
+        <title>Five Mysteries</title>
+        <meta property="og:image" content="/img/Five_Mysteries_Banner_1.webp" />
+        <meta name="twitter:card" content="https://heyko.org/img/Five_Mysteries_Banner_1.webp"></meta>
+        <meta property="og:description" content="RPG game of exploration, magic, fighting, with quests, developed by Heyko" />
+      </Head>
       <Navbar/>
       <div className={styles.title}>
         <h1 className={`${styles.title_text} ${styles.v2}`}>Five Mysteries</h1>

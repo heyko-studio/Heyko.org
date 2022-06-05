@@ -2,10 +2,17 @@ import React from 'react';
 import styles from '../../styles/Games.module.css'
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import Head from 'next/head'
 
 function App() {
   return (
     <>
+      <Head>
+        <title>Poly Story</title>
+        <meta property="og:image" content="/img/Five_Mysteries_Banner_1.webp" />
+        <meta name="twitter:card" content="https://heyko.org/img/Five_Mysteries_Banner_1.webp"></meta>
+        <meta property="og:description" content="Poly Story is a multiplayer and cross-platform game of exploration of a magical and vast world, dotted with villages, caves and dragons! Run to discover this beautiful universe! Fight with your friends, and annihilate all the enemies that cross your path!, developed by Heyko" />
+      </Head>
       <Navbar/>
       <div className={styles.title}>
         <div className={[styles.icon, styles.v1].join(" ")}></div>
@@ -14,11 +21,12 @@ function App() {
         <div className={styles.description}>
           <div className={styles.descriptionImage}></div>
           <p className={styles.description_text}>
-            Poly Story is a game of exploration of a magical and vast world,
+            Poly Story is a multiplayer and cross-platform  game of exploration of a magical and vast world,
           dotted with villages, caves and dragons!
           Run to discover this beautiful universe!
-          
           Fight with your friends, and annihilate all the enemies that cross your path!
+          <br></br>
+          The game is temporarily <strong>free</strong>
           </p>
         </div>
         <h2 className={styles.download_title}>Download</h2>
@@ -46,12 +54,11 @@ function App() {
         </div>
         <p className={styles.Device_Price}>5,99 $</p>
         </div>
-
           </div>
 
           <div className={[styles.Download_Message, styles.Contener].join(" ")}>
           <p className={[styles.Download_message, styles.description].join(" ")}>
-          The game is still in development and is not yet available. For more information, join our discord server 🎮
+          The game is still in development and is not yet available. For more information (and to try for <strong>free</strong>), join our discord server 🎮
           </p>
           <a className={styles.a} href="https://discord.gg/tKypaXn" target="https://discord.gg/tKypaXn"><button className='button white center'>Join our discord</button></a>
         </div>
