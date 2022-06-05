@@ -42,7 +42,7 @@ function App() {
           <div className={`${styles.Infos} ${styles.partnerImage}`}>
             </div>
             <div className={`${styles.Infos} ${styles.partner_i} ${styles.v9}`}></div>
-            <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s"></div>
+            <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
             <h1 className={`${styles.Infos} ${styles.partnerTitle}`}>The Lord Of Shadow</h1>
             <a href="https://discord.gg/wFT4sHknNT" target="https://discord.gg/wFT4sHknNT"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
             <p className={`${styles.Infos} ${styles.partnerDescription} ${styles.v2}`}><b className={`${styles.Infos} ${styles.bold}`}>The Lord Of Shadow</b> est un jeu réalisé par une équipe indépendante. Découvrez dès maintenant cet Action RPG scénarisé et incarnez Herumor, le seigneur de l'ombre !</p>
