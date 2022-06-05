@@ -1,0 +1,88 @@
+.title {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 38px;
+    color: gray;
+}
+
+.imageContener {
+    position: relative;
+    width: 700px;
+    max-width: calc(100% - 100px);
+    aspect-ratio: 700 / 500;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.suggestionList {
+    width: 700px;
+    max-width: calc(100% - 100px);
+    display: block;
+    margin: 20px auto 0;
+    background-color: rgb(233, 233, 233);
+    border-radius: 12px;
+    padding: 5px 15px 15px;
+}
+
+@media (max-width: 500px) {
+    .suggestionList {
+        width: 700px;
+        max-width: calc(100% - 10px);
+        padding: 5px 15px 15px;
+    }
+}
+
+.suggestionContener {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 5px 0;
+}
+
+.suggestionContener div {
+    position: absolute;
+    background-color: rgba(142, 185, 142, 0.562);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    border-radius: 40px;
+}
+
+.suggestionContener p {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: rgb(70, 126, 70);
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.suggestionContener svg {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 20px;
+    z-index: 1;
+}
+
+.suggestionContener a {
+    color: rgb(43, 43, 43);
+    text-decoration: underline;
+    z-index: 1;
+    background-color: white;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.styles.suggestionListTitle {
+    font-size: 20px;
+    color: rgb(43, 43, 43);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
