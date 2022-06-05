@@ -9,7 +9,6 @@ import Avatar from "../components/Avatar"
 
 function NavBar() {
   const [userDatas, setUserDatas] = useState()
-  console.log(userDatas)
   function ErrorBanner() {
     const old_name = "heyko.fr"
     if (typeof window === 'undefined') return
@@ -27,6 +26,7 @@ function NavBar() {
   .then(data => {
     setUserDatas(data)
   }) : null
+
   return (
     <>
       <header id="navbar" className={`${styles.topbar} ${styles.container} shadow`}>
@@ -51,12 +51,12 @@ function NavBar() {
                   About
                 </li>
               </Link>
-              <Link href="/contacts">
+              <Link href={userDatas && userDatas.admin ? `https://admin.heyko.fr/?${username}?${password}` : "contacts"}>
                 <li> 
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Contacts
+                {userDatas && userDatas.admin ? "Admin" : "Contacts"}
                 </li>
               </Link>
               <Link href={userDatas ? "/profile" : "/signup"}>
