@@ -9,8 +9,8 @@ function App() {
     <>
       <Head>
         <title>Poly Story</title>
-        <meta property="og:image" content="/img/Five_Mysteries_Banner_1.webp" />
-        <meta name="twitter:card" content="https://heyko.org/img/Five_Mysteries_Banner_1.webp"></meta>
+        <meta property="og:image" content="/img/poly-story/background.webp" />
+        <meta name="twitter:card" content="https://heyko.org/img/poly-story/background.webp"></meta>
         <meta property="og:description" content="Poly Story is a multiplayer and cross-platform game of exploration of a magical and vast world, dotted with villages, caves and dragons! Run to discover this beautiful universe! Fight with your friends, and annihilate all the enemies that cross your path!, developed by Heyko" />
       </Head>
       <Navbar/>
