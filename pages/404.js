@@ -41,7 +41,7 @@ function App() {
         <div className={styles.suggestionList}>
             <h2 className={styles.suggestionListTitle}>Did you mean:</h2>
             {
-                suggestions.map((suggestion, index) => 
+                suggestions.length > 0 ? suggestions.map((suggestion, index) => 
                     <div key={"suggestion_" + index} className={styles.suggestionContener}>
                        <p>{parseInt(suggestion.similarity * 100)}%</p>
                         <div style={{width: suggestion.similarity * 100 + "%"}}>
@@ -52,7 +52,15 @@ function App() {
                         <a href={`/${suggestion.path}`}>{suggestion.path}</a>
                     </div>
                 )
+                :   <p>No suggestions.</p>
             }
+            <br></br>
+            <div className={styles.suggestionContener}>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href={`/contacts`}>You can contact us here</a>
+            </div>
         </div>
         <div className={styles.imageContener}>
             <Image layout="fill" src="/img/illustrations/404.svg" />
