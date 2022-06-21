@@ -32,5 +32,6 @@ Languages : html - css - javascript
 
 Framework : React
 
-![image](https://user-images.githubusercontent.com/60229704/171698139-a1e69d0d-c371-439a-8efc-a8b45fe67056.png)
+![image](https://user-images.githubusercontent.com/60229704/174825684-0c538629-5280-48a0-b1a5-82c619fb0a62.png)
+
 
