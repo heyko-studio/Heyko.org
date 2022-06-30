@@ -51,20 +51,6 @@ function App() {
           <div style={{height: '310px'}} className={`${styles.Infos} ${styles.partnerContener}`}>
           <div className={`${styles.Infos} ${styles.partnerImage}`}>
             </div>
-            <div className={`${styles.Infos} ${styles.partner_i} ${styles.v8}`}></div>
-            <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
-            <h1 className={`${styles.Infos} ${styles.partnerTitle}`}>World Cloud</h1>
-            <a href="https://manager.world-cloud.fr/" target="https://manager.world-cloud.fr/"><button className="button view" style={{position: 'absolute', bottom: '35px', left: '10px'}}>Voir</button></a>
-            <p className={`${styles.Infos} ${styles.partnerDescription} ${styles.v3}`}>
-            🚀 Serveurs de jeux, web et VPS.<br></br>
-            🔒 N'ayez pas peur de perdre vos données, elles sont sécurisées.<br></br>
-            👲 Association ou étudiant ? Des réductions vous attendent !
-            </p>
-          </div>
-
-          <div style={{height: '310px'}} className={`${styles.Infos} ${styles.partnerContener}`}>
-          <div className={`${styles.Infos} ${styles.partnerImage}`}>
-            </div>
             <div className={`${styles.Infos} ${styles.partner_i} ${styles.v5}`}></div>
             <div className="flag_fr s1"></div><div className="flag_fr s2"></div><div className="flag_fr s3"></div>
             <h1 className={`${styles.Infos} ${styles.partnerTitle}`}>Tech'NCode</h1>
